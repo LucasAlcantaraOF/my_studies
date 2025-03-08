@@ -73,3 +73,86 @@ Abordagem de desenvolvimento de software e resolução de problemas que se basei
 5. Legibilidade:
     - Segue uma estrutura clara, facilitando a leitura e o entendimento do código.
 
+### Pensamento Computacional 
+
+Se trata de um conjunto de habilidades mentais e práticas que ajudam a resolver problemas de maneira sistemática e eficiente. Ele é a base para o desenvolvimento de algoritmos e programas e a principal ferramenta para cumprir a principal responsabilidade de um desenvolvedor, que seria a mitigação de problemas por meios lógicos e modernos. No contexto específico do C, o pensamento computacional é aplicado para entender e resolver incógnitas usando a lógica e os recursos da linguagem.
+
+__As ideias do que seria Pensamento Computacional para determinadas pessoas:__
+
+<details>
+<summary>Pensamento Computacional para Grover e Pea (2013)</summary>
+
+</br>
+
+> Com as ideias de Grover e Pea, o pensamento computacional tem nove elementos que os levam a atender alunos interdisciplinarmente, além de avaliar seu desempenho. São eles:
+>
+> 1. Abstração e reconhecimento de padrões;
+> 2. Processamento sistemático da informação;
+> 3. Noções de controle de fluxo de algoritmos;
+> 4. Decomposição de problemas estruturados;
+> 5. Sistema de símbolos e representações;
+> 6. Pensamento iterativo, recursivo e paralelo;
+> 7. Lógica condicional;
+> 8. Eficiência e restrições de desempenho;
+> 9. Depuração e detecção de erro sistemático.
+</details>
+
+<details>
+<summary>Pensamento Computacional para Brackmann (2017)</summary>
+
+</br>
+
+> De acordo com os estudos de Brackmann ele desenvolveu a ideia ed que o pensamento computacional tem quatro pilares para a resolução de problemas. São eles:
+>
+> 1. **Descomposição:** Consiste em dividir o problema inicial em partes menores, permitindo que cada parte reduzida seja mais facilmente resolvida. De maneira geral, problemas que não estão decompostos têm sua resolução mais difícil de enxergar e desenvolver.
+>
+> 2. **Reconhecimento de Padrões:** Ao decompor o problema em partes menores, é possível aumentar a atenção aos detalhes e perceber que algumas dessas partes menores já são conhecidas ou têm sua solução conhecida, ou seja, algum tipo de problema que você em algum momento dos seus estudos e vida profissional ja teve que solucionar. O reconhecimento de padrões se caracteriza por identificar repetições ou regras de recorrência, aumentando a chance de se conhecer alguma solução para problemas similares.
+>
+> 3. **Abstração:** Consiste em filtrar e classificar os dados, concentrando a atenção no que realmente é importante. Ela pode ser vista como o principal dos pilares, porque será utilizada em diversos momentos, pois, ao concentrar-se nos dados realmente importantes, a abstração permite que decisões sejam tomadas com maior qualidade.
+>
+> 4. **Algoritmos:** Procedimentos para resolver um problema com as ações a serem executadas e a ordem em que elas devem acontecer. Na visão acadêmica, aprendemos diversos algoritmos, como os responsáveis por executar operações básicas (soma, subtração, multiplicação e divisão)
+</details>
+
+### Fluxo de requisições
+
+Uma boa prática na questão de desenvolvimento é constituído antes mesmo de fato começar a escrever seu código, um importante ato é a criação do que chamamos de **fluxo de requisições**, que seria a elaboração de todo o esquema do nosso sistema utilizando o método de criar um fluxo com todos os fatores que deveremos abordar naquele momento, ou seja, se por exemplos formos trabalhar criando uma interface de cadastrar novos usuários precisamos se atentar a certas coisas, como por exemplo:
+
+1. Todos os campos foram preenchidos?
+2. Esse usuário já está cadastrado em nosso sistema?
+3. Os dados fornecidos são válidos?
+4. Crie uma criptografia dos dados
+5. Verificado tudo, mande para o nosso SGBD para enviar ao BD
+
+Esse é um exemplo de algumas perguntas que são padrões no momento que estivermos trabalhando com um fluxo de requisições de cadastros, mas é somente o começo de sistemas muitos mais complexos que precisam passar por vários tópicos.
+
+Vamos demonstrar como seria esse fluxograma de forma prática agora, reutilizando a ideia de uma interface que possui cadastro:
+
+<img  src="./assets/images/flow_request.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+### Considerações Finais:
+
+Esse material todo se baseando no sistema de ensino da Estacio - Via Corpus (Fortaleza-CE), sendo uma parte anotado a partir das explicações da professora e coordenadora: Danielle Amorim e outra tirada dos matérias de estudo do SAVA.
+
+Algumas Fontes:
+
+> BRACKMANN, C. P. Desenvolvimento do pensamento computacional através de atividades desplugadas na educação básica. Tese (Doutorado em Informática na Educação) - Universidade Federal do Rio Grande do Sul, Porto Alegre, 2017.
+
+> GROVER, S.; PEA, R. Computational Thinking in K-12: A Review of the State of the Field. Educational Researcher, 2013, v. 42, n. 1, p. 38 - 43.
