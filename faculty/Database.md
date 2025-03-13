@@ -115,4 +115,77 @@ Depois foi desenvolvido o **Sistema Gerenciador de Banco de Dados (SGBD)** que f
 
 ### Banco de Dados Relacional
 
-Edgar Frank Codd, matemático pesquisador da International Business Machines Corporation (IBM), propõe o modelo de dados relacional, que se tornou
+Edgar Frank Codd, matemático pesquisador da International Business Machines Corporation (IBM), propõe o modelo de dados relacional, que se tornou um marco em como pensar em banco de dados. Ele desconectou a estrutura lógica do banco de dados do método de armazenamento físico. Este sistema se tornou padrão desde então. Edgar criou uma Álgebra Relacional e um Cálculo Relacional, nos quais baseou toda a teoria matemática das relações em que fundamentou o modelo relacional. 
+
+Apesar da base teórica do modelo, a estrutura de dados subjacente tem o mérito de ser muito simples, pois uma relação nada mais é do que uma tabela formada por colunas e linhas, em cujas células estão armazenados os dados, conceito compreensível pelo senso comum de qualquer leigo em Matemática ou computação.
+
+| Linhas/Colunas  | Nome | Data de Nascimento | Sexo | Setor |
+| -------- | ------ | ---------- | - | ------------- |
+| Linha 1  | Lucas  | 28/06/2005 | M | Estudante de T.I |
+| Linha 2  | Vitoria | 24/08/2005 | F | Psicologa | 
+| Linha 3  | Paiva  | 11/03/1854 | M | Tech-Lead |
+
+A solidez da fundamentação matemática do modelo relacional disparou uma série de iniciativas de implementação em empresas, como a própria IBM, e no meio acadêmico, principalmente nas universidades do estado da Califórnia, onde se localizava o centro de pesquisas da IBM
+
+A partir de então, a IBM patrocinou o projeto System R (de Relational), enquanto a Universidade da Califórnia em Berkeley (UCB) deu início à implementação acadêmica de um SGBD relacional denominado de Ingres (Interactive Graphics Retrieval System), **Que serviram especialmente para dar início da novos SGBD's mais atuais e robustos.**
+
+1. Ingres (Interactive Graphics Retrieval System): Desenvolvido pela UCB (Universidade da Califórnia, Berkeley). Que no final das contas serviu como base para Ingres Corp., Sybase, MS SQL Server, Britton-Lee, Wang PACE. Este sistema utilizava QUEL como linguagem de consulta;
+
+2. System R (de Relational): Desenvolvido pela IBM e serviu de base para o IBM SQL/DS, IBM DB2, Oracle, todas os BD da HP, Tandem's Non-Stop SQL. Este sistema utilizava SEQUEL como linguagem de consulta.
+
+Dr. Peter Chen propõe o modelo **Entidade-Relacionamento** (ER) para projetos de banco de dados dando uma nova e importante percepção dos conceitos de modelos de dados. Assim como as linguagens de alto nível, a modelagem ER possibilita ao projetista concentrar-se apenas na utilização dos dados, sem se preocupar com estrutura lógica de tabelas.
+
+Afinal, a comercialização de sistemas relacionais começa a se torna evidente entre as organizações e na metade do anos 80 a Linguagem Estruturada de Consulta - SQL se torna um padrão mundial. Então, A IBM transforma o DB2 como carro chefe da empresa em produtos para BD. Os modelos em rede e hierárquico passam a ficar em segundo plano praticamente sem desenvolvimentos utilizando seus conceitos, porém vários sistemas legados continuam em uso.
+
+Portanto, no inicio dos anos 90 temos a chamada loucura na internet, baseando-se na corrida para prover acesso remoto a sistemas de computadores com dados legados, além da tendência de evolução dos novos SGBD que surgiriam a partir do Ingres e System R, aumentando o uso de soluções de código aberto (open source) através de GCC, CGI, Apache, MySQL, etc... Surgimento dos bancos de dados XML e de suas linguagens de consulta XML: XPath e XQuery, crescimento das técnicas de computação para reduzir os esforços de administração dos sistemas de banco de dados.
+
+Além de dar espaço para modelos que são utilizados hoje em dia, como
+
+1. Web atual: fontes de dados abrangem volumes gigantescos em diversos formatos e localizações.
+2. Big Data: conjuntos de dados extremamente grandes e complexos que não podem ser facilmente processados com métodos de processamento de dados tradicionais. 
+3. Diversidade de plataformas digitais, que têm em comum a conexão com a internet e a computação em nuvem (Cloud Computing).
+
+### NoSQL
+
+NoSQL é uma categoria de sistemas de banco de dados que se diferencia dos bancos de dados relacionais tradicionais, surgindo a partir de todas essas mudanças tecnológicas. O termo "NoSQL" significa "Not Only SQL" (ou seja, "Não Somente SQL"), indicando que esses bancos de dados oferecem uma abordagem alternativa à organização e consulta de dados, não dependendo de tabelas e relações estruturadas. Tendo como principais pontos:
+
+1. Modelos Flexíveis de Dados:
+Diferentemente dos bancos de dados relacionais (que seguem esquemas fixos), o NoSQL é mais flexível e pode armazenar dados de diferentes formatos, como documentos JSON, pares chave-valor, grafos ou colunas.
+Alta Escalabilidade:
+
+2. Ideal para lidar com grandes volumes de dados (Big Data) e tráfego intenso, escalando horizontalmente ao adicionar mais servidores.
+Desempenho Rápido:
+
+3. Projetado para alta performance, especialmente em aplicações que exigem acesso rápido a dados.
+Sem Esquema Rígido:
+
+4. Não exige que os dados sigam uma estrutura fixa, permitindo a manipulação de informações não estruturadas ou semiestruturadas.
+
+<img src="./assets/images/types_database_nosql.png">
+
+---
+
+### SGBD's
+
+SGBD significa Sistema de Gerenciamento de Banco de Dados. Ele é um software utilizado para criar, gerenciar e manipular bancos de dados, permitindo que você armazene, organize e acesse dados de maneira eficiente e segura.
+
+1. Algumas funções principais de um SGBD:
+2. Armazenamento de dados: Salva informações em tabelas, que podem ser acessadas e modificadas.
+3. Manipulação de dados: Permite inserir, atualizar, deletar e consultar dados usando linguagens como SQL.
+4. Segurança: Controla quem pode acessar e modificar os dados.
+5. Backup e recuperação: Garante que os dados possam ser recuperados em caso de falhas.
+6. Integridade dos dados: Mantém os dados consistentes e sem redundâncias desnecessárias.
+
+__Alguns Exemplos:__
+
+- ORACLE (documentos, grafos e RDF);
+
+- MYSQL (documentos);
+
+- MICROSOFT SQL SERVER (documentos e grafos);
+
+- POSTGRESQL (documentos);
+
+- IBM DB2 (documentos e RDF).
+
+### Linguagem SQL
