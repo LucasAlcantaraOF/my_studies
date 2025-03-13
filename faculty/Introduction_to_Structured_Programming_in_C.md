@@ -22,7 +22,7 @@ C logo se tornou umas das linguagens mais populares do mundo da programação e 
 
 ## 🔩 Solução de Problemas e Pensamento Computacional
 
-### Lógica de Programação:
+### 📌 Lógica de Programação:
 
 Antes de darmos inicio ao estudo aprofundado sobre essa introdução gostaria de apresentar o conceito de Lógica de Programação. Para exemplificar melhor, iremos analisar exclusivamente a ideia de "lógica".
 
@@ -52,7 +52,7 @@ Ficou mais claro?
 Essa ideia de lógica, paralelamente, o proposto desafio de matricular um aluno é completamente a definição do que seria a lógica de programação, que seria montar e desenvolver o melhor método para executar uma tarefa.
 
 
-### Solução Estruturada:
+### 📌 Solução Estruturada:
 
 Abordagem de desenvolvimento de software e resolução de problemas que se baseia em dividir um problema complexo em partes menores e mais gerenciáveis. Esses pequenos desafios são resolvidos de forma independente, mas de maneira organizada, seguindo princípios de **programação estruturada**. Sendo esses princípios:
 
@@ -73,7 +73,7 @@ Abordagem de desenvolvimento de software e resolução de problemas que se basei
 5. Legibilidade:
     - Segue uma estrutura clara, facilitando a leitura e o entendimento do código.
 
-### Pensamento Computacional 
+### 📌 Pensamento Computacional 
 
 Se trata de um conjunto de habilidades mentais e práticas que ajudam a resolver problemas de maneira sistemática e eficiente. Ele é a base para o desenvolvimento de algoritmos e programas e a principal ferramenta para cumprir a principal responsabilidade de um desenvolvedor, que seria a mitigação de problemas por meios lógicos e modernos. No contexto específico do C, o pensamento computacional é aplicado para entender e resolver incógnitas usando a lógica e os recursos da linguagem.
 
@@ -113,7 +113,7 @@ __As ideias do que seria Pensamento Computacional para determinadas pessoas:__
 > 4. **Algoritmos:** Procedimentos para resolver um problema com as ações a serem executadas e a ordem em que elas devem acontecer. Na visão acadêmica, aprendemos diversos algoritmos, como os responsáveis por executar operações básicas (soma, subtração, multiplicação e divisão)
 </details>
 
-### Fluxo de requisições
+### 📌 Fluxo de requisições
 
 Uma boa prática na questão de desenvolvimento é constituído antes mesmo de fato começar a escrever seu código, um importante ato é a criação do que chamamos de **fluxo de requisições**, que seria a elaboração de todo o esquema do nosso sistema utilizando o método de criar um fluxo com todos os fatores que deveremos abordar naquele momento, ou seja, se por exemplos formos trabalhar criando uma interface de cadastrar novos usuários precisamos se atentar a certas coisas, como por exemplo:
 
@@ -129,7 +129,7 @@ Vamos demonstrar como seria esse fluxograma de forma prática agora, reutilizand
 
 <img  src="./assets/images/flow_request.png">
 
-
+## Tipos de Dados, Expressões, Operadores e Tabela Verdade
 
 
 
@@ -147,7 +147,7 @@ Vamos demonstrar como seria esse fluxograma de forma prática agora, reutilizand
 
 ---
 
-### Considerações Finais:
+### 📌 Considerações Finais:
 
 Esse material todo se baseando no sistema de ensino da Estacio - Via Corpus (Fortaleza-CE), sendo uma parte anotado a partir das explicações da professora e coordenadora: Danielle Amorim e outra tirada dos matérias de estudo do SAVA.
 
