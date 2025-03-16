@@ -26,6 +26,21 @@ C logo se tornou umas das linguagens mais populares do mundo da programação e 
 
 Antes de darmos inicio ao estudo aprofundado sobre essa introdução gostaria de apresentar o conceito de Lógica de Programação. Para exemplificar melhor, iremos analisar exclusivamente a ideia de "lógica".
 
+Primeiramente, gostaria de expôs que o filósofo grego Aristóteles é considerado o criador da lógica, estabelecendo-a, na Grécia Antiga, como uma disciplina denominada "Razão".
+
+> A Lógica é lida como raciocínios e argumentos
+>
+> Um argumento pode ser composto por uma ou várias premissas, as quais podem ser verdadeiras ou falsas e conduzem à conclusão, que também poderá ser verdadeira ou falsa. No argumento exemplificado a seguir, temos em 1 e 2 as premissas e em 3 a conclusão:
+>
+> 1. Paiva é mais velho que Lucas
+> 2. Lucas é mais velho que Vitoria
+> 3. Logo, Paiva é mais velho que Vitoria
+>
+>
+>A lógica é aplicada a diversas ciências. Na informática a lógica é empregada em áreas que vão da construção de circuitos elétricos, que constituem o hardware dos dispositivos eletrônicos, ao software que permite seu funcionamento e uso.
+>
+> Ao pensar, muitas vezes efetuamos certas operações sobre proposições, chamadas de operações lógicas, que obedecem a regras de um cálculo, denominado “cálculo proposicional”, semelhante ao da aritmética sobre números.
+
 __Lógica:__
 
 Declarado na lingua portuguesa como modo de raciocinar de forma coerente e mais produtiva possível, ou seja, o ato de pensar e desenvolver essa lógica para constituir uma ação com uma finalidade que ocasionara em um resultado com maior qualidade possível. Caso não esteja tão claro tentarei exemplificar melhor:
@@ -113,7 +128,7 @@ __As ideias do que seria Pensamento Computacional para determinadas pessoas:__
 > 4. **Algoritmos:** Procedimentos para resolver um problema com as ações a serem executadas e a ordem em que elas devem acontecer. Na visão acadêmica, aprendemos diversos algoritmos, como os responsáveis por executar operações básicas (soma, subtração, multiplicação e divisão)
 </details>
 
-### 📌 Fluxo de requisições
+### 📌 Fluxo de requisições (Fluxograma)
 
 Uma boa prática na questão de desenvolvimento é constituído antes mesmo de fato começar a escrever seu código, um importante ato é a criação do que chamamos de **fluxo de requisições**, que seria a elaboração de todo o esquema do nosso sistema utilizando o método de criar um fluxo com todos os fatores que deveremos abordar naquele momento, ou seja, se por exemplos formos trabalhar criando uma interface de cadastrar novos usuários precisamos se atentar a certas coisas, como por exemplo:
 
@@ -129,21 +144,149 @@ Vamos demonstrar como seria esse fluxograma de forma prática agora, reutilizand
 
 <img  src="./assets/images/flow_request.png">
 
+> Site: Miro.com.br
+
+<img src="./assets/images/flowchart_1.png">
+<img src="./assets/im   ages/flowchart_2.png">
+
+##  Algoritmos e Portugol
+
+Antes de utilizarmos a linguagem C realmente, precisamos entender algumas definições importantes para facilitar o entendimento de como a programação funciona, para tanto, vamos compreender qual o significado de **algoritmo** e **portugol**, respectivamente.
+
+### Algoritmos:
+
+A ideia de algoritmo é muito antiga e foi bastante discutida entre matemáticos e filósofos que vislumbravam, no século XVII, máquinas universais de calcular e estranhas linguagens simbólicas para representar ideias complexas por meio de sinais convencionais. A matemática clássica é, em grande parte, o estudo de determinados algoritmos que são manipulados por meio de regras práticas, como uma receita, um guia. Isso acontece na álgebra elementar, que substitui os números por letras e define um conjunto de símbolos.
+
+Os algoritmos são muito utilizados em disciplinas ligadas à área de ciências exatas, como matemática, física, química e computação; eles também têm diversas aplicações em outras áreas e atividades, ainda que não sejam conhecidos por esse nome.
+
+- Para que as tarefas possam ser realizadas com êxito, elas devem estar ordenadas.
+- Tarefas ordenadas nos levam a noção de Algoritmos. 
+- Algoritmos é uma sequência de instruções ordenada, finita, e não ambígua (direta) que são executadas mecanicamente para executar uma tarefa.   
+
+Existem diversos tipos de algoritmos utilizados na computação e o que difere um tipo do outro é a maneira de representar as instruções para realização de uma tarefa. Entre os principais tipos de algoritmos, podemos citar:
+
+1. Descrição Narrativa
+2. Diagrama de Chapin
+3. Pseudocódigo 
+4. Fluxograma 
+
+### Descrição Narrativa (Linguagem Textual):
+
+> A mais simples de entender, visto que utilizamos o a linguagem natural, ou seja, nosso idioma para criar uma lógica
+
+A descrição narrativa utiliza linguagem natural para especificar os passos da realização das tarefas. Pela pouca formalidade e por dar margem a interpretações ambíguas, dificilmente é utilizada na representação de algoritmos.
+
+```
+1. Ler valores para o A e B
+2. Verificar se o A é maior que o B
+3. Se A for maior que o B
+4. Mostre: "O maior valor é A"
+5. Se A for menor que o B"
+6. Mostre: O maior valor é B"
+7. Se os valores de A e B forem iguais
+8. Mostre: "Os valores A e B são iguais"
+9. Fim
+```
+
+### Diagrama de Chapin
+
+O diagrama de Chapin, também conhecido como diagrama Nassi-Shneiderman ou diagrama N-S, apresenta a solução do problema por meio de um diagrama de quadros com uma visão hierárquica e estruturada. Esse tipo de diagrama não é muito utilizado, pois é difícil representar alguns procedimentos
+
+<img src="./assets/images/chapin.png">
+
+### Pseudocódigo 
+
+> A mais próxima dos códigos de programação, já que utilizamos um estilo de sintaxe similar as linguagens de programação.
+
+
+O pseudocódigo é uma forma de representação de algoritmos que utiliza uma linguagem flexível, intermediária entre a linguagem natural e a linguagem de programação. É utilizado para organizar o raciocínio lógico a ser seguido para a resolução de um problema ou para definir os passos para a execução de uma tarefa. 
+
+- A palavra “pseudocódigo” significa “falso código”.
+
+Esse nome se deve à proximidade que existe entre um algoritmo escrito em pseudocódigo e a maneira pela qual um programa é representado em uma linguagem de programação.
+
+``` 
+1.  Algoritmo exemplo2.3
+2.  Var
+3.      a, b: inteiro
+4.  Início
+5.      Ler (a,b)
+6.      Se (a>b) então
+7.          Mostrar ("O maior valor é a" a)
+8.      senão
+9.          Se (a<b) então
+10.             Mostrar("O maior valor é b" b)
+11.     senão
+12.         Mostrar("Os valores de A e B são iguais)
+13.     Fim-se
+```
+Todo algoritmo representado por um pseudocódigo deve, primeiramente, ser identificado, como aparece na linha 1 do Exemplo 2.3. 
+
+1. Variáveis: 
+    - Todas as variáveis que serão utilizadas na resolução do problema devem ser previamente declaradas, isto é, todas as informações necessárias à resolução do problema devem ser representadas. 
+    - No exemplo anterior, a palavra reservada Var indica a área para declaração das variáveis e, na linha 3, as variáveis a e b são declaradas.
+
+2. Corpo do algoritmo: 
+    - Nas linhas 4 e 15, encontramos as palavras reservadas Início e Fim, respectivamente. 
+    - Elas delimitam o espaço definido para escrever todos os passos necessários para solucionar o problema.
+    - Nessa parte, devem-se escrever todos os passos lógicos necessários para solucionar o problema, representando, entre outras:
+    a entrada de valores para as variáveis;
+    as operações de atribuição, lógicas e aritméticas;
+    a abertura e o fechamento de arquivos;
+    as repetições;
+    a exibição dos resultados.
+    
+
+### Fluxograma:
+
+> A mais difundida e compreendida mundialmente, já que foi estabelecido um padrão para os fluxogramas, portanto, é entendida por qualquer projetista.
+
+O fluxograma é um tipo de algoritmo que se utiliza de símbolos gráficos para representar ações ou instruções a serem seguidas.
+
+É utilizado para organizar o raciocínio lógico a ser seguido para a resolução de um problema ou para definir os passos para a execução de uma tarefa. O fluxograma, por utilizar figuras para representação das ações, é considerado um algoritmo universal.
+Cada instrução ou ação a ser executada deve ser representada por meio de um símbolo gráfico (Simbologia).
+
+<img src="./assets/images/flowchart_1.png">
+
+<img src="./assets/images/flowchart_2.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Tipos de Dados, Expressões, Operadores e Tabela Verdade
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ---
 

@@ -248,9 +248,9 @@ Um protocolo define o formato e a ordem das mensagens trocadas entre duas ou mai
 
 Outro fator importante ressaltar dos protocolos, são a sua importância dentro do âmbito de desenvolvimento, visto que, se não fosse estabelecido protocolos para serem seguidos dentro da internet, ela não seria padronizada, desenvolvendo uma necessidade de em todo desenvolvimento de algum sistema, o programador teria que criar todas as camadas a mão dentro do sistema.
 
-> Comentário:
+>❗️ Comentário:
 >
->❗️ Inicialmente, fazemos um cumprimento, como um “oi” e esperamos receber outro “oi” como resposta, ou, por exemplo, falando um “bom dia” e esperando receber um “bom dia” de volta. A partir desse ponto, podemos perguntar as horas, por exemplo. Ou seja, existem mensagens específicas que enviamos e ações específicas que realizamos em reação às respostas recebidas. Também podemos realizar outros eventos quando a resposta é diferente da esperada.
+> O envio de dados segue uma série de camadas responsáveis por instruir um padrão sobre como é feito o encaminhamento de dados, ou seja, exemplificando de uma uma forma menos tecnológica, digamos que precisamos enviar uma carta para um amigo, primeiro teremos a camada 1, que seria a nossa, de escrever a carta e enviaremos para a camada 2 que seria responsável por envelopar essa carta para assim chegar na camada 3, a saída que faria a entrega para o meio de transporte. Afinal, o transporte levaria para a entrada do dado que seria a camada 3 do outro lado, que passaria pela camada 2 para abrir os dados e entregar a camada 1 que seria o amigo.
 
 O mesmo é válido para as redes de computadores. Para que determinada ação seja realizada entre dois componentes de rede, eles devem utilizar o mesmo protocolo.
 
@@ -261,3 +261,122 @@ Em um modelo de serviço:
 - Cada protocolo é executado em uma camada.
 - Cada camada oferece seus serviços à camada acima dela, executando certas ações dentro dela, e utilizando os serviços da camada diretamente abaixo dela.
 - O ponto de ligação entre uma camada e outra camada é denominado interface.
+
+### ➜ O primeiro modelo de camadas:
+
+No final dos anos 1970, a Organização Internacional para Padronização (International Organization for Standardization – ISO) propôs que as redes de computadores fossem organizadas em camadas, sendo cada camada responsável por realizar determinado serviço.
+
+Esse esforço fez surgir um modelo de camadas que ficou conhecido como modelo RM-OSI (Reference Model Open Systems Interconnection), ou simplesmente modelo OSI, utilizado até hoje e composto por sete camadas, numeradas de cima para baixo: aplicação, apresentação, sessão, transporte, rede, enlace e física, conforme mostrado na imagem a seguir:
+
+<img src="./assets/images/model_osi.jpg">
+
+Importante ressaltar que o modelo OSI é utilizado como uma referência para o estudo e funcionamento das redes, entretanto, não é utilizado em si, principalmente porque ele não definiu protocolos, mas sim os serviços que cada camada oferece. Vamos detalhar essas camadas:
+
+1. Aplicação
+    - Nesta camada, residem as aplicações de rede que implementam os serviços de redes, como para transferir arquivos, enviar mensagens, entre outros. Um protocolo de camada de aplicação é executado nos sistemas finais, permitindo que as aplicações executadas nesses sistemas finais possam trocar informações por meio de mensagens.
+2. Apresentação:
+    - Nesta camada, provê serviços que permitam às aplicações de comunicação interpretarem o significado dos dados trocados, ou seja, ela é responsável por garantir que sistemas diferentes possam trocar informações, como faz um tradutor. Entre esses serviços estão a compressão, criptografia e a codificação de dados.
+3. Sessão:
+    - Nesta camada, há a delimitação e sincronização da troca de dados. É a camada que seria responsável, por exemplo, por permitir que, se você estivesse realizando um download de um arquivo e a conexão caísse, você retomasse a transferência a partir do último ponto de sincronização.
+4. Transporte: 
+    - Nesta camada, são carregadas mensagens da camada de aplicação entre os sistemas finais, garantindo que todos dados sejam trocados de forma correta, ou seja, sem perda, em ordem, sem sobrecarregar a rede e as máquinas. Um pacote da camada de transporte é denominado segmento.
+5. Rede:
+    - Nesta camada, há a responsabilidade por determinar o caminho de um hospedeiro para outro. Para que esse serviço seja possível, os endereços lógicos são definidos na camada de rede, que identificam unicamente uma máquina na rede, e a função de roteamento. Os pacotes da camada de rede são conhecidos como datagramas.
+6. Enlace:
+    - Nesta camada, leva-se um pacote, denominado quadro, de um nó ao nó seguinte, no caminho entre origem e destino. Em cada nó, a camada de rede passa o datagrama para a camada de enlace, que fica responsável por encaminhar o pacote de dados até o próximo nó, de forma confiável, ou seja, sem erros.
+7. Físico:
+    - Nesta camada, os bits individuais que estão dentro do quadro de um nó para o seguinte são movimentados, transformando-os em algum tipo de sinal adequado a ser transmitido pelo meio de transmissão utilizado, por exemplo, fios de cobre ou fibra ótica.
+
+### ➜ Arquitetura TCP/IP ou Internet:
+
+Conforme comentamos, o modelo OSI é um modelo de referência e não é utilizado na prática.
+
+O Modelo TCP/IP é o utilizado atualmente.
+
+As redes que utilizamos empregam a arquitetura TCP/IP ou arquitetura internet. Originalmente, a arquitetura TCP/IP emprega quatro camadas (aplicação, transporte, inter-rede e intrarrede). Entretanto, por fins didáticos, utilizaremos um modelo formado por cinco camadas: aplicação, transporte, rede, enlace e físico, como mostra a imagem a seguir. No modelo de cinco camadas, a camada de intrarrede é dividida em camada de enlace e física. Confira!
+
+<img src="./assets/images/model_tcp_ip.jpg">
+
+Conforme podemos observar, a diferença que temos entre o modelo OSI e a arquitetura de cinco camadas é a ausência das camadas de apresentação e sessão. As funções dessas duas camadas são absorvidas pela camada de aplicação. Um detalhe que você deve ter percebido é que, quando falamos do OSI, sempre falamos sobre modelo e agora no TCP/IP estamos usando a expressão arquitetura. Por que essa diferença?
+
+Essa diferença ocorre pelo fato de o OSI não definir protocolos. Já no TCP/IP, temos um conjunto de protocolos associados, conhecidos como a pilha de protocolos TCP/IP, que nada mais são do que o conjunto de protocolos implementados por todas as camadas da arquitetura.
+
+A camada de aplicação tem a mesma função da camada do modelo OSI, acrescido das funções da apresentação e sessão. Nessa camada, estão definidos alguns dos principais protocolos utilizados atualmente, como o HTTP (HyperText Transfer Protocolo), DNS (Domain Name Server), SMTP (Simple Mail Transfer Protocolo), entre muitos outros.
+
+A camada de transporte tem a responsabilidade de garantir a confiabilidade das informações trocadas pelas aplicações. Há dois protocolos de transporte na internet, vejamos a seguir:
+
+1. TCP:
+    - Provê serviços orientados à conexão para suas aplicações. Alguns serviços são: entrega garantida de mensagens, controle de fluxo (compatibilização das velocidades do remetente e do receptor), controle de congestionamento (uma origem reduz sua velocidade de transmissão quando a rede está congestionada) e garantia da ordem das mensagens.
+
+2. UDP:
+    - Provê serviço não orientado à conexão para suas aplicações. É um serviço econômico sem controle de fluxo e de congestionamento adequado para as aplicações que toleram perda de pacotes, mas não toleram atrasos.
+    - Comumente utilizado em sistemas de Streaming, pelo motivo mencionado antes, de que pequenas perdas de pacotes nos filmes não acarretá em um problema realmente impactante
+
+A camada de rede segue a mesma função da camada de rede do modelo OSI, mas agora são definidos o formato do endereço e as regras de encaminhamento. Essa definição é feita pelo protocolo IP (Internet Protocol).
+
+As camadas de enlace físicas não são definidas de forma explícita na arquitetura internet, mas elas executam o mesmo papel previsto no modelo OSI. Alguns dos padrões utilizados nessas camadas de enlace são o ethernet, wi-fi e bluetooth.
+
+### ➜ Encapsulamento:
+
+Para compreender o conceito de encapsulamento, considere uma mensagem da camada de aplicação na máquina emissora que é passada para a camada de transporte. Essa camada pega a mensagem e anexa as informações de cabeçalho de camada de transporte. Essas informações serão usadas pela camada de transporte do lado receptor.
+
+>❗️ Comentário:
+>
+> A mensagem da camada de aplicação e as informações de cabeçalho da camada de transporte, juntas, formam o que é chamado de Unidade de Dados de Protocolo, ou PDU (Protocol Data Unit), que, nesse caso, é chamado de segmento da camada de transporte, que encapsula a mensagem da camada de aplicação.
+
+A camada de transporte então passa o segmento à camada de rede, que adiciona informações de cabeçalho de camada de rede, como endereços de sistemas finais de origem e de destino, criando um datagrama de camada de rede. Este é então passado para a camada de enlace, que adicionará suas próprias informações de cabeçalho e criará um quadro de camada de enlace. Finalmente, os dados são passados para a camada física, que transmite os dados na forma de bits pelo meio físico.
+
+Em cada camada, um PDU possui campos de cabeçalho e um campo de carga útil. A carga útil é, em geral, um pacote da camada acima. Quando o pacote chega no sistema final destino, o processo de desencapsulamento se inicia. Na extremidade receptora, cada segmento deve ser reconstruído a partir dos datagramas que o compõem. O conceito de encapsulamento está ilustrado na imagem que veremos a seguir.
+
+
+Quando um sistema final envia pacotes para outro sistema final, o caminho físico que os dados percorrem é o seguinte:
+
+1. Sentido para baixo na pilha de protocolos de um sistema final emissor.
+2. Sentido para cima e para baixo nas pilhas de protocolos de um comutador e roteador de camada de enlace que estejam no caminho.
+3. Depois para cima na pilha de protocolos do sistema final receptor.
+
+Os roteadores e comutadores de camada de enlace não implementam todas as camadas da pilha de protocolos. Por exemplo, os roteadores da internet são capazes de executar o protocolo IP (da camada 3), mas comutadores de camada de enlace não (só até a camada 2, de enlace). Os hospedeiros implementam todas as cinco camadas.
+
+Resumidamente, para melhor encaminhamento de pacotes ele é divido em partes, enviado ao mesmo tempo e assim que chegar ao destino, o pacote será remontando para assim ser entregue o dado com integridade.
+
+## 📌 Um pouco sobre a história da Internet:
+
+**Anos 1960**
+
+No início da década de 1960, a rede de telefonia, que usa comutação de circuitos para transmitir informações de uma origem a um destino, era a rede de comunicação dominante no mundo. A comutação de circuitos foi escolhida, pois a voz é transmitida a uma taxa constante entre os pontos. Com a importância cada vez maior dos computadores no início da década de 1960, foi considerada a questão de como interligar computadores para que pudessem ser compartilhados entre usuários geograficamente dispersos.
+
+A comutação de pacotes foi inventada como uma alternativa poderosa e eficiente à comutação de circuitos. O programa de ciência de computadores na ARPA (Advanced Research Projects Agency, ou Agência de Projetos de Pesquisa Avançada), nos Estados Unidos, publicou um plano geral para a ARPAnet, a primeira rede de computadores por comutação de pacotes e uma ancestral direta da internet pública de hoje.
+
+Em 1969, foi instalado o primeiro comutador de pacotes na UCLA (Universidade da Califórnia em Los Angeles). O primeiro protocolo fim a fim entre sistemas finais da ARPAnet foi o protocolo de controle de rede (Network Control Protocol – NCP). Com um protocolo fim a fim à disposição, a escrita de aplicações tornou-se possível, e em 1972, foi escrito o primeiro programa de e-mail.
+
+**Anos 1970**
+
+O trabalho de interconexão de redes realizado pela DARPA (Defense Advanced Research Projects Agency, ou Agência de Projetos de Pesquisa Avançada de Defesa), criou uma rede de redes e foi realizado por Vinton Cerf e Robert Kahn.
+
+>❗️ Comentário
+>
+> Esses princípios de arquitetura foram incorporados ao TCP. As primeiras versões desse protocolo combinavam uma entrega sequencial confiável de dados via retransmissão por sistema final (que ainda faz parte do TCP de hoje) com funções de envio (que hoje são desempenhadas pelo IP). Os três protocolos fundamentais da internet que temos hoje — TCP, UDP e IP — estavam conceitualmente disponíveis no final da década de 1970.
+
+Anos 1980
+
+Em 1983, o TCP/IP foi adotado oficialmente como o novo padrão de protocolo de máquinas para a ARPAnet (em substituição ao protocolo NCP). Foi desenvolvido o sistema de nomes de domínios (DNS) utilizado para mapear nomes da internet fáceis de entender.
+
+Anos 1990
+
+Na década de 1990, a ARPAnet, a progenitora da internet, deixou de existir. O principal evento foi o surgimento da World Wide Web, que levou a internet para os lares e as empresas de milhões de pessoas no mundo inteiro. A web serviu como plataforma para a habilitação e a disponibilização de centenas de novas aplicações, como sites de busca (por exemplo, Google), comércio pela internet (por exemplo, Amazon, eBay) e redes sociais (por exemplo, Facebook).
+
+> A web foi inventada por Tim Berners-Lee, entre 1989 e 1991, no CERN (European Center for Nuclear Physics, ou Centro Europeu para Física Nuclear), com base em ideias originadas de trabalhos sobre hipertexto.
+
+Em 1995, empresas começaram a operar servidores e a realizar transações comerciais pela web. A segunda metade da década de 1990 foi um período de tremendo crescimento e inovação, com grandes corporações e milhares de novas empresas criando produtos e serviços para a internet.
+
+De 1995 a 2001, a internet realizou uma viagem vertiginosa pelos mercados financeiros. Antes mesmo de se mostrarem lucrativas, centenas de novas empresas faziam suas ofertas públicas iniciais de ações e começavam a ser negociadas em bolsas de valores. Muitas empresas eram avaliadas em bilhões de dólares, sem ter nenhum fluxo significativo de receita. As ações da internet sofreram uma queda também vertiginosa entre 2000 e 2001, e muitas novas empresas fecharam.
+
+Anos 2000 até o presente
+
+Desde o início do milênio, vimos a implementação do acesso à internet por banda larga nos lares – modems a cabo, DSL, FTTH. Esse acesso à internet de alta velocidade possibilitou a aparição de várias aplicações de vídeo, como a distribuição de vídeo gerado pelo usuário (por exemplo, YouTube), fluxo contínuo por demanda de filmes e shows de televisão (por exemplo, Netflix) e videoconferência entre várias pessoas (por exemplo, Skype).
+
+>❗️ Comentário
+>
+> A onipresença cada vez maior das redes Wi-Fi e de telefonia celular 4G e 5G públicas está possibilitando permanecer constantemente conectado enquanto se desloca, e também permitindo novas aplicações inerentes à localização.
+
+O número de dispositivos sem fio conectados ultrapassou o número de dispositivos com fio. Muitas empresas de comércio na internet agora estão rodando suas aplicações na “nuvem” — como na EC2 da Amazon, ou na Azure da Microsoft.
