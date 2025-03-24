@@ -35,6 +35,14 @@ Algumas empresas ainda não utilizam Banco de Dados para guardar suas informaç�
 7. **Acesso Concurrente** Possibilidade de acesso por múltiplos usuários e manipulação de dados ao mesmo tempo;
 8. **Eficiência:** Projetados para gerenciar dados de forma eficiente, com técnicas de indexação e otimização de consultas.
 
+Entretanto, não teremos apenas vantagens de utilizar o Banco de Dados, visto que se fosse somente se existisse vantagens por que todas as empresas não aderem a ideia de ter um BD?
+
+1. **Alto Custo**: É necessário um custo alto para manter um servidor físico, que seria uma máquina dentro da própria empresa, ou até mesmo um servidor na nuvem que consiste em alugar algum sistema online, que muitas vezes não é vantajoso para empresas que não precisam armazenar e lidar com uma grande base de dados;
+2. **Mão de obra qualificada**: Além do mais, é preciso empregar uma equipe de T.I para a criação e manunteção do Banco de Dados, paralelamente, qualificar os funcionários da empresa para utilizar os novos sistemas.
+
+Portanto, fica evidente que não temos somente qualidades para analisar, visto que, dentro do mercado de T.I não somos somente desenvolvedores, mas sim solucionadores de problemas, então precisamos entender todos as informações administrativas de criar um sistema.
+
+
 > __Dados ou Informação?__
 </br>
 </br>
@@ -113,7 +121,7 @@ Depois foi desenvolvido o **Sistema Gerenciador de Banco de Dados (SGBD)** que f
 
 <img height="200" width="500" src="./assets/images/network_model.png"> <img height="200" width="500" src="./assets/images/hierarchical _model.png">
 
-### Banco de Dados Relacional
+### 📌 Banco de Dados Relacional
 
 Edgar Frank Codd, matemático pesquisador da International Business Machines Corporation (IBM), propõe o modelo de dados relacional, que se tornou um marco em como pensar em banco de dados. Ele desconectou a estrutura lógica do banco de dados do método de armazenamento físico. Este sistema se tornou padrão desde então. Edgar criou uma Álgebra Relacional e um Cálculo Relacional, nos quais baseou toda a teoria matemática das relações em que fundamentou o modelo relacional. 
 
@@ -145,7 +153,7 @@ Além de dar espaço para modelos que são utilizados hoje em dia, como
 2. Big Data: conjuntos de dados extremamente grandes e complexos que não podem ser facilmente processados com métodos de processamento de dados tradicionais. 
 3. Diversidade de plataformas digitais, que têm em comum a conexão com a internet e a computação em nuvem (Cloud Computing).
 
-### NoSQL
+### 📌 NoSQL
 
 NoSQL é uma categoria de sistemas de banco de dados que se diferencia dos bancos de dados relacionais tradicionais, surgindo a partir de todas essas mudanças tecnológicas. O termo "NoSQL" significa "Not Only SQL" (ou seja, "Não Somente SQL"), indicando que esses bancos de dados oferecem uma abordagem alternativa à organização e consulta de dados, não dependendo de tabelas e relações estruturadas. Tendo como principais pontos:
 
@@ -165,7 +173,7 @@ Sem Esquema Rígido:
 
 ---
 
-### SGBD's
+### 📌 SGBD's
 
 SGBD significa Sistema de Gerenciamento de Banco de Dados. Ele é um software utilizado para criar, gerenciar e manipular bancos de dados, permitindo que você armazene, organize e acesse dados de maneira eficiente e segura.
 
@@ -188,4 +196,39 @@ __Alguns Exemplos:__
 
 - IBM DB2 (documentos e RDF).
 
-### Linguagem SQL
+### 📌 Linguagem SQL
+
+SQL (Structured Query Language) é uma linguagem de programação padrão desenvolvida para ser utilizada mundialmente por todos os desenvolvedores, usada para gerenciar e manipular bancos de dados relacionais. Com o SQL, é possível realizar diversas operações como consultar, inserir, atualizar e excluir dados armazenados em um banco de dados. A principal característica do SQL é que ele permite que os usuários interajam com os dados de forma estruturada e intuitiva, utilizando comandos bem definidos.
+
+Os principais tipo são:
+
+1. DDL (Data Definition Language ou Linguagem de Definição de Dados)
+    - Grupo de comandos dentro da linguagem SQL que é utilziada paraa criação, alteração e exclusão de objetos em um banco de dados;
+    - Principais comandos: **CREATE, ALTER, DROPE e TRUCANTE**.
+
+2. DML (Data Manipulation Language ou Linguagem de Manipulação de Dados)
+    - Permite aos usuários fazer o acesso aos dados ou manipulá-los, conforme modelos de dados apropriado;
+    - Principais comandos: **SELECT, INSERT, UPDATE e DELETE**
+
+3. DCL (Data Control Language ou Linguagem de Controle de Dados)
+    - Comandos usados para o controle de acessos e gerenciamento de permissões para usuários no banco de dados. Com eles, pode-se facilmente permitir ou negar alguma ações para usuários nas tabelas ou registros;
+    - Alguns Comandos: **GRANT, REVOKE e DENY**.
+
+
+</br>
+</br>
+
+---
+### Passando para o Módulo 02
+---
+</br>
+
+# Projeto de Banco de Dados
+
+Enterdemos um pouco sobre o que é Banco de Dados, como foi elaborado sua evolução e todos os processos ligados ao seu desenvolvimento, entretanto, precisamos entender como funciona o planejamento de um BD, mas agora de uma forma mais prática.
+
+> Digamos que trabalhamos na empresa "Addiante", que trabalha com a locação e venda de caminhões, tratores... que está passando pela implementação de um novo BD para cuidar de um projeto de divulgação dos produtos, localizado em uma feira de apresentações de negócios agropecuários. Afinal, você foi designado para criar o projeto do BD que será armazenado todas as informações dos clientes que estão interresados nos nosso serviços.
+>
+> Portanto, primeiramente, você precisa entender as necessidades do seu chefe, visto que, antes de iniciarmos um projeto precisamos entender a proposta que o cliente precisa ser cumprida, sendo uma das fases mais importante, já que, é nesse momento que teremos a parte inicial do projeto, que seria o esboço da modelagem principal.
+>
+>

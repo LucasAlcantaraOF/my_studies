@@ -9,7 +9,7 @@ Objetivos desse módulo:
 - Identificar a arquitetura de redes de de computadores como um modelo de camadas;
 - Descrever os aspectos da evolução das redes e a internet.
 
-## 📌 Introdução:
+# 📌 Introdução:
 
 A internet, nos modelos atuais, possui bilhões de usuários conectados, dispositivos e enlaces de comunicação, além de uma quantidade enorme de computadores. Os usuários podem conectar uma alta gama de aparelhos, tais como: notebooks, smart TVs, smartphones, sensores, webcams, console de jogos, utensílios domésticos, telefones, impressoras, câmeras, aparelhos de limpezas... Portanto, fica evidente que quase todos os aparelhos do cotidiano precisam de uma conexão direta com a internet, visto que, com os avanços tecnológicos cada vez mais, estamos sendo ligados constantemente aos meios de redes, pois nenhum tipo de aparelho acaba tendo 100% da sua funcionalidade a partir de apenas os dados que estão nele, é preciso, entrar em contato com um servidor, por meio de uma rede, para termos acesso as essas funcionalidades.
 
@@ -17,13 +17,13 @@ Nesses diversos dispositivos, são executadas várias aplicações de redes que 
 
 Não tem como negarmos a importância da internet para todos nós, mas para quem estuda computação vai muito além do simples uso. É importante compreender os conceitos de organização das redes de computadores e internet, necessários para utilização nas redes de hoje e do futuro.
 
-## Conceitos Básicos
+# 📌 Conceitos Básicos
 
 ### 📍 O que é a internet e redes de computadores?
 
 As **redes de computadores** podem ser definidas como um conjunto de módulos processadores interligados por um sistema de comunicação, capazes de trocar informações e compartilhar recursos. Ou seja, temos um transmissor ou origem que é conectado a uma interface que se liga a uma **rede de interconexão**, que é recebido por outra interface ligada ao receptor ou destino, para exemplificar, faria da seguinte manteira:
 
-<img src="./assets/images/computer_network.png">
+<img src="images/computer_network.png">
 
 > Por final, na rede de interconexão também teremos demais dispositivos utilizando da rede para mandar e receber dados.
 
@@ -73,7 +73,7 @@ Sobre os servidores, é comum chamarmos de máquinas grandes, poderosas, mas, na
 
 A imagem a seguir ilustra a localização dos sistemas finais em uma infraestrutura de redes de computadores. Confira!
 
-<img src="./assets/images/hosts.png">
+<img src="images/hosts.png">
 
 ### 📍 Redes de Acesso:
 
@@ -81,7 +81,7 @@ A rede de acesso é uma rede física que conecta os sistemas finais ao primeiro 
 
 Veja abaixo as diferentes redes de acesso (linhas em azul):
 
-<img src="./assets/images/acess_network.png">
+<img src="images/acess_network.png">
 
 Redes que são dividos em duas maneiras de conexão:
 
@@ -119,7 +119,7 @@ Algumas das soluções residenciais também podem ser utilizadas para as redes d
 
 O núcleo da rede consiste em uma rede de dispositivos, por exemplo, roteadores e switches, os enlaces, normalmente de alta velocidade, que interligam esses dispositivos. O núcleo da rede oferece os possíveis caminhos que permitem a interconexão dos sistemas finais, conforme mostrado na imagem (destaque em azul). Confira!
 
-<img src="./assets/images/network_core.png">
+<img src="images/network_core.png">
 
 O núcleo da rede é organizado pelos diversos provedores de serviços de internet (Internet Service Providers — ISPs), pelos quais nós, usuários, contratamos serviços para nos conectarmos à internet. Conectar usuários finais e provedores de conteúdo a um provedor de acesso (ISP) é apenas uma parte de todo o desafio: interligar os bilhões de sistemas finais que compõem a internet. Isso é feito a partir da criação de uma rede de redes.
 
@@ -168,7 +168,7 @@ Para ser possível a formulação de propostas de soluções para os problemas e
 
 Considere um pacote enviado de um nó por meio do roteador A até o roteador B. Um pacote somente pode ser transmitido do roteador A ao B, se não houver nenhum outro pacote sendo transmitido pelo enlace e se não houver outros à sua frente na fila. Se o enlace estiver ocupado, ou com pacotes à espera, o recém-chegado entrará na fila (buffer, ou memória, do roteador). A imagem a seguir ilustra os elementos citados:
 
-<img src="./assets/images/network_delay.png">
+<img src="images/network_delay.png">
 
 > Processamento Nodal: Atraso no processamentos dos equipamentos locais, por exemplo: o atraso de um roteador no processamento para enviar os dados
 >
@@ -223,7 +223,7 @@ O usuário especifica um nome de hospedeiro de destino, e o programa envia vári
 
 A origem registra também o nome e o endereço do roteador, ou do hospedeiro de destino, que retorna a mensagem. Desse modo, a origem pode reconstruir a rota tomada pelos pacotes que vão da origem ao destino e pode determinar os atrasos de ida e volta para todos os roteadores no caminho. Observe a imagem a seguir retirado do aplicativo **Traceroute**:
 
-<img src="./assets/images/traceroute.jpg">
+<img src="./images/traceroute.jpg">
 
 No exemplo mostrado, existem 12 roteadores entre a origem e o destino. Vamos pegar o Roteador 5, que tem o endereço 200.244.19.75. Examinando seus dados, vemos que na primeira das três tentativas, o atraso de ida e volta entre a origem e o roteador foi 17ms. Os atrasos de ida e volta para as duas tentativas seguintes foram 20 e 16ms, e incluem os atrasos que foram abordados, que são o atraso de transmissão, o atraso de propagação, o atraso de processamento do roteador e o atraso de fila.
 
@@ -240,7 +240,7 @@ A vazão depende não somente das taxas de transmissão dos enlaces ao longo do 
 
 ## 📌 Camadas de protocolo e modelos de serviço
 
-### ➜ Arquitetura de Camadas
+### 📍 Arquitetura de Camadas
 
 Todas as atividades na internet que envolvem duas ou mais entidades remotas que se comunicam são governadas por um protocolo.
 
@@ -262,13 +262,13 @@ Em um modelo de serviço:
 - Cada camada oferece seus serviços à camada acima dela, executando certas ações dentro dela, e utilizando os serviços da camada diretamente abaixo dela.
 - O ponto de ligação entre uma camada e outra camada é denominado interface.
 
-### ➜ O primeiro modelo de camadas:
+### 📍 O primeiro modelo de camadas:
 
 No final dos anos 1970, a Organização Internacional para Padronização (International Organization for Standardization – ISO) propôs que as redes de computadores fossem organizadas em camadas, sendo cada camada responsável por realizar determinado serviço.
 
 Esse esforço fez surgir um modelo de camadas que ficou conhecido como modelo RM-OSI (Reference Model Open Systems Interconnection), ou simplesmente modelo OSI, utilizado até hoje e composto por sete camadas, numeradas de cima para baixo: aplicação, apresentação, sessão, transporte, rede, enlace e física, conforme mostrado na imagem a seguir:
 
-<img src="./assets/images/model_osi.jpg">
+<img src="images/model_osi.jpg">
 
 Importante ressaltar que o modelo OSI é utilizado como uma referência para o estudo e funcionamento das redes, entretanto, não é utilizado em si, principalmente porque ele não definiu protocolos, mas sim os serviços que cada camada oferece. Vamos detalhar essas camadas:
 
@@ -287,7 +287,7 @@ Importante ressaltar que o modelo OSI é utilizado como uma referência para o e
 7. Físico:
     - Nesta camada, os bits individuais que estão dentro do quadro de um nó para o seguinte são movimentados, transformando-os em algum tipo de sinal adequado a ser transmitido pelo meio de transmissão utilizado, por exemplo, fios de cobre ou fibra ótica.
 
-### ➜ Arquitetura TCP/IP ou Internet:
+### 📍 Arquitetura TCP/IP ou Internet:
 
 Conforme comentamos, o modelo OSI é um modelo de referência e não é utilizado na prática.
 
@@ -295,7 +295,7 @@ O Modelo TCP/IP é o utilizado atualmente.
 
 As redes que utilizamos empregam a arquitetura TCP/IP ou arquitetura internet. Originalmente, a arquitetura TCP/IP emprega quatro camadas (aplicação, transporte, inter-rede e intrarrede). Entretanto, por fins didáticos, utilizaremos um modelo formado por cinco camadas: aplicação, transporte, rede, enlace e físico, como mostra a imagem a seguir. No modelo de cinco camadas, a camada de intrarrede é dividida em camada de enlace e física. Confira!
 
-<img src="./assets/images/model_tcp_ip.jpg">
+<img src="images/model_tcp_ip.jpg">
 
 Conforme podemos observar, a diferença que temos entre o modelo OSI e a arquitetura de cinco camadas é a ausência das camadas de apresentação e sessão. As funções dessas duas camadas são absorvidas pela camada de aplicação. Um detalhe que você deve ter percebido é que, quando falamos do OSI, sempre falamos sobre modelo e agora no TCP/IP estamos usando a expressão arquitetura. Por que essa diferença?
 
@@ -316,7 +316,7 @@ A camada de rede segue a mesma função da camada de rede do modelo OSI, mas ago
 
 As camadas de enlace físicas não são definidas de forma explícita na arquitetura internet, mas elas executam o mesmo papel previsto no modelo OSI. Alguns dos padrões utilizados nessas camadas de enlace são o ethernet, wi-fi e bluetooth.
 
-### ➜ Encapsulamento:
+### 📍 Encapsulamento (Fragmentação):
 
 Para compreender o conceito de encapsulamento, considere uma mensagem da camada de aplicação na máquina emissora que é passada para a camada de transporte. Essa camada pega a mensagem e anexa as informações de cabeçalho de camada de transporte. Essas informações serão usadas pela camada de transporte do lado receptor.
 
@@ -380,3 +380,114 @@ Desde o início do milênio, vimos a implementação do acesso à internet por b
 > A onipresença cada vez maior das redes Wi-Fi e de telefonia celular 4G e 5G públicas está possibilitando permanecer constantemente conectado enquanto se desloca, e também permitindo novas aplicações inerentes à localização.
 
 O número de dispositivos sem fio conectados ultrapassou o número de dispositivos com fio. Muitas empresas de comércio na internet agora estão rodando suas aplicações na “nuvem” — como na EC2 da Amazon, ou na Azure da Microsoft.
+
+---
+### Passando para o Módulo 02
+---
+</br>
+
+# Modelo de Referências OSI e Arquitetura de TCP/IP
+
+## 📌 Divisão da estrutura das rede em camadas
+
+A Internet funciona em um modelo de camadas. Esse modelo é baseado na divisão das funções e responsabilidade em diferentes níveis para facilitar a comunicação, padronizar protocolos e garantir a interoperabilidade entre sistemas de diferentes fabricantes. O modelo mais conhecido que descreve essa arquitetura é o **Modelo OSI (Open Systems Interconnection)**, que possui sete camadas, e o **Modelo TCP/IP**, que é mais simplificado e possui quatro ou cinco camadas, dependendo da abordagem.
+
+### 📍 Modelo em camadas:
+
+A internet é um conjunto de redes de computadores que permite a troca de informações entre dispositivos computacionais. Para que essa troca seja realizada de forma eficiente, devem ser estabelecidas regras de comunicação. Essas regras são os protocolos de rede, que devem garantir que a comunicação ocorra de forma confiável, segura, eficaz, no momento certo e para a pessoa certa. De maneira intuitiva, percebemos que satisfazer a todos esses requisitos não é uma tarefa fácil. São muitas regras que devem ser implementadas para garantir a efetividade da comunicação, tornando o processo de troca de dados entre computadores uma tarefa extremamente complexa.
+
+Por causa dessa complexidade, os engenheiros e projetistas de redes do passado pensaram em formas de facilitar o desenvolvimento das regras nos dispositivos computacionais. Eles utilizaram um princípio básico de resolução de diversos outros problemas: a técnica de dividir para conquistar.
+
+> ❗️ Comentário
+>
+> Na técnica dividir para conquistar, os projetistas dividem o problema em problemas menores e resolvem cada um de forma isolada. Se cada pequeno problema for resolvido, o grande problema será resolvido.
+
+Para que essa divisão ocorresse de forma simplificada, os projetistas dividiram a organização das redes de computadores em **camadas**, sendo cada camada responsável por cuidar de determinada regra ou protocolo necessário ao processo de comunicação. A quantidade de camadas utilizadas depende de como as funcionalidades são divididas. Quanto maior a divisão, maior o número de camadas que serão empilhadas, numerando da mais baixa, camada 1, para a mais alta, camada n.
+
+<img src="images/layers.png">
+
+> As camadas se inter-relacionam da seguinte maneira: a camada superior utiliza os serviços oferecidos por outra imediatamente inferior, portanto, a **camada 3** utiliza os serviços oferecidos pela **camada 2**, e assim em seguinte.
+>
+>De forma contrária, podemos dizer que a camada inferior oferece serviços para outra imediatamente superior, logo, a camada 2 oferece serviços para a camada 3.
+
+### ➜ Elementos da Camada
+
+As camadas são formadas por três elementos principais:
+
+1. Serviço
+    - É o conjunto de funcionalidades que uma determinada camada oferece. Por exemplo, uma camada pode ser responsável pela verificação de erros na transmissão, por determinar o endereço de um computador, entre outras funcionalidades. O serviço diz o que a camada faz e não como ela faz.
+2. Protocolo
+    - Responsável por como a camada faz. Assim, o protocolo é a implementação do serviço da camada, ou seja, executa as regras para que os erros possam ser corrigidos ou para que um computador possa ser identificado.
+    - "Um conjunto de camadas e protocolos é a arquitetura de rede e o conjunto de protocolos utilizados por determinado sistema é uma pilha de protocolos." (TANENBAUM, 2011, p. 38)
+3. Interface
+    - Para que uma camada possa utilizar a camada imediatamente inferior, é necessário que haja um ponto de comunicação entre ambas, chamado interface. Por meio dela, uma camada pode utilizar o serviço de outra, passando informações para a camada vizinha.
+
+Onde, exatamente, tudo isso é implementado no computador?
+
+O que está implementado são os **protocolos e interfaces**, que podem estar desenvolvidos em um hardware, como uma placa de rede, ou em um software, como no sistema operacional da máquina.
+
+Agora que os elementos da camada foram apresentados, é possível entender dois conceitos importantes da arquitetura de redes: **Comunicação Vertical e Comunicação Horizontal**.
+
+### ➜ Comunicações Horizontal e Vertical
+
+Já vimos que uma camada utiliza os serviços de outra imediatamente inferior, sucessivamente, até chegar à camada mais baixa. Como estão empilhadas, podemos fazer analogia à comunicação vertical, uma vez que o dado original, no topo do conjunto de camadas, desce até a camada 1, caracterizando a verticalidade desse processo.
+
+> Na origem:
+ Na origem, o dado a ser transmitido desce pelas camadas até o nível mais baixo, a camada 1. Essa camada está conectada ao meio de transmissão, por exemplo, uma fibra ótica, um cabo de rede metálico ou o ar, possíveis caminhos para o dado fluir até o destino.
+
+> No destino:
+No destino, o processo ocorrerá de modo contrário, pois o dado sobe pelas camadas até o nível mais alto da arquitetura. Podemos, assim, associar a comunicação vertical aos serviços das camadas.
+
+Conforme o dado passa por determinada camada, o hardware ou o software, responsável por implementar o protocolo, irá preparar esse dado para que a regra (para a qual ele foi projetado) possa ser executada.
+
+Se a camada 2 é responsável pela verificação de erro, o dado será preparado na origem por essa camada para que, ao passar pela camada 2 do destino, seja verificado se houve erro ou não.
+
+No exemplo anterior, vimos que a camada 2 de origem preparou o dado para que a camada 2 de destino verificasse se a informação está correta, caracterizando a existência de uma conversa entre as duas camadas de mesmo nível em computadores distintos. Essa conversa é a comunicação horizontal, realizada pelos protocolos que implementarão a regra.
+
+<img src="images/protocol_vertical.jpg">
+
+Ainda pode estar um pouco abstrata a forma como realmente a comunicação vertical e, principalmente, a horizontal funcionam.
+
+Como a camada 2 da máquina de origem consegue conversar com a mesma camada na máquina de destino?
+
+A comunicação horizontal ocorre de forma virtual. A camada 2 da máquina de origem, ao preparar o dado para ser enviado, adiciona informações que serão lidas e tratadas única e exclusivamente pela mesma camada do dispositivo de destino. Essas informações são denominadas cabeçalhos.
+
+<img src="images/protocol_horizontal_1.png">
+
+Cada camada adicionará um novo cabeçalho ao dado que será enviado, e esse processo é chamado de encapsulamento.
+
+Cada camada receberá o dado da camada superior, através da interface, e adicionará seu próprio cabeçalho, encapsulando o dado recebido.
+
+<img src="images/protocol_horizontal_2.png">
+
+Nesse processo, quando determinada camada recebe os dados, ela não se preocupa com o conteúdo que recebeu, apenas adiciona o seu cabeçalho para permitir que o protocolo execute as regras necessárias à comunicação.
+
+Esse procedimento acontece, repetidamente, até alcançar a camada 1 e a informação ser transmitida ao destino, onde ocorrerá o processo inverso. A informação subirá, desencapsulando as informações, da camada 1 até o usuário do serviço.
+
+> Atenção
+>
+>Ao realizar o encapsulamento, a unidade de dados do protocolo ou PDU (Protocol Data Unit, na sigla em inglês) é criada.
+>
+> A PDU é constituída pela informação que vem da camada superior (PDU da camada superior) e o cabeçalho da própria camada.
+
+## 📌 Camadas do modelo OSI
+
+Na década de 1970, a International Organization for Standardization (ISO), um órgão que desenvolve padrões internacionais, criou um modelo de referência de camadas denominado OSI **(Open System Interconnection - ISO/IEC 7498-1:1994)**. 
+
+O objetivo foi elaborar um modelo que permitisse a comunicação entre sistemas diferentes, independentemente de suas arquiteturas, facilitando a comunicação, sem a necessidade de realizar mudanças na lógica do hardware ou software (FOROUZAN, 2010).
+
+> Observe que o modelo OSI propriamente dito não é uma arquitetura de rede, pois não especifica os serviços e protocolos exatos que devem ser usados em cada camada. Ele apenas informa o que cada camada deve fazer. No entanto, a ISO também produziu padrões para todas as camadas, embora esses padrões não façam parte do próprio modelo de referência. Cada um foi publicado como um padrão internacional distinto. O modelo (em parte) é bastante utilizado, embora os protocolos associados há muito tempo tenham sido deixados de lado.
+>
+> (TANENBAUM, 2011, p. 45)
+
+O que utilizamos hoje do modelo OSI é a referência para as funções das camadas. Então, quando ouvimos falar que determinado protocolo é da camada X (1, 2, 3, ...), esse X se refere ao OSI, tanto que é encontrada, em diversos livros e artigos, a expressão modelo de referência OSI (RM-OSI em inglês).
+
+O modelo OSI possui sete camadas, de cima para baixo: aplicação, apresentação, sessão, transporte, rede, enlace e física.
+
+De acordo com o conceito de camadas que estudamos, cada uma delas é responsável por determinada tarefa no processo de transmissão de dados. Entretanto, já sabemos que, por mais que tenham sido especificados protocolos para cada camada, na prática, eles não são utilizados.De acordo com o conceito de camadas que estudamos, cada uma delas é responsável por determinada tarefa no processo de transmissão de dados. Entretanto, já sabemos que, por mais que tenham sido especificados protocolos para cada camada, na prática, eles não são utilizados.
+
+<img src="./images/model_layer_osi.png">
+
+Os conceitos estudados de comunicação vertical, comunicação horizontal e encapsulamento são válidos nesse modelo. Portanto, um dado transmitido por um dispositivo de origem será inserido na estrutura de rede a partir da camada de aplicação e descerá até a camada física, quando será enviado pelo meio de transmissão. Cada camada adicionará o seu próprio cabeçalho, encapsulando a PDU da camada superior e permitindo a comunicação horizontal entre camadas de mesmo nível.
+
+Portanto, iremos analisar cada camada separadamente
