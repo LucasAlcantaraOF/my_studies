@@ -1,5 +1,7 @@
 # 🌐 Fundamentos e Redes de Computadores
 
+### 📍 Introdução:
+
 A organização das redes de computadores é essencial para os profissionais de Tecnologia da Informação (TI) utilizarem os serviços oferecidos por uma ou mais camadas de um modelo de arquitetura de redes.
 
 Objetivos desse módulo:
@@ -9,7 +11,6 @@ Objetivos desse módulo:
 - Identificar a arquitetura de redes de de computadores como um modelo de camadas;
 - Descrever os aspectos da evolução das redes e a internet.
 
-# 📌 Introdução:
 
 A internet, nos modelos atuais, possui bilhões de usuários conectados, dispositivos e enlaces de comunicação, além de uma quantidade enorme de computadores. Os usuários podem conectar uma alta gama de aparelhos, tais como: notebooks, smart TVs, smartphones, sensores, webcams, console de jogos, utensílios domésticos, telefones, impressoras, câmeras, aparelhos de limpezas... Portanto, fica evidente que quase todos os aparelhos do cotidiano precisam de uma conexão direta com a internet, visto que, com os avanços tecnológicos cada vez mais, estamos sendo ligados constantemente aos meios de redes, pois nenhum tipo de aparelho acaba tendo 100% da sua funcionalidade a partir de apenas os dados que estão nele, é preciso, entrar em contato com um servidor, por meio de uma rede, para termos acesso as essas funcionalidades.
 
@@ -17,7 +18,7 @@ Nesses diversos dispositivos, são executadas várias aplicações de redes que 
 
 Não tem como negarmos a importância da internet para todos nós, mas para quem estuda computação vai muito além do simples uso. É importante compreender os conceitos de organização das redes de computadores e internet, necessários para utilização nas redes de hoje e do futuro.
 
-# 📌 Conceitos Básicos
+## 📌 Conceitos Básicos
 
 ### 📍 O que é a internet e redes de computadores?
 
@@ -381,6 +382,8 @@ Desde o início do milênio, vimos a implementação do acesso à internet por b
 
 O número de dispositivos sem fio conectados ultrapassou o número de dispositivos com fio. Muitas empresas de comércio na internet agora estão rodando suas aplicações na “nuvem” — como na EC2 da Amazon, ou na Azure da Microsoft.
 
+</br>
+
 ---
 ### Passando para o Módulo 02
 ---
@@ -490,4 +493,240 @@ De acordo com o conceito de camadas que estudamos, cada uma delas é responsáve
 
 Os conceitos estudados de comunicação vertical, comunicação horizontal e encapsulamento são válidos nesse modelo. Portanto, um dado transmitido por um dispositivo de origem será inserido na estrutura de rede a partir da camada de aplicação e descerá até a camada física, quando será enviado pelo meio de transmissão. Cada camada adicionará o seu próprio cabeçalho, encapsulando a PDU da camada superior e permitindo a comunicação horizontal entre camadas de mesmo nível.
 
+<img src="./images/model_layer_osi_02.png">
+
+É possível dividir as sete camadas em três subgrupos.
+
+> ### Camadas mais altas:
+>
+> As três camadas mais altas (aplicação, apresentação e sessão) estão relacionadas a funções que dão suporte para que os usuários possam acessar os diversos serviços de redes, garantindo a interoperabilidade de sistemas heterogêneos (FOROUZAN, 2010).
+>
+> ### Camadas mais inferiores:
+>
+> As três camadas mais inferiores (rede, enlace e física) estão relacionadas às operações ligadas aos aspectos da movimentação dos dados de um dispositivo para o outro, dando suporte às operações de rede (FOROUZAN, 2010).
+>
+> ### Camadas de transporte:
+>
+> A camada de transporte faz a interligação entre o suporte ao usuário e o suporte de rede. Ela vai permitir que os dados que chegaram das camadas mais baixas estejam em condições de serem utilizados pelas camadas mais altas (FOROUZAN, 2010).
+
+<img src="./images/model_layer_osi_03.png">
+
+
 Portanto, iremos analisar cada camada separadamente
+
+### 📍 Camadas mais altas:
+
+### ➜ Aplicação
+
+A camada de aplicação é a que está mais próxima de nós, usuários da rede. Podemos citar algumas das aplicações oferecidas por essa camada:
+
+1. Serviço web.
+2. Serviço de correio eletrônico.
+3. Serviço de transferência de arquivos.
+4. Serviço de streaming de áudio e vídeo.
+5. Serviço de compartilhamento de arquivos
+
+Os serviços citados acima ou quaisquer outros oferecidos pela camada de aplicação são executados por processos dos usuários que estão em andamento em determinado dispositivo.
+
+Sua **segunda tarefa** será traduzir, criptografar e comprimir dados. Organização é a palavra-chave!
+
+### ➜ Apresentação
+
+A camada de apresentação é responsável por **garantir a interoperabilidade dos sistemas** heterogêneos, ou seja, permitir que, independentemente do dispositivo que você esteja utilizando (computador, smartphone, televisão, carro etc.) e do sistema operacional (MS Windows, Apple IOS, Linux etc.), seja possível acessar qualquer tipo de serviço disponibilizado pela rede.
+
+Para que haja essa interoperabilidade, a camada de apresentação é responsável por fazer a transformação dos dados, por isso, podemos chamá-la de **tradutor da rede**. Ela será responsável pela conversão entre formatos, compressão de dados e criptografia.
+
+Sua **terceira tarefa** será estabelecer, gerenciar e encerrar sessões, garantindo a sincronia da comunicação.
+
+### ➜ Apresentação
+
+Essa camada é responsável por organizar a comunicação entre os dispositivos e permitirá que os usuários, em diferentes máquinas, possam estabelecer sessões de comunicação; cada sessão terá dois serviços básicos: **controle de diálogo e sincronização**.
+
+> Controle de diálogo: Define quem transmitirá em determinado momento. Considerando a existência de dois usuários, A e B, a camada de sessão determinará se eles podem transmitir simultaneamente, caracterizando a comunicação full duplex, ou de forma intercalada, em um sentido por vez, a exemplo da comunicação half duplex.
+
+> Sincronização: Permite que sejam estabelecidos pontos de controle em determinado fluxo de dados. Esses pontos permitem que, se houver uma perda de comunicação, a transmissão de dados seja restabelecida a partir daquele ponto e não desde o início da transmissão.]
+
+Sua **quarta tarefa** será prover a entrega confiável de mensagens processo a processo e a recuperação de erros. Fique atento ao fluxo de informações!
+
+### 📍 Camada de Transporte
+
+Essa camada tem por finalidade garantir a entrega de processo a processo de todos os dados enviados pelo usuário. Podemos dizer que a camada de transporte é responsável por entregar os dados corretamente para os processos que estão em execução na camada de aplicação, além do mais, caso tivermos alguma divergência de dados e precisarmos realizar a correção, a camada de transporte fica responsável por isso também.
+
+Esse papel da camada de transporte a torna uma das mais complexas dentro da estrutura do modelo OSI. Para garantir que as mensagens da camada de aplicação sejam entregues corretamente, diversas funções são necessárias:
+
+1. Segmentação e Remontagem
+    - A camada de transporte receberá os dados originados na camada de sessão (PDU da camada de sessão) e irá dividi-los em pedaços, segmentos de dados (PDU da camada de transporte), que possam ser enviados e, na camada de transporte de destino, irá remontá-los na ordem correta. Para isso, será necessário estabelecer números de sequência para garantir que, independentemente da ordem de chegada, os dados sejam remontados na ordem correta.
+2. Controle de erros fim a fim
+    - A camada de transporte verificará se ocorreram erros na comunicação fim a fim, ou seja, entre os processos da camada de aplicação. Na origem, serão adicionadas informações que permitam identificar no destino se durante o tráfego pela rede ocorreu algum erro e, possivelmente, corrigi-lo.
+3. Controle de fluxo
+    - A camada de transporte será encarregada de evitar que o processo na origem sobrecarregue o processo no destino.
+4. Controle de conexão:
+    - A camada de transporte pode ser orientada ou não à conexão. No serviço orientado à conexão, a camada de transporte será responsável por estabelecer a conexão entre os processos de origem e destino.
+5. Endereçamento do ponto de acesso ao serviço: 
+    - Em um dispositivo, normalmente, estão em andamento diversos tipos de serviços executados por vários processos e não apenas um. A camada de transporte será responsável por fazer a entrega para o processo correto e, para isso, será utilizado o chamado endereço de porta. Ele indicará o serviço correto que deverá receber os dados.
+6. Controle de congestionamento
+    - No mundo real, as máquinas não estão diretamente conectadas, ou seja, não há uma comunicação ponto a ponto direta. Entre a máquina de origem e de destino existem diversos outros dispositivos cuja finalidade é fazer a informação ir de um ponto a outro. Como esses equipamentos transmitirão dados de diversas outras origens, poderá haver uma sobrecarga desses dispositivos. A camada de transporte será responsável por monitorar esse congestionamento e, possivelmente, tratá-lo.
+
+Sua **quinta tarefa** será transferir pacotes da origem ao destino, permitindo a ligação entre as redes. Cuidado para não tomar uma rota errada!
+
+### 📍 Camadas mais baixas
+
+### ➜ Rede
+
+A camada de rede é responsável por **determinar o caminho da origem até o destino**. Ela receberá os segmentos gerados pela camada de transporte e, no cabeçalho da camada de rede, irá inserir o endereço da máquina de destino para que seja enviado pela rede por meio dos diversos dispositivos intermediários. Enquanto a camada de transporte é responsável pela comunicação processo a processo, a camada de rede é encarregada da **comunicação máquina a máquina**.
+
+Veja a representação desse fluxo a seguir:
+
+<img src="./images/layer_flow_network.png">
+
+Para cumprir nosso objetivo, duas funcionalidades principais devem ser estabelecidas:
+
+1. Endereço lógico
+    - O endereço da porta, definido pela camada de transporte, permitirá a entrega no processo de destino. Mas, para que isso aconteça, é necessário que os segmentos cheguem à máquina de destino. Por isso, são empregados endereços lógicos a fim de permitir que os dispositivos intermediários encaminhem os dados pelas redes e alcancem o destino.
+
+2. Roteamento
+    - A função de roteamento permite estabelecer um caminho entre origem e destino. Os dispositivos intermediários verificarão o endereço lógico de destino e, com base nas informações de caminho que eles possuem, farão o processo de encaminhamento para outros dispositivos intermediários a fim de alcançar o destino da informação.
+
+Sua **sexta tarefa** será organizar os bits em quadros, fornecendo a entrega nó a nó. Tenha atenção aos erros no caminho!
+
+### ➜ Enlace
+
+A camada de enlace é responsável por garantir a comunicação entre dispositivos adjacentes. Ela corrigirá quaisquer problemas que tenham ocorrido no meio físico de transmissão e entregará para a camada de rede um serviço de transmissão de dados aparentemente livre de erros.
+
+> Pode ser confundido com a camada de transporte, entretanto a sua diferença está onde elas estão sendo executadas. A camada de elance cuida apenas do controle de erro dentro da comunicação direta entre máquinas adjacentes, nó a nó.
+
+Por esse motivo, muitas das funções existentes na camada de transporte também estarão presentes na de enlace:
+
+1. Controle de erros:
+    - Os meios de transmissão não são livres de erro; portanto, os dados que trafegam através deles estão sujeitos a erros. A camada de enlace pode implementar mecanismos de controle de erro com a finalidade de agregar confiabilidade ao serviço de transmissão.
+
+2. Controle de acesso ao meio:
+    - Como alguns meios de transmissão são compartilhados, ou seja, mais de um dispositivo pode transmitir pelo mesmo meio, é necessário um mecanismo para controlar qual dos dispositivos pode transmitir naquele momento.
+
+3. Endereçamento físico:
+    - Enquanto o endereço de porta indica o processo na máquina de destino e o endereço lógico indica o dispositivo de destino, o endereço físico indicará qual será o próximo dispositivo no caminho origem-destino. Ao chegar à rede de destino, o endereço físico será o do dispositivo final.
+
+4. Controle de fluxo:
+    - Semelhante ao que acontece na camada de transporte, o controle de fluxo evitará que o nó de origem sobrecarregue o nó de destino.
+
+5. Enquadramento:
+    - A camada de enlace receberá os dados da camada de rede (PDU da camada de rede), encapsulando-os em quadros (PDU da camada de enlace). Os quadros criados pela camada de enlace terão uma função importante, que será a adição de delimitadores de início e fim do quadro na origem, para permitir que, no nó vizinho, a camada de enlace possa ver o fluxo de bits e definir corretamente onde inicia e termina o quadro.
+
+Sua **sétima tarefa** será transmitir bits através de um meio físico, promovendo especificações mecânicas e elétricas. Garanta a estabilidade do sinal!
+
+### ➜ Física
+
+Essa camada é responsável por transmitir os dados pelo meio de transmissão. Ela receberá os quadros da camada de enlace, que serão formados por uma sequência de bits, e irá codificar corretamente para que sejam enviados pelo meio de transmissão.
+
+A camada física será responsável pela representação dos bits, ou seja, de acordo com o meio de transmissão, ela irá definir se essa representação ocorrerá por pulsos de luz, no caso da fibra ótica, ou pulsos elétricos, no caso de empregar cabos de par trançado. Além disso, a camada física é responsável por:
+
+1. Taxa de dados
+    - A velocidade em que os bits são inseridos no meio de transmissão é responsabilidade da camada física. Quando ouvimos a expressão megabits por segundo (Mbps), que define a taxa de transmissão de determinado enlace, é responsabilidade da camada física estabelecer esse valor. Assim, a taxa de transmissão definirá a duração de um bit: quanto maior a taxa, menor a duração do bit, e vice-versa.
+
+2. Sincronização dos bits
+    - O nó transmissor e o receptor devem operar na mesma velocidade, ou seja, na mesma taxa de bits. Entretanto, os relógios (clocks) das camadas físicas têm pequenas diferenças; portanto, é possível que ocorram falhas de sincronismos. A camada física deve implementar algum tipo de mecanismo que permita o correto sincronismo dos bits entre origem e destino.
+
+3. Topologia física
+    - Define como os nós da rede estão interligados, podendo ser uma configuração de um enlace ponto a ponto, em que cada nó está diretamente conectado a outro, sem compartilhamento do meio, ou uma ligação ponto-multiponto, em que o enlace é compartilhado por diversos nós.
+
+4. Modo de transmissão
+    - A camada física definirá o modo de transmissão em um determinado meio: simplex, half duplex ou full duplex. Considerando dois dispositivos, A e B, no modo simplex só existe envio de dados em um sentido, por exemplo, de A para B; no modo half duplex, os dados podem ser enviados nos dois sentidos, mas não simultaneamente (de A para B em um momento e de B para A em outro momento); e no modo full duplex, os dados podem ser enviados simultaneamente por A e B.
+
+### ➜ Resumidamente:
+
+<img src="./images/summary_layers_model_osi.png">
+
+## 📌 Camadas do modelo TCP/IP
+
+A arquitetura foi batizada por TCP/IP por causa dos seus dois principais protocolos: **Transmission Control Protocol (TCP)** e **Internet Protocol (IP)**. Ela foi apresentada pela primeira vez em 1974 (CERF, 1974) com o objetivo de criar uma arquitetura que permitisse a interligação de diversas redes de comunicação, sendo posteriormente adotada como padrão, de fato, para a comunidade internet.
+
+A arquitetura foi criada utilizando quatro camadas: aplicação, transporte, internet e acesso à rede.
+
+As duas últimas camadas podem ser encontradas com nomes diferentes na literatura. A camada de internet pode ser encontrada como rede e inter-rede e a camada de acesso à rede pode ser encontrada como camada de enlace, host-rede, intrarrede e host-network.
+
+<img src="./images/layers_tcpip.png">
+
+Após identificarmos que a arquitetura TCP/IP tem apenas quatro camadas, é possível imaginar que algumas das funções executadas pelas camadas de apresentação, sessão, enlace e rede, ausentes na arquitetura TCP/IP, serão acumuladas por outras camadas
+
+As funções das camadas de apresentação e sessão serão acumuladas pela camada de aplicação e a funções das camadas de enlace e física serão executadas pela camada de acesso à rede. Observe a relação entre os dois modelos a seguir.
+
+<img src="./images/comparation_tcpip_osi.png">
+
+Uma grande diferença que temos entre o modelo de referência OSI e a arquitetura TCP/IP é:
+
+- Modelo OSI
+    - É baseado, principalmente, nas funcionalidades das camadas.
+- Arquitetura TCP/IP
+    - Não ficou presa apenas nas funcionalidades, mas ampliou para o desenvolvimento de protocolos relativamente independentes e hierárquicos. A hierarquia baseia-se em um protocolo de nível superior que é suportado pelos protocolos de nível inferior
+
+É comum ouvirmos falar da pilha de protocolos TCP/IP. Agora que dominamos o conceito do modelo de camadas, como vimos no modelo OSI, fica fácil de entender que a pilha de protocolos TCP/IP é o conjunto de todos os protocolos implementados pela arquitetura. E não são poucos.
+
+Os principais protocolos de padrão aberto da arquitetura Internet foram desenvolvidos pelo **IETF (The Internet Engineering Task Force)**, uma grande comunidade internacional aberta, composta por designers de rede, operadores, fornecedores e pesquisadores preocupados com a evolução da arquitetura da internet.
+
+### 📍 Camadas do TCP/IP
+
+### ➜ Aplicação:
+
+A camada de aplicação da arquitetura TCP/IP nos engloba os serviços das camadas de aplicação, apresentação e sessão do modelo OSI. Através da camada de aplicação é possível acessar uma infinidade de serviços na internet. Desde os que são utilizados de forma direta pelos usuários, como o serviço Web, serviço de correio eletrônico, entre outros, bem como os que funcionam dando suporte à operação da rede, como o serviço de nomes (DNS).
+
+Os serviços são implementados pelos diversos protocolos existentes. Correlacionamos, a seguir, alguns serviços e protocolos utilizados na camada de aplicação.
+
+| Serviço                             | Protocolo         |
+| ----------------------------------- | ----------------- |
+| Web                                 | HTTP, HTTPS       |
+| Correio Eletrônico                  | SMTP, POP E IMAP  |
+| Nomes                               | DNS               |
+| Transferência de arquivos           | FTP, TFTP         | 
+| Áudio e video em tempo real         | RTP               |
+| Configuração automática de estações | DHCP              |
+
+Os protocolos apresentados são implementados por meio de softwares, que são executados nos diversos dispositivos computacionais, e podem estar associados a dois tipos principais de arquitetura:
+
+1. Cliente-Servidor
+    - Na arquitetura cliente-servidor, como já evidencia o nome, existirá um cliente e um servidor. O cliente será executado por um usuário como nós e irá requisitar um serviço do servidor. Por exemplo, para o serviço Web, o cliente é o navegador que acessa determinado servidor, por exemplo, o servidor que está disponibilizando esse conteúdo.
+2. Par a par (peer-to-peer (P2P))
+    - A arquitetura P2P foi pensada no emprego mínimo de servidores, caso exista algum. A ideia da arquitetura peer-to-peer é que os usuários possam trocar informações de forma direta. Esse tipo de arquitetura ficou muito conhecida com os programas de compartilhamento de arquivos, mas também pode ser utilizada em outras situações, como em um chat entre duas pessoas.
+
+Independentemente da arquitetura utilizada, dizemos que os processos da camada de aplicação trocam mensagens, que é o nome da unidade de dados do protocolo (PDU) da camada de aplicação.
+
+### ➜ Transporte
+
+Tem a mesma funcionalidade da camada existente no modelo OSI: garantir a entrega de processo a processo de todos os dados enviados pelo usuário. Porém, na arquitetura TCP/IP, temos dois protocolos principais:
+
+> **TCP (Transmission Control Protocol)**
+> 
+> - O protocolo TCP, efetivamente, confere confiabilidade.
+> - O protocolo TCP é um protocolo orientado à conexão, com controle de erros, de congestionamento e de fluxo. Também define os endereços das portas e divide a mensagem (PDU-A) da camada de aplicação em segmentos (PDU-T), determinando números de sequência para cada um, para garantir a entrega dos dados na ordem correta para a aplicação. O TCP é adequado para as aplicações de rede que precisam de confiabilidade na troca de mensagens entre processos.
+
+> **UDP (User Datagram Protocol)**
+>
+> - O protocolo UDP não confere confiabilidade.
+> - O protocolo UDP é o oposto do TCP. Ele não é orientado à conexão e não faz a maioria das funções da camada de rede. Podemos dizer que o UDP existe apenas para permitir que uma mensagem (PDU-A) seja encapsulada em um datagrama (PDU-T) e entregue para o processo de destino correto, já que ele utiliza o endereço da porta para fazer a correta entrega na máquina de destino.
+ 
+Então, por que usamos o UDP?
+
+Ele é importante para as aplicações que demandam tempo de resposta baixo na comunicação, como em um áudio ou uma videoconferência, e nas aplicações que podem funcionar tolerando algum tipo de perda.
+
+> ⚠️ Atenção:
+>
+> Além do protocolo IP, a camada internet emprega outros protocolos que dão suporte ao encaminhamento dos dados. Existem protocolos com o objetivo de fazer sinalização e avisos de erros, como o ICMP (Internet Control Message Protocol), tradução do endereço lógico para o físico, como o ARP (Address Resolution Protocol), e a chamada comunicação multicast, que permite o envio dos dados para um grupo de estações, como o protocolo IGMP (Internet Group Management Protocol).
+
+### ➜ Acesso à rede
+
+A camada de acesso à rede não foi bem definida pela arquitetura TCP/IP, nem define um protocolo específico a ser empregado. O que foi dito inicialmente é que a camada de acesso à rede seria qualquer coisa que pudesse ligar o dispositivo ao enlace de transmissão.
+
+Mas, como para chegar até aqui já estudamos vários conceitos, sabemos que, apesar de não estar definida pela arquitetura TCP/IP, nessa camada encontraremos os serviços que são oferecidos pelas camadas de enlace e física do modelo OSI.
+
+Embora não faça parte da arquitetura TCP/IP, a arquitetura desenvolvida pelo Instituto de Engenheiros Eletricistas e Eletrônicos (Institute of Electrical and Electronics Engineers – IEEE), denominada IEEE 802, é largamente utilizada na camada de acesso à rede. Ela define diversos padrões utilizados nas redes locais e metropolitanas, como o padrão Ethernet e o famoso WiFi, que provavelmente você está usando agora para acessar este conteúdo.
+
+Agora que terminamos a apresentação dos principais protocolos da arquitetura TCP/IP, podemos fazer uma correlação entre a arquitetura internet e seus protocolos com o modelo OSI, conforme se vê a seguir:
+
+<img src="./images/protocols.png">
+
+> Saiba mais!
+>
+>A arquitetura internet ou TCP/IP como uma estrutura de camadas não evoluiu ao longo dos anos. A grande evolução que tivemos foi nos protocolos empregados.
+>
+> Inicialmente, os protocolos da camada de aplicação eram concentrados nas aplicações textuais, com um pequeno volume de informação a ser trocado, como o Serviço Web criado por Sir Tim Berners-Lee (físico britânico, cientista da computação e professor do MIT. É o criador da World Wide Web (WWW)), com foco em páginas textuais para troca de informações entre os centros de pesquisa.
+>
+> Atualmente, os protocolos evoluíram significativamente para oferecer maior qualidade de serviço, suporte ao tráfego de vídeo, segurança, transações financeiras, entre outros. Falando novamente do serviço Web, o protocolo https:// evoluiu de um protocolo textual para binário, a fim de dar suporte aos diversos usos do serviço Web, como assistir a vídeos, CRMs, ERPs, entre muitos outros sistemas complexos.
