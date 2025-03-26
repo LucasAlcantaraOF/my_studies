@@ -58,7 +58,7 @@ Então assim, temos uma junção de dados formando uma informação.
 
 O conceito de bancos de dados sempre existiu em qualquer área que precisasse de algum nível de organização, principalmente em meios corporativos, devido a necessidade de guardar uma densa quantidade de dados de clientes por exemplo, entretanto, primordialmente era utilizado a ideia de organização, mas com meios físicos, que seria anotar os dados em papeis e organizar em pastas. Modelo muito utilizado até a modernização da ideia de banco de dados
 
-<img src="./assets/images/folders.jpg">
+<img src="./images/folders.jpg">
 
 Modelo que passava por sérios problemas, sendo os principais:
 
@@ -70,7 +70,7 @@ Além de muitos outros motivos pelos quais não é recomendado o uso desse model
 
 Então em meados dos anos 1900 até 1950 foi desenvolvido oque chamamos de **cartões perfurados**, que foi o principal meio de entrada, armazenamento e processamento de dados na computação institucional.
 
-<img align="center" height="515" width="700" src="./assets/images/punched_cards.jpeg">
+<img align="center" height="515" width="700" src="./images/punched_cards.jpeg">
 
 </br>
 
@@ -78,7 +78,7 @@ Geralmente tinham 80 coluna e cada coluna podia representar um caractere ou núm
 
 Com o desenvolvimento de novos métodos de armazenar dados foi criado o banco de dados de **fita magnética**, sendo um meio de armazenamento sequencial, ou seja, os dados eram gravados em sequência linear ao longo da fita, portanto, criava o acesso sequencial, que já seria considerado uma desvantagem, já que, os dados só seria mostrado seguindo até o fim da semana, portanto, caso necessário, era preciso rebobinar a fita até o ponto desejado, tornando um processo muito lento.
 
-<img src="./assets/images/magnetic_tape.jpg">
+<img src="./images/magnetic_tape.jpg">
 
 Foi um modelo muito promissor pelo seu baixo custo, durabilidade e capacidade, mas se tornou obsoleto com a criação dos discos rígidos E SSDs, que são os modelos de armazenamentos atuais que retrataremos agora, falando sobre a coexistência dos Bancos de Dados e os Computadores.
 
@@ -92,7 +92,7 @@ Então, essa utilidade do computador foi impulsionada com a invenção do **disc
 
 Já ouviu falar em Centro de Processamento de Dados (CPD), denominação ainda persistente em organizações tradicionais.
 
-<img src="./assets/images/cpd.jpeg">
+<img src="./images/cpd.jpeg">
 
 Mas para trabalhar com computadores foi preciso criar um meio de comunicação direta entre o desenvolvedor e o sistema, sendo criada a linguagem **COBOL** para trabalhar em aplicações empresarias, ou **Fortran**, em aplicações acadêmicas, que manipulavam dados armazenados em arquivos hospedados em disco magnéticos, utilizado pelo sistema operacional e formando o que se denomina **Sistema de Arquivos**
 
@@ -111,7 +111,7 @@ __Desvantagens dos Sistema de Arquivos:__
 
 Um principal fator que devemos tratar é como ele funcionava de fato, digamos que temos uma loja, onde precisamos de uma série de aplicações funcionando ao mesmo tempo, ou seja, teremos uma aplicação exclusivamente para cadastros, login e compras, portanto, teremos que lidar com varias aplicações e um sistema de arquivos para guardar todos os dados. Primeiramente, era preciso criar um código para gerenciar os dados e colocar em todos as aplicações, criando uma repetição de códigos no sistema inteiro, além do problema de integridade, ou seja, cada aplicação criaria e manipularia seus próprios dados, criando a duplicidade de dados muitas vezes. Afinal, foi necessários novos avanços, pois como visto, esse é um sistema com muitas brechas de desenvolvimento.
 
-<img src="./assets/images/types_database.png">
+<img src="./images/types_database.png">
 
 Depois foi desenvolvido o **Sistema Gerenciador de Banco de Dados (SGBD)** que foi acrescentado no **Sistema de Banco de Dados (SBD)** que criou a independência de dados e programas, ou seja, não seria mais necessário um código para gerenciar os dados, já que foi estabelecido um software exclusivamente para realizar essa tarefa, além de adicionar dois modelos de armazenamento de dados.
 
@@ -119,9 +119,9 @@ Depois foi desenvolvido o **Sistema Gerenciador de Banco de Dados (SGBD)** que f
 >
 > Modelo Hierárquico: Organiza os dados em uma estrutura de árvore, com relações entre registros que seguem uma hierarquia (ou seja, de "pai para filho").
 
-<img height="200" width="500" src="./assets/images/network_model.png"> <img height="200" width="500" src="./assets/images/hierarchical _model.png">
+<img height="200" width="500" src="./images/network_model.png"> <img height="200" width="500" src="./images/hierarchical _model.png">
 
-### 📌 Banco de Dados Relacional
+### 📍 Banco de Dados Relacional
 
 Edgar Frank Codd, matemático pesquisador da International Business Machines Corporation (IBM), propõe o modelo de dados relacional, que se tornou um marco em como pensar em banco de dados. Ele desconectou a estrutura lógica do banco de dados do método de armazenamento físico. Este sistema se tornou padrão desde então. Edgar criou uma Álgebra Relacional e um Cálculo Relacional, nos quais baseou toda a teoria matemática das relações em que fundamentou o modelo relacional. 
 
@@ -153,7 +153,7 @@ Além de dar espaço para modelos que são utilizados hoje em dia, como
 2. Big Data: conjuntos de dados extremamente grandes e complexos que não podem ser facilmente processados com métodos de processamento de dados tradicionais. 
 3. Diversidade de plataformas digitais, que têm em comum a conexão com a internet e a computação em nuvem (Cloud Computing).
 
-### 📌 NoSQL
+### 📍 NoSQL
 
 NoSQL é uma categoria de sistemas de banco de dados que se diferencia dos bancos de dados relacionais tradicionais, surgindo a partir de todas essas mudanças tecnológicas. O termo "NoSQL" significa "Not Only SQL" (ou seja, "Não Somente SQL"), indicando que esses bancos de dados oferecem uma abordagem alternativa à organização e consulta de dados, não dependendo de tabelas e relações estruturadas. Tendo como principais pontos:
 
@@ -169,11 +169,11 @@ Sem Esquema Rígido:
 
 4. Não exige que os dados sigam uma estrutura fixa, permitindo a manipulação de informações não estruturadas ou semiestruturadas.
 
-<img src="./assets/images/types_database_nosql.png">
+<img src="./images/types_database_nosql.png">
 
 ---
 
-### 📌 SGBD's
+### 📍 SGBD's
 
 SGBD significa Sistema de Gerenciamento de Banco de Dados. Ele é um software utilizado para criar, gerenciar e manipular bancos de dados, permitindo que você armazene, organize e acesse dados de maneira eficiente e segura.
 
@@ -196,7 +196,7 @@ __Alguns Exemplos:__
 
 - IBM DB2 (documentos e RDF).
 
-### 📌 Linguagem SQL
+### 📍 Linguagem SQL
 
 SQL (Structured Query Language) é uma linguagem de programação padrão desenvolvida para ser utilizada mundialmente por todos os desenvolvedores, usada para gerenciar e manipular bancos de dados relacionais. Com o SQL, é possível realizar diversas operações como consultar, inserir, atualizar e excluir dados armazenados em um banco de dados. A principal característica do SQL é que ele permite que os usuários interajam com os dados de forma estruturada e intuitiva, utilizando comandos bem definidos.
 
@@ -223,12 +223,55 @@ Os principais tipo são:
 ---
 </br>
 
-# Projeto de Banco de Dados
+## 📌 Projeto de Banco de Dados
 
 Enterdemos um pouco sobre o que é Banco de Dados, como foi elaborado sua evolução e todos os processos ligados ao seu desenvolvimento, entretanto, precisamos entender como funciona o planejamento de um BD, mas agora de uma forma mais prática.
 
+> ### Desafio da Addiante
+>
 > Digamos que trabalhamos na empresa "Addiante", que trabalha com a locação e venda de caminhões, tratores... que está passando pela implementação de um novo BD para cuidar de um projeto de divulgação dos produtos, localizado em uma feira de apresentações de negócios agropecuários. Afinal, você foi designado para criar o projeto do BD que será armazenado todas as informações dos clientes que estão interresados nos nosso serviços.
 >
-> Portanto, primeiramente, você precisa entender as necessidades do seu chefe, visto que, antes de iniciarmos um projeto precisamos entender a proposta que o cliente precisa ser cumprida, sendo uma das fases mais importante, já que, é nesse momento que teremos a parte inicial do projeto, que seria o esboço da modelagem principal.
+> Portanto, primeiramente, iremos exercer oque chamamos de **levamento de requisitos**, você precisa entender as necessidades do seu chefe, visto que, antes de iniciarmos um projeto precisamos entender a proposta que o cliente precisa, para assim ser cumprida, sendo uma das fases mais importante, já que, é nesse momento que teremos a parte inicial do projeto, que seria o esboço da modelagem principal.
 >
+> Digamos que nesse exemplo teremos que lidar com os seguintes dados: **Nome, Idade, CPF e/ou CNPJ**. Além do mais, depois de apresentarmos os tipos de produtos em uma tabela que foi constituida por um BD de produto que possui: **ID, Produto, Quantidade, Tipo e Valor** iremos solicitar ao usuário o preenchimento de um formulário que pede: **Tipo de Produto, Quantidade e Informações de entrega (Cidade, Rua e Número)**. 
 >
+> Antes de continuarmos com o problema proposto, vamos entender algumas definições da modelagem de Banco de Dados
+
+### 📍 Etapa da Modelagem de Banco de Dados
+
+A construção de uma projeto de Banco de Dados é dado a partir de 3 fases:
+
+### ➜ Modelagem Conceitual
+
+Nessa primeira fase, é construído um modelo conceitual, na forma de um **diagrama de entidade-relacionamento** realizando um processo de abstração, focando somente naquilo que será importante para o nosso BD. Esse modelo captura as necessidades da organização em termos de armazenamento de dados de forma independente de implementação, ou seja, **nessa fase não se importamos com o tipo de SGBD que utilizaremos**
+
+- DER - Diagrama Entidade e Relacionamento
+- Projetado com: Entidades, Relacionamentos e Atributos
+    - Entidades são representadas por **retângulos**
+    - Relacionamentos são representados por **losangos**
+    - Atributos são representados por meio de **setas com um circulo no final**
+
+**DIAGRAMA PENDENTE**
+
+### ➜ Projeto Lógico
+
+A partir desse momento, a etapa de projeto lógico objetiva transformar o modelo conceitual obtido na primeira fase em um modelo lógico. O modelo lógico define como o banco de dados será implementado em um SGBD específico, portanto, **nessa fase se importamos com o tipo de SGBD que utilizaremos**, além do mais, nesse ponto do projeto não definiremos as características dos atributos, tais como tipos de dados e tamanho. Basta apenas que eles estejam vinculados às suas tabelas.
+
+> Existem diversos modelos lógicos, por exemplo:
+>
+> Rede, hierárquico, relacional, orientado a objeto, grafos, chave-valor e XML. entretanto, o mais popular é o relacional
+
+- DT - Diagrama de Tabela
+- Projetado com: Tabelas, Colunas e Chaves
+
+**DIAGRAMA PENDENTE**
+
+### ➜ Projeto Físico
+
+Afinal, na etapa de projeto físico, o modelo do banco de dados é enriquecido com detalhes que influenciam no desempenho do banco de dados, mas não interfere em sua funcionalidade. O modelo obtido neste passo é o modelo físico do banco de dados. Afinal, definimos os detalhes de implementação dos objetos do banco de dados. No caso das tabelas, escolhemos os tipos de dados e tamanho das colunas, e especificamos se elas são opcionais ou obrigatórias.
+
+**DIAGRAMA PENDENTE**
+
+> ### Desafio da Addiante
+>
+> Depois de enterdemos melhor as etapas de como o projeto de banco de dados funciona, podemos voltar a retratar o nosso problema desafio, visto que, dentro dos exemplos de cada etapa foi constítuido um diagrama com os dados referentes ao nosso desafio para melhor entendimento da proposta da tarefa. Afinal, vamos entender melhor mais definições para implementarmos mais funcionalidades no nosso projeto de BD para nossa tarefa.

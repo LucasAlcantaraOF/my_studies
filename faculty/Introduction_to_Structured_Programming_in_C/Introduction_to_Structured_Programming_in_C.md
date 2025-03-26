@@ -142,12 +142,12 @@ Esse é um exemplo de algumas perguntas que são padrões no momento que estiver
 
 Vamos demonstrar como seria esse fluxograma de forma prática agora, reutilizando a ideia de uma interface que possui cadastro:
 
-<img  src="./assets/images/flow_request.png">
+<img  src="./images/flow_request.png">
 
 > Site: Miro.com.br
 
-<img src="./assets/images/flowchart_1.png">
-<img src="./assets/im   ages/flowchart_2.png">
+<img src="./images/flowchart_1.png">
+<img src="./images/flowchart_2.png">
 
 ##  Algoritmos e Portugol
 
@@ -192,7 +192,7 @@ A descrição narrativa utiliza linguagem natural para especificar os passos da 
 
 O diagrama de Chapin, também conhecido como diagrama Nassi-Shneiderman ou diagrama N-S, apresenta a solução do problema por meio de um diagrama de quadros com uma visão hierárquica e estruturada. Esse tipo de diagrama não é muito utilizado, pois é difícil representar alguns procedimentos
 
-<img src="./assets/images/chapin.png">
+<img src="./images/chapin.png">
 
 ### Pseudocódigo 
 
@@ -221,6 +221,36 @@ Esse nome se deve à proximidade que existe entre um algoritmo escrito em pseudo
 13.     Fim-se
 ```
 Todo algoritmo representado por um pseudocódigo deve, primeiramente, ser identificado, como aparece na linha 1 do Exemplo 2.3. 
+
+> ### Linguagem de baixo nível:
+>
+> Definição: São linguagens que têm uma abstração muito próxima do hardware. Elas fornecem pouco ou nenhum controle automático de recursos e dependem de detalhes específicos da arquitetura do computador, como registros, memória e instruções da CPU.
+> Exemplos: Assembly, Linguagem de Máquina, C.
+>
+> **Características:**
+>
+>1. Mais difíceis de aprender e usar.
+>
+>2. Maior controle sobre os recursos de hardware.
+>
+>3. Normalmente mais rápidas e eficientes, pois o código gerado é muito próximo das instruções da máquina.
+>
+>4. O programador precisa gerenciar detalhes como alocação de memória, registros e instruções específicas.
+
+> ### Linguagem de alto nível:
+>
+> Definição: São linguagens que oferecem maior abstração, tornando a programação mais fácil e intuitiva, ao ocultar detalhes complexos do hardware. O foco está em tarefas mais complexas e na produtividade do desenvolvedor.
+> Exemplos: Python, Java, JavaScript, C++, Ruby.
+> 
+> **Características:**
+>
+>1. Mais fáceis de aprender e usar, pois têm uma sintaxe mais próxima da linguagem humana.
+>
+>2. O programador não precisa se preocupar com os detalhes do hardware, como gerenciamento de memória e registros.
+>
+>3. Normalmente mais lentas em termos de execução, pois o código precisa ser interpretado ou compilado para se adaptar à arquitetura do sistema.
+>
+>4. Mais eficientes para desenvolvimento rápido de aplicativos, sistemas complexos e interativos.
 
 1. Variáveis: 
     - Todas as variáveis que serão utilizadas na resolução do problema devem ser previamente declaradas, isto é, todas as informações necessárias à resolução do problema devem ser representadas. 

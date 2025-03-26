@@ -31,9 +31,9 @@ Suas principais contribuições foram:
 
 ## 📌 Gerações dos Computadores
 
-### Primeira Geração: Válvulas Termiônicas
+### ➜ Primeira Geração: Válvulas Termiônicas
 
-<img src="./assets/images/eniac.jpg">
+<img src=". /images/eniac.jpg">
 
 Ainda durante a Segunda Guerra Mundial, nos Estados Unidos, foi desenvolvido o primeiro computador eletrônico da história por John Presper Eckert e John Mauchly, na universidade de Pensilvânia. Trata-se do **ENIAC (Eletronic Numerical Integrator and Computer)**, um computador integrador numérico eletrônico, cujos números impressionam. Sendo criado para realizar cálculos complexos necessários para o exército dos Estados Unidos durante a Segunda Guerra Mundial, como:
 
@@ -50,9 +50,9 @@ Tamanho: Sala de 150m²;
 </br>
 Capacidade de Processamento: 1 bilhão de vezes menor que a dos celulares usados hoje em dia.
 
-### Segunda Geração: Transistores 
+### ➜ Segunda Geração: Transistores 
 
-<img src="./assets/images/transistor.jpg">
+<img src="./images/transistor.jpg">
 
 Transistores são componentes eletrônicos fundamentais em circuitos modernos, usados para amplificar, controlar ou comutar sinais elétricos. Eles são pequenos dispositivos semicondutores que substituíram as válvulas eletrônicas em grande parte dos sistemas eletrônicos por serem mais eficientes, compactos e confiáveis. Um transistor tem três terminais principais:
 
@@ -83,9 +83,9 @@ Ele age como um interruptor eletrônico ou um amplificador
 3. Circuitos digitais: Funcionam como interruptores em processadores e memórias
 4. Fontes de alimentação; Controlam tensões em circuitos reguladores
 
-### Terceira Geração: Circuitos Integrados
+### ➜ Terceira Geração: Circuitos Integrados
 
-<img src="./assets/images/integrated_circuit.jpg">
+<img src="./images/integrated_circuit.jpg">
 
 Na década de 1960, o proximo salto de evolução foi dado com a criação dos **circuitos integrados (CI)**, também conhecidos como chip ou microchip, é um dispositivo eletrônico que contém diversos componentes como *transistores, resistores, capacitores e outros elementos* em um único pedaço de material semicondutor (geralmente silício). Ele é projetado para executar uma função ou conjunto de funções específicas em um circuito elétrico. Portanto, vamos exemplificar como funciona o CI:
 
@@ -119,9 +119,9 @@ Vantagens dos circuitos integrados:
 3. Confiabilidade: Reduzem falhas porque eliminam conexões externas entre componentes.
 4. Custo-benefício: Produção em massa torna os dispositivos mais baratos.
 
-### Quarta Geração: Microprocessadores
+### ➜ Quarta Geração: Microprocessadores
 
-<img src="./assets/images/microprocessor.jpg">
+<img src="./images/microprocessor.jpg">
 
 A década de 1980 presenciou a proliferação de PC's cada vez mais potentes, baratos e conectador por meio do surgimento das redes locais de computadores e da internet: a rede mundial. Além disso, um novo equipamento aparecia nos lares: o videogame, um tipo de computador especializado, cujos programas são jogos eletrônicos com ênfase nos gráficos e na interação com os usuários.
 
@@ -217,7 +217,7 @@ Um exemplo prático é quando você digita algo no teclado (hardware) e vê o te
 
 ### 📌 Principais Componentes de Hardware dos computadores:
 
-<img src="./assets/images/central_processing_unit.jpg">
+<img src="./images/central_processing_unit.jpg">
 
 Também conhecido como CPU (Central Processing Unit ou Unidade Central de Processamento, em português), processador é o cérebro do computador, pois recebe as instruções e as executa sequencialmente. Seu principal componente é a unidade lógica e aritmética, responsável por operações como adicionar e subtrair.
 
@@ -229,7 +229,7 @@ Como vimos, os processadores foram criados na década de 1970. Inicialmente, ele
 
 O aumento de clock a cada geração de processadores seguiu ao longo dos anos, até que, por conta de interferências físicas entre seus componentes, ficou inviável a continuação desse procedimento. A solução dada pelos projetistas foi colocar diversos miniprocessadores (chamados de núcleos) dentro de um mesmo chip de processador. Em termos práticos, é como se houvesse dois, quatro ou até mais processadores trabalhando em um mesmo chip. Essa técnica é conhecida como multicore, mas, em função do número de núcleos, também é chamada de:
 
-<img src="./assets/images/dual_core.jpg"><img src="./assets/images/quad_core.jpg">
+<img src="./images/dual_core.jpg"><img src="./images/quad_core.jpg">
 </br>
 Dual Core (2 Núcleos) e Quad Core (4 Núcleos)
 
@@ -243,7 +243,7 @@ Atualmente, a maioria dos processadores de mercado (inclusive os de celulares) u
 
 Por fim, outra característica importante a ser considerada na avaliação do processador é seu encaixe (conhecido como pinagem). Para permanecer encaixado na placa-mãe, ele conta com pinos cujo formato deve corresponder ao dos buracos disponíveis (chamados de soquete).
 
-<img src="./assets/images/ram.jpg">
+<img src="./images/ram.jpg">
 
 A memória principal é parte fundamental do computador, pois se trata do espaço onde são armazenados os dados e os programas executados no processador. Ela funciona como uma série de células em que cada uma armazena um conjunto de oito bits (chamado de um byte). Essas células funcionam como caixas de correio: cada uma tem seu endereço, embora só armazene uma carta por vez.
 
@@ -258,7 +258,7 @@ Vejamos, a seguir, as principais características de uma memória RAM:
 2. Velocidade de comunicação com o barramento
     - Trata-se da velocidade com que a memória consegue transferir os dados para o processador. Por exemplo, uma memória de 400 MHz consegue transferir dados para o processador com uma taxa de até 3200 Mbps (3 bilhões e 200 milhões de bits por segundo).
 
-<img src="./assets/images/hd.jpg">
+<img src="./images/hd.jpg">
 
 Mesmo com a operacionalidade garantida por esses dispositivos, ainda existe o seguinte problema: a memória principal perde as informações quando se desliga o computador, ou seja, ela é volátil.
 
@@ -270,7 +270,7 @@ Para isso, são usadas as memórias secundárias. Mais conhecidas como HD (Hard 
 
 Hoje, a principal tecnologia de barramento de memória secundária é o SATA2, que é capaz de atingir taxas de transmissão de 3 Gb/s (3 gigas por segundo).
 
-<img src="./assets/images/motherboard.jpg">
+<img src="./images/motherboard.jpg">
 
 A placa-mãe consiste em um circuito elétrico impresso e uma série de componentes conectados nela. Os principais são:
 
@@ -283,7 +283,7 @@ A função básica da placa-mãe é conectar o processador, a memória principal
 > Atenção
 As placas-mãe dos celulares atuais são circuitos altamente complexos, contando com processador, memória, controladora de vídeo, controladora de tela touchscreen, acelerômetros, GPS e placa de rede sem fio e celular. Todos eles estão diretamente integrados à sua placa-mãe.
 
-<img src="./assets/images/peripherals.jpg">
+<img src="./images/peripherals.jpg">
 
 Por se conectarem à parte central do computador, seus demais componentes são chamados, em geral, de periféricos. Muitos mostram ser tão relevantes que não seríamos capazes de imaginar sistemas computacionais sem eles. O primeiro computador usava apenas uma série de lâmpadas como saída e alguns cartões perfurados como entrada. Inicialmente, são necessários apenas dois instrumentos nesse processo, embora haja outro que também precisa ser apontado.
 
@@ -336,9 +336,9 @@ No ramo de softwares, diversos programas mudaram a forma como trabalhamos e nos 
 - Planilhas
 - Editores de texto
 
-## 📌 Sistema Operacional
+### 📌 Sistema Operacional
 
-<img src="./assets/images/operating_system.jpg">
+<img src="./images/operating_system.jpg">
 
 Sabemos que o sistema operacional (OS) é um dos principais – e o mais conhecido – softwares de sistema. Responsável por conhecer o hardware instalado no computador, ele possui diversas funções importantes.
 
@@ -377,7 +377,7 @@ Expansão:
 
 3. Conectou universidades, institutos de pesquisa e, posteriormente, organizações comerciais, mostrando o potencial de redes interconectadas.
 
-<img src="./assets/images/map_arpanet.png">
+<img src="./images/map_arpanet.png">
 
 > Evolução da ARPANET, uma rede de armazenamento de dados que, inicialmente, conectava algumas universidades e alguns centros de pesquisa.
 
@@ -412,7 +412,7 @@ Conforme outras redes iam se juntando, crescia a rede de redes (que passou a ser
 </br>
 Por uma questão de simplicidade, as empresas de telefonia assumiram o papel de prover conexão à internet para os usuários domésticos. Surgia, assim, o modem de internet discada, que se conectava como se estivéssemos fazendo um telefonema e atingia taxas de transmissão de 14400 bps (s por segundo).
 
-<img src="./assets/images/dial_up_internet.jpg">
+<img src="./images/dial_up_internet.jpg">
 
 **Endereço IP e roteador:**
 </br>
@@ -430,7 +430,7 @@ Em posse do endereço de destino, um pacote (também chamado de datagrama) é en
 </br>
 A conexão de tantos usuários em rede não trouxe só dificuldades técnicas a serem superadas como também – e principalmente – propiciou a criação de oportunidades para outros mercados e outras tecnologias.
 
-<img src="./assets/images/mail.jpg">
+<img src="./images/mail.jpg">
 
 Inicialmente, os correios eletrônicos (e-mail) eram transmitidos por rede em uma analogia direta com o sistema de correios em que se baseou o conceito da ARPANET. Passadas três décadas, o sistema tradicional de correios raramente transporta cartas, limitando-se a encomendas e boletos. A maior parte do tráfego de correio é eletrônico.
 
@@ -451,7 +451,7 @@ Após alguns anos, as pessoas se acostumaram a ficar sentadas diante de seus com
 </br>
 Com a conexão de diversos usuários domésticos, uma nova geração que crescia na década de 1990 via seus jogos eletrônicos começarem a permitir uma interação entre usuários.
 
-<img src="./assets/images/gaming.jpg">
+<img src="./images/gaming.jpg">
 
 Inicialmente, essa interação foi realizada em redes locais (chamadas de LAN), o que impulsionou o surgimento de LAN houses: lojas onde era possível jogar em rede usando os computadores e a LAN dos estabelecimentos. Em um processo de evolução natural, as empresas começaram a realizar jogos por meio da internet.
 
@@ -476,4 +476,65 @@ De fato, a profissão de influenciador digital já é algo rentável. Novos conc
     - Aplicativo para relacionamentos
 4. Entre outros...
 
-##
+---
+### Passando para o Módulo 02
+---
+</br>
+
+# Componentes de Hardware
+
+Componentes de hardware são as partes físicas de um computador ou dispositivo eletrônico que permitem seu funcionamento. Eles são responsáveis por realizar as tarefas de processamento, armazenamento e comunicação entre os diversos sistemas de um dispositivo. Ou seja, tudo aquilo que está fisicamente presente para o contato do usuário, diferentemente do software, visto que já foi explicado sua diferença, mas relembrando:
+
+> Software: é o conjunto de programas, dados e instruções que fazem um computador ou dispositivo eletrônico funcionar. Diferente do hardware, que é a parte física, o software é a parte "intangível" que dita como o hardware deve se comportar para realizar tarefas específicas.
+
+**Alguns exemplos de Hardware são:**
+
+1. **Processador (CPU)**:  
+   - É o "cérebro" do computador, responsável por executar as instruções e processar dados. Ele coordena todas as operações e determina a velocidade do sistema.
+
+2. **Memória RAM**:  
+   - Armazena dados temporários que o processador usa enquanto executa programas. Quanto mais RAM, mais dados o computador pode processar ao mesmo tempo, o que melhora a performance.
+
+3. **Disco Rígido (HD) ou SSD**:  
+   - Dispositivos de armazenamento permanente. O HD usa discos magnéticos, enquanto o SSD usa memória flash, sendo mais rápido e durável.
+
+4. **Placa-mãe**:  
+   - É a principal placa de circuito que conecta todos os outros componentes do computador, como CPU, memória, armazenamento e periféricos. Ela permite que os dados sejam transmitidos entre as partes.
+
+5. **Placa de Vídeo (GPU)**:  
+   - Responsável pelo processamento de gráficos e imagens, principalmente em jogos, vídeos e programas de design gráfico. Uma boa placa de vídeo é essencial para quem trabalha com mídia visual.
+
+6. **Fonte de Alimentação**:  
+    - Converte a energia elétrica da tomada em energia que o computador pode usar. Ela distribui a energia para todos os componentes do sistema.
+
+7. **Periféricos**:  
+   - São dispositivos externos que conectam ao computador, como teclado, mouse, monitor, impressora, fones de ouvido, etc.
+
+Todos essas partes de hardware são dividas em 3 partes 
+
+
+
+
+
+
+
+
+
+
+### 📍 Oque é uma sistema?
+
+A área conhecida como **implementação de computadores** se relaciona, em geral, com a abordagem de aspectos que são desnecessários ao programador. Por exemplo, a tecnologia usada na construção da memória, a frequência do relógio, sinais de controle para iniciar as micro-operações etc.
+
+A implementação de computadores difere do conceito de **arquitetura de computadores**, cujo termo se relaciona, em geral, ao tratamento de pontos que são de interesse do programador, a saber, conjunto de instruções do processador, tamanho da palavra, modos de endereçamento de instruções, entre outros. A implementação de computadores e a arquitetura de computadores estão inseridas no domínio mais geral dos sistemas de computação.
+
+A definição de computação pode ser entendida como a realização de cálculos de forma ordenada ou apenas a manipulação de valores.
+
+
+> Partindo dessa definição, como você definiria um sistema de computação?
+>
+> Resposta: Um sistema de computação é um conjunto de partes coordenadas que concorrem para a realização do objetivo de computar (dados).
+
+Outro termo importante que devemos incluir no vocabulário é o data processing ou, processamento de dados que consiste em uma série de atividades ordenadamente realizadas (receita de bolo), com o objetivo de produzir um arranjo determinado de informações a partir de outras obtidas inicialmente. Veja a seguir as etapas de um processamento de dados:
+
+<img src="./images/data_processing.jpg">
+
