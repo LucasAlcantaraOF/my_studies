@@ -510,7 +510,8 @@ Componentes de hardware são as partes físicas de um computador ou dispositivo 
 7. **Periféricos**:  
    - São dispositivos externos que conectam ao computador, como teclado, mouse, monitor, impressora, fones de ouvido, etc.
 
-Todos essas partes de hardware são dividas em 3 partes 
+Todos essas partes de hardware são dividas em 3 partes chamados de sub-sistemas
+
 
 
 

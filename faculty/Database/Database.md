@@ -229,11 +229,11 @@ Enterdemos um pouco sobre o que é Banco de Dados, como foi elaborado sua evolu�
 
 > ### Desafio da Addiante
 >
-> Digamos que trabalhamos na empresa "Addiante", que trabalha com a locação e venda de caminhões, tratores... que está passando pela implementação de um novo BD para cuidar de um projeto de divulgação dos produtos, localizado em uma feira de apresentações de negócios agropecuários. Afinal, você foi designado para criar o projeto do BD que será armazenado todas as informações dos clientes que estão interresados nos nosso serviços.
+> Digamos que trabalhamos na empresa "Addiante", que exercer a locação e venda de caminhões, tratores... que está passando pela implementação de um novo BD para cuidar de um projeto de divulgação dos produtos, localizado em uma feira de apresentações de negócios agropecuários. Afinal, você foi designado para criar o projeto do BD que será armazenado todas as informações dos clientes que estão interresados nos nossos serviços.
 >
-> Portanto, primeiramente, iremos exercer oque chamamos de **levamento de requisitos**, você precisa entender as necessidades do seu chefe, visto que, antes de iniciarmos um projeto precisamos entender a proposta que o cliente precisa, para assim ser cumprida, sendo uma das fases mais importante, já que, é nesse momento que teremos a parte inicial do projeto, que seria o esboço da modelagem principal.
+> Portanto, primeiramente, iremos exercer oque chamamos de **levamento de requisitos**, você precisa entender as necessidades do seu chefe, visto que, antes de iniciarmos um projeto precisamos entender a proposta que o cliente propôs, para assim ser cumprida, sendo uma das fases mais importante, já que, é nesse momento que teremos a parte inicial do projeto, que seria o esboço da modelagem principal.
 >
-> Digamos que nesse exemplo teremos que lidar com os seguintes dados: **Nome, Idade, CPF e/ou CNPJ**. Além do mais, depois de apresentarmos os tipos de produtos em uma tabela que foi constituida por um BD de produto que possui: **ID, Produto, Quantidade, Tipo e Valor** iremos solicitar ao usuário o preenchimento de um formulário que pede: **Tipo de Produto, Quantidade e Informações de entrega (Cidade, Rua e Número)**. 
+> Digamos que nesse exemplo teremos que lidar com o cadastro de possíveis clientes interresados com os seguintes dados: **Nome, Idade, CPF e/ou CNPJ**. Além do mais, depois de apresentarmos os tipos de produtos em uma tabela que foi constituida por um BD de produto, que possui: **ID_product, Produto, Quantidade, Tipo e Valor** iremos solicitar ao usuário o preenchimento de um formulário para declarar interrese nos produtos, que pede: **ID_product, Quantidade, Tipo de contrato(compra ou aluguel) e Informações de entrega (Cidade, Rua e Número)**. Afinal, também teremos o setor de vendedores que serão a ponte do nosso sistema para o usuário, portanto, teremos que lidar com um espaço para declarar: **Nome e CPF** dos funcionários.
 >
 > Antes de continuarmos com o problema proposto, vamos entender algumas definições da modelagem de Banco de Dados
 
@@ -243,13 +243,34 @@ A construção de uma projeto de Banco de Dados é dado a partir de 3 fases:
 
 ### ➜ Modelagem Conceitual
 
-Nessa primeira fase, é construído um modelo conceitual, na forma de um **diagrama de entidade-relacionamento** realizando um processo de abstração, focando somente naquilo que será importante para o nosso BD. Esse modelo captura as necessidades da organização em termos de armazenamento de dados de forma independente de implementação, ou seja, **nessa fase não se importamos com o tipo de SGBD que utilizaremos**
+Nessa primeira fase, é construído um modelo conceitual, na forma de um **diagrama de entidade-relacionamento (DER)** realizando um processo de abstração, focando somente naquilo que será importante para o nosso BD. Esse modelo captura as necessidades da organização em termos de armazenamento de dados de forma independente de implementação, ou seja, **nessa fase não se importamos com o tipo de SGBD que utilizaremos** apenas e como vai funcionar a infraestrutura do nosso Banco de Dados.
 
 - DER - Diagrama Entidade e Relacionamento
 - Projetado com: Entidades, Relacionamentos e Atributos
     - Entidades são representadas por **retângulos**
+        - **Tipos de entidades:**
+            - Forte: 
+            - Fraca:
+
     - Relacionamentos são representados por **losangos**
+        - Cardinalidade:
+
     - Atributos são representados por meio de **setas com um circulo no final**
+        - **Tipos de atributos:**
+            - Simples: Valores simples
+            - Composto: Mais de um valor para um dado (Endereço: CEP, Bairro, Rua, Número)
+            - Multvalorado: Valores pré-definidos para um dado (Caixa de seleção)
+            - Derivado: Dado aferido a partir de um valor, ou seja, dado calculado a parte de um valor dado pelo usúario (Date_birth: 28/06/2005 ; derivado: 19 anos)
+            - Chave: Valor único (ID)
+                - Representação gráfica desses atributos:
+
+                        **DIAGRAMA PENDENTE**
+
+#### ➜ Cardinalidade - Exemplos
+
+
+
+#### ➜ Especialização/Generalização    
 
 **DIAGRAMA PENDENTE**
 
@@ -259,10 +280,12 @@ A partir desse momento, a etapa de projeto lógico objetiva transformar o modelo
 
 > Existem diversos modelos lógicos, por exemplo:
 >
-> Rede, hierárquico, relacional, orientado a objeto, grafos, chave-valor e XML. entretanto, o mais popular é o relacional
+> Rede, hierárquico, relacional, orientado a objeto, grafos, chave-valor e XML. entretanto, o mais popular é o relacional, e também utilizaremos ele no nosso matérial.
 
 - DT - Diagrama de Tabela
 - Projetado com: Tabelas, Colunas e Chaves
+    -
+    
 
 **DIAGRAMA PENDENTE**
 
@@ -274,4 +297,4 @@ Afinal, na etapa de projeto físico, o modelo do banco de dados é enriquecido c
 
 > ### Desafio da Addiante
 >
-> Depois de enterdemos melhor as etapas de como o projeto de banco de dados funciona, podemos voltar a retratar o nosso problema desafio, visto que, dentro dos exemplos de cada etapa foi constítuido um diagrama com os dados referentes ao nosso desafio para melhor entendimento da proposta da tarefa. Afinal, vamos entender melhor mais definições para implementarmos mais funcionalidades no nosso projeto de BD para nossa tarefa.
+> Agora finalizando os estudos de modelagem de Banco de Dados, retrataremos aquele problema proposto declarado de "Desafio Addiante".
