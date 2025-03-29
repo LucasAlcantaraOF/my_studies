@@ -33,7 +33,7 @@ Suas principais contribuições foram:
 
 ### ➜ Primeira Geração: Válvulas Termiônicas
 
-<img src=". /images/eniac.jpg">
+<img src="./images/eniac.jpg">
 
 Ainda durante a Segunda Guerra Mundial, nos Estados Unidos, foi desenvolvido o primeiro computador eletrônico da história por John Presper Eckert e John Mauchly, na universidade de Pensilvânia. Trata-se do **ENIAC (Eletronic Numerical Integrator and Computer)**, um computador integrador numérico eletrônico, cujos números impressionam. Sendo criado para realizar cálculos complexos necessários para o exército dos Estados Unidos durante a Segunda Guerra Mundial, como:
 

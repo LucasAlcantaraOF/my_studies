@@ -227,50 +227,78 @@ Os principais tipo são:
 
 Enterdemos um pouco sobre o que é Banco de Dados, como foi elaborado sua evolução e todos os processos ligados ao seu desenvolvimento, entretanto, precisamos entender como funciona o planejamento de um BD, mas agora de uma forma mais prática.
 
-> ### Desafio da Addiante
->
-> Digamos que trabalhamos na empresa "Addiante", que exercer a locação e venda de caminhões, tratores... que está passando pela implementação de um novo BD para cuidar de um projeto de divulgação dos produtos, localizado em uma feira de apresentações de negócios agropecuários. Afinal, você foi designado para criar o projeto do BD que será armazenado todas as informações dos clientes que estão interresados nos nossos serviços.
->
-> Portanto, primeiramente, iremos exercer oque chamamos de **levamento de requisitos**, você precisa entender as necessidades do seu chefe, visto que, antes de iniciarmos um projeto precisamos entender a proposta que o cliente propôs, para assim ser cumprida, sendo uma das fases mais importante, já que, é nesse momento que teremos a parte inicial do projeto, que seria o esboço da modelagem principal.
->
-> Digamos que nesse exemplo teremos que lidar com o cadastro de possíveis clientes interresados com os seguintes dados: **Nome, Idade, CPF e/ou CNPJ**. Além do mais, depois de apresentarmos os tipos de produtos em uma tabela que foi constituida por um BD de produto, que possui: **ID_product, Produto, Quantidade, Tipo e Valor** iremos solicitar ao usuário o preenchimento de um formulário para declarar interrese nos produtos, que pede: **ID_product, Quantidade, Tipo de contrato(compra ou aluguel) e Informações de entrega (Cidade, Rua e Número)**. Afinal, também teremos o setor de vendedores que serão a ponte do nosso sistema para o usuário, portanto, teremos que lidar com um espaço para declarar: **Nome e CPF** dos funcionários.
->
-> Antes de continuarmos com o problema proposto, vamos entender algumas definições da modelagem de Banco de Dados
-
 ### 📍 Etapa da Modelagem de Banco de Dados
 
 A construção de uma projeto de Banco de Dados é dado a partir de 3 fases:
 
 ### ➜ Modelagem Conceitual
 
-Nessa primeira fase, é construído um modelo conceitual, na forma de um **diagrama de entidade-relacionamento (DER)** realizando um processo de abstração, focando somente naquilo que será importante para o nosso BD. Esse modelo captura as necessidades da organização em termos de armazenamento de dados de forma independente de implementação, ou seja, **nessa fase não se importamos com o tipo de SGBD que utilizaremos** apenas e como vai funcionar a infraestrutura do nosso Banco de Dados.
-
-- DER - Diagrama Entidade e Relacionamento
-- Projetado com: Entidades, Relacionamentos e Atributos
-    - Entidades são representadas por **retângulos**
-        - **Tipos de entidades:**
-            - Forte: 
-            - Fraca:
-
-    - Relacionamentos são representados por **losangos**
-        - Cardinalidade:
-
-    - Atributos são representados por meio de **setas com um circulo no final**
-        - **Tipos de atributos:**
-            - Simples: Valores simples
-            - Composto: Mais de um valor para um dado (Endereço: CEP, Bairro, Rua, Número)
-            - Multvalorado: Valores pré-definidos para um dado (Caixa de seleção)
-            - Derivado: Dado aferido a partir de um valor, ou seja, dado calculado a parte de um valor dado pelo usúario (Date_birth: 28/06/2005 ; derivado: 19 anos)
-            - Chave: Valor único (ID)
-                - Representação gráfica desses atributos:
-
-                        **DIAGRAMA PENDENTE**
-
-#### ➜ Cardinalidade - Exemplos
+Nessa primeira fase, é construído um modelo conceitual, na forma de um **Diagrama de Entidade-Relacionamento (DER)** realizando um processo de abstração, focando somente naquilo que será importante para o nosso BD. Esse modelo captura as necessidades da organização em termos de armazenamento de dados de forma independente de implementação, ou seja, **nessa fase não se importamos com o tipo de SGBD que utilizaremos** apenas e como vai funcionar a infraestrutura do nosso Banco de Dados. **Sendo projetado com: Entidades, Relaciomantos e Atributos**
 
 
+- ### Entidades são representadas por **retângulos**
+    - **Tipos de entidades:**
+        - Forte: Entidade que não depende de outra para existir, ou seja, ela por si só já possui total sentido
+        - Fraca: Entidade que depende de outra para existir, pos individualmente elas não fazem sentido
 
-#### ➜ Especialização/Generalização    
+        <img src="./images/entity.png">
+
+        > No exemplo acima temos uma entidade(forte), declarada como empregado em um relacionamento de possuir a uma entidade fraca, declarada dependente, caso não exista um empregado, não vai existir um filho, mas se existir um filho, vai existir um pai.
+
+- ### Relacionamentos são representados por **losangos**
+    - **Cardinalidade:** Ela define a quantidade de instâncias que uma tabela pode ter em relação a outra.
+        - Relacionamento 1..1
+        - Relacionamento 1..n ou 1..*
+        - Relacionamento n..n ou * ..*
+
+        <img src="./images/cardinality_1.png">
+
+        > Um desenvolvedor de uma empresa precisa trabalhar no computador, mas só pode usar no máximo uma máquina, paralelamente, um computador pode ficar sem ser utilizada, mas só pode ser usada por um desenvolvedor
+
+        <img src="./images/cardinality_2.png">
+        
+        > Um departamento pode possuir um ou mais empregados, mas um empregado só possui trabalhar em um departamento
+
+        <img src="./images/cardinality_3.png">
+
+        > Um setor deve ter apenas um profissional trabalhando, mas um profissional pode trabalhar em mais de um setor
+
+- ### Atributos são representados por meio de **setas com um circulo no final**
+    - **Tipos de atributos:**
+        - Simples: Valores simples
+        - Composto: Mais de um valor para um dado (Endereço: CEP, Bairro, Rua, Número)
+        - Multvalorado: Valores pré-definidos para um dado (Caixa de seleção)
+        - Derivado: Dado aferido a partir de um valor, ou seja, dado calculado a parte de um valor dado pelo usúario (Date_birth: 28/06/2005 ; derivado: 19 anos)
+        - Chave: Valor único (ID)
+
+            - **Representação gráfica desses atributos:**
+                    <img src="./images/attributes_1.png">
+                    <img src="./images/attributes_2.png">
+
+### 📍 Especialização/Generalização
+
+Especialização e Generalização são conceitos relacionados ao modelo de banco de dados e ao design de esquemas, frequentemente utilizados em modelagem de dados no contexto de diagramas Entidade-Relacionamento Estendido (EER). Esses conceitos ajudam a organizar os dados de maneira hierárquica e são úteis para representar subclasses e superclasses.
+
+### ➜ Generalização
+
+Consiste no processo de abstrair características comuns de duas ou mais entidades e combiná-las em uma entidade mais genérica (superclasse).
+
+- Ideia principal: Identificar semelhanças entre várias entidades para criar um modelo mais simplificado.
+- Exemplo: As entidades "Carro" e "Moto" podem ser generalizadas em uma entidade genérica chamada "Veículo", porque ambas compartilham atributos como "Marca", "Modelo" e "Ano de Fabricação".
+
+### ➜Especialização 
+
+É o processo inverso, ou seja, de criar subclasses a partir de uma entidade genérica (superclasse) com base em características específicas.
+
+- Ideia principal: Destacar diferenças ou características únicas entre subconjuntos de uma entidade.
+- Exemplo: A entidade genérica "Veículo" pode ser especializada em subclasses como "Carro", "Moto" e "Caminhão", onde cada uma tem atributos ou comportamentos específicos, como "Número de Portas" para "Carro".
+
+
+
+
+
+
+
 
 **DIAGRAMA PENDENTE**
 
@@ -295,6 +323,22 @@ Afinal, na etapa de projeto físico, o modelo do banco de dados é enriquecido c
 
 **DIAGRAMA PENDENTE**
 
+
+
+
+
+
+
+
+
+
+
+
+
 > ### Desafio da Addiante
 >
-> Agora finalizando os estudos de modelagem de Banco de Dados, retrataremos aquele problema proposto declarado de "Desafio Addiante".
+> Digamos que trabalhamos na empresa "Addiante", que exercer a locação e venda de caminhões, tratores... que está passando pela implementação de um novo BD para cuidar de um projeto de divulgação dos produtos, localizado em uma feira de apresentações de negócios agropecuários. Afinal, você foi designado para criar o projeto do BD que será armazenado todas as informações dos clientes que estão interresados nos nossos serviços.
+>
+> Portanto, primeiramente, iremos exercer oque chamamos de **levamento de requisitos**, você precisa entender as necessidades do seu chefe, visto que, antes de iniciarmos um projeto precisamos entender a proposta que o cliente propôs, para assim ser cumprida, sendo uma das fases mais importante, já que, é nesse momento que teremos a parte inicial do projeto, que seria o esboço da modelagem principal.
+>
+> Digamos que nesse exemplo teremos que lidar com o cadastro de possíveis clientes interresados com os seguintes dados: **Nome, Idade, CPF e/ou CNPJ**. Além do mais, depois de apresentarmos os tipos de produtos em uma tabela que foi constituida por um BD de produto, que possui: **ID_product, Produto, Quantidade, Tipo e Valor** iremos solicitar ao usuário o preenchimento de um formulário para declarar interrese nos produtos, que pede: **ID_product, Quantidade, Tipo de contrato(compra ou aluguel) e Informações de entrega (Cidade, Rua e Número)**. Afinal, também teremos o setor de vendedores que serão a ponte do nosso sistema para o usuário, portanto, teremos que lidar com um espaço para declarar: **Nome e CPF** dos funcionários.
