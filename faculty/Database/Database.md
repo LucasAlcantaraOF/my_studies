@@ -231,7 +231,7 @@ Enterdemos um pouco sobre o que é Banco de Dados, como foi elaborado sua evolu�
 
 A construção de uma projeto de Banco de Dados é dado a partir de 3 fases:
 
-### ➜ Modelagem Conceitual
+### 📍 Modelagem Conceitual
 
 Nessa primeira fase, é construído um modelo conceitual, na forma de um **Diagrama de Entidade-Relacionamento (DER)** realizando um processo de abstração, focando somente naquilo que será importante para o nosso BD. Esse modelo captura as necessidades da organização em termos de armazenamento de dados de forma independente de implementação, ou seja, **nessa fase não se importamos com o tipo de SGBD que utilizaremos** apenas e como vai funcionar a infraestrutura do nosso Banco de Dados. **Sendo projetado com: Entidades, Relaciomantos e Atributos**
 
@@ -284,25 +284,43 @@ Especialização e Generalização são conceitos relacionados ao modelo de banc
 Consiste no processo de abstrair características comuns de duas ou mais entidades e combiná-las em uma entidade mais genérica (superclasse).
 
 - Ideia principal: Identificar semelhanças entre várias entidades para criar um modelo mais simplificado.
-- Exemplo: As entidades "Carro" e "Moto" podem ser generalizadas em uma entidade genérica chamada "Veículo", porque ambas compartilham atributos como "Marca", "Modelo" e "Ano de Fabricação".
+- Exemplo: As entidades "Carro" e "Moto" podem ser generalizadas em uma entidade genérica chamada "Veículo", porque ambas compartilham atributos como "Marca", "Modelo" e "Ano 
+de Fabricação".
 
-### ➜Especialização 
+<img src="./images/generalization.png">
+
+### ➜ Especialização 
 
 É o processo inverso, ou seja, de criar subclasses a partir de uma entidade genérica (superclasse) com base em características específicas.
 
 - Ideia principal: Destacar diferenças ou características únicas entre subconjuntos de uma entidade.
 - Exemplo: A entidade genérica "Veículo" pode ser especializada em subclasses como "Carro", "Moto" e "Caminhão", onde cada uma tem atributos ou comportamentos específicos, como "Número de Portas" para "Carro".
 
+<img src="./images/example.png">
 
 
+### ➜ Parcial e Total
+
+Dentro da especialização/generalização temos duas classificações importantes, que seriam a ligação com entidade de forma **parcial** e **total**.
+
+- **Parcial:** São entidades que indicam que não precisam fazer parte de nenhuma especialização/generalização
+
+- **Total:** São entidades que indicam que que precisam necessariamente fazer parte de pelo menos alguma especialização/generalização.
+
+<img src="./images/partial.png">
+
+> Nesse exemplo, indica que nem todo **FUNCIONÁRIO** é **MOTORISTA** e nem **SECRETÁRIA**
+>
+> A ligação especialização/generalização parcial é definida por um P no seu relacionamento
+
+<img src="./images/total.png">
+
+> Nesse exemplo, indica que **CLIENTE** é pelo menos **PESSOA FÍSICA** ou **PESSOA JURÍDICA**
+>
+> A ligação especialização/generalização total é definida por um T no seu relacionamento
 
 
-
-
-
-**DIAGRAMA PENDENTE**
-
-### ➜ Projeto Lógico
+### 📍 Projeto Lógico
 
 A partir desse momento, a etapa de projeto lógico objetiva transformar o modelo conceitual obtido na primeira fase em um modelo lógico. O modelo lógico define como o banco de dados será implementado em um SGBD específico, portanto, **nessa fase se importamos com o tipo de SGBD que utilizaremos**, além do mais, nesse ponto do projeto não definiremos as características dos atributos, tais como tipos de dados e tamanho. Basta apenas que eles estejam vinculados às suas tabelas.
 
@@ -312,12 +330,12 @@ A partir desse momento, a etapa de projeto lógico objetiva transformar o modelo
 
 - DT - Diagrama de Tabela
 - Projetado com: Tabelas, Colunas e Chaves
-    -
+
     
 
 **DIAGRAMA PENDENTE**
 
-### ➜ Projeto Físico
+### 📍 Projeto Físico
 
 Afinal, na etapa de projeto físico, o modelo do banco de dados é enriquecido com detalhes que influenciam no desempenho do banco de dados, mas não interfere em sua funcionalidade. O modelo obtido neste passo é o modelo físico do banco de dados. Afinal, definimos os detalhes de implementação dos objetos do banco de dados. No caso das tabelas, escolhemos os tipos de dados e tamanho das colunas, e especificamos se elas são opcionais ou obrigatórias.
 
