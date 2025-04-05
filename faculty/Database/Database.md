@@ -531,45 +531,38 @@ Métodos que são utilizados dependendo de cada cardinalidade de relacionamentos
 >
 > A cardinalidade é declarada a partir da analise dos relacionamentos, onde teremos um número mínimo de relacionamentos e o máximo (minímo, máximo). E para analisarmos qual o tipo de cardinalidade montamos a partir da análise do máximo dos dois relacionamentos que se ligam.
 
-**Relacionamentos (1..1)**
+### ➜ Relacionamentos (1..1)
 
 - Adicionar uma coluna (FK) para um DER com alguma cardinalidade que possua no **minímo igual a 0**
 
 <img src="./images/entity_DT_Example_05.png">
 
-- Fusão de tabelas para uma DER com alguma cardinalidaed que possua no **minímo igual a 1**
+- Fusão de tabelas para uma DER com alguma cardinalidade que possua no **minímo igual a 1**
 
 <img src="./images/entity_DT_Example_06.png">
 
+### ➜ Relacionamentos (1..N)
 
+- Adicionar uma coluna (FK) na tabela com **cardinalidade igual a N**
 
+<img src="./images/entity_DT_Example_07.png">
 
+### ➜ Relacionamentos (N..N)
 
+- Criar tabela com as colunas(FK) das tabelas relacionadas
 
-
-
-
-
-
-
-
-
-
-
-
-
+<img src="./images/entity_DT_Example_08.png">
 
 ### ➜ Mapeamento de Generalização/Especialização
-Em geral, deve ser criada uma tabela para a entidade pai e uma tabela para cada entidade filha. Porém, veremos que existem três regras para essa transformação. 
+Em geral, deve ser criada uma tabela para a entidade pai e uma tabela para cada entidade filha. Porém, veremos que existem três alternativas para essa transformação. 
 
+1. Tabela única para entidade genérica e suas especializações
+2. Tabelas para a entidade genérica e as entidades especializadas
+3. Tabelas apenas para as entidades especializadas
 
-
-
-
-
-
-
-
+<img src="./images/entity_DT_Example_09.png">
+<img src="./images/entity_DT_Example_10.png">
+<img src="./images/entity_DT_Example_11.png">
 
 <!--
 **DIAGRAMA PENDENTE**
