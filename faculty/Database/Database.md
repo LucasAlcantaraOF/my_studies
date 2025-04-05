@@ -317,7 +317,7 @@ Dentro da especialização/generalização temos duas classificações important
 
 > Nesse exemplo, indica que **CLIENTE** é pelo menos **PESSOA FÍSICA** ou **PESSOA JURÍDICA**
 >
-> A ligação especialização/generalização total é definida por um T no seu relacionamento
+> A ligação especialização/generalização total é definida por um T no seu relacionamento, vale ressaltar que na ausência de qualquer simbolo, é subentedido que estamos lidando com uma total.
 
 
 ### 📍 Projeto Lógico
@@ -337,129 +337,69 @@ A partir desse momento, a etapa de projeto lógico objetiva transformar o modelo
 
 A partir desse momento do projeto lidaremos com algumas diferenças que já foram citadas, que seria no modelo de modelagem, trabalharemos agora com: **Tabelas, Colunas e Chaves**
 
-### ➜ Tabelas:
+### 📍 Tabelas:
 
-Organizaremos nossa modelagem a partir de agora por meio de tabelas, que seriam as antigas **entidades**.
+Organizaremos nossa modelagem a partir de agora por meio de tabelas, que seriam as antigas **entidades*.
 
+<img src="./images/table_bd.png">
 
+### ➜ Regras das criações de tabela:
 
+1. Nomeclatura:
+    - É evidente a importância de sempre ser claro em qualquer área de desenvolvimento do nosso trabalho, entretanto, vale ressaltar algumas boas condutas sobre as nomeclaturas que iremos impregar no nosso Banco de Dados
+        - Toda tabela deve possuir um nome único, não é permitido a duplicata de tabelas;
+        - A tabela deve representa com clareza o objetado modelado;
+        - Não pode possuir espaços
+        - A primeira linha da tabela é obrigatóriamente declara o tipo de dados que receberemos porteriormente naquela coluna.
+2. Regras das Colunas:
+    - Não é permitido ter uma coluna composta, ou seja, não é possível haver uma coluna que complete a outra.
+3. Tipos de Valores:
+    - Na criação de uma tabela, precisamos declarar quais serão os valores opcionais e os obrigatórios
 
+### 📍 Tipos de Chaves:
 
+O conceito de chave designa um item de busca, ou seja, um dado que será usado para efetuar uma consulta no banco de dados. É um conceito lógico que só faz sentido para a aplicação e não existe fisicamente no banco de dados. Existindo 4 tipos de chaves, sendo elas:
 
+1. Chave Primária
+2. Chave Secundária
+3. Chave Candidata
+4. Chave Estrangeira
 
+### ➜ Chave Primária (PK - Primary Key)
 
+A chave primária é usada para identificar univocamente uma linha em uma tabela. Em uma tabela, um SGBD precisa diferenciar uma linha das demais, isso é feito a partir da definição de uma restrição de integridade. Na prática, escolheremos uma ou mais coluna(s) para que seu(s) valores se torne(m) únicos no banco de dados. Exemplo: CPF, Matricula, CNPJ, etc.
 
+Todas as chaves primárias tem as seguintes propriedades:
 
+1. Unicidade
+    - O valor da chave primária não permite repetição;
+2. Monovalorado
+    - Toda linha da tabela possui no máximo um valor de chave primária;
+3. Restrição de Integridade
+    - toda linha da tabela necessariamente tem que ter um valor para a coluna que é chave primária. Em outras palavras, nenhum valor de chave primária deve ser vazio. Esta propriedade é conhecida por restrição de integridade de entidade.
+    
+### ➜ Chave Secundária 
 
+A chave secundária é usada para acessar um conjunto de informações. Pode ser formada por um único atributo ou mais de um atributo que identifica(m) um subconjunto de dados em uma tabela. Normalmente, se cria um índice para uma chave secundária como forma de otimizar a consulta feita por aquela chave ao banco de dados. Por exemplo, podemos ter uma chave secundária formada pelo CEP para a tabela de CLIENTES pois esta chave identifica um subconjunto de clientes que residem em uma rua.
 
+### ➜ Chave Candidata
 
+Ao projetarmos uma tabela, pode ser que mais de uma coluna sirva para diferenciar uma linha das demais. A chave candidata é formada por um atributo que identifica uma única linha na tabela. Como uma tabela pode possuir mais de um atributo identificador único podemos ter várias chaves candidatas em uma única tabela, sendo que apenas uma das chaves candidatas pode ser escolhida para ser a chave primária da tabela. As demais chaves permanecem como chaves candidatas na tabela. 
 
+Por exemplo, em uma tabela declarada **ALUNO**, tanto **CODIGOALUNO** quanto **CPF** poderiam ser utilizados como chave primária. Logo, podemos dizer que CODIGOALUNO e CPF são chaves candidatas.
 
+### ➜ Chave Estrangeira (FK - Foreign Key) 
 
+A chave estrangeira é formada por atributos que são chave primária em outra tabela, servindo assim para estabelecer relacionamentos entre as tabelas de um banco de dados. Assim, quando dizemos que duas tabelas estão relacionadas através de uma coluna devemos observar que em uma tabela esta coluna será chave primária e na outra tabela ela será uma chave estrangeira que fará a ligação entre as duas tabelas, **estabelecendo o relacionamento.**
 
+Principal regra:
 
+- - Se uma determinada tabela A possui uma chave estrangeira que estabelece relacionamento com uma tabela B, então o valor da chave estrangeira da tabela A deve ser igual a um valor de chave primária na tabela B. Esta regra garante que as referências de uma tabela para outra tabela sejam válidas, de forma que os relacionamentos sejam consistentes e não ocorra inconsistência nos dados, como haver um funcionário alocado em um departamento que não existe. Assim, para todo valor de uma coluna que é chave estrangeira em uma tabela, deve haver um valor correspondente na coluna que é chave primária da tabela com a qual a chave estrangeira faz referência.
+- Como nem sempre o relacionamento entre tabelas é obrigatório uma chave estrangeira pode possuir valor nulo
 
+<img src="./images/FK.png">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### - Tabelas 
-- Em um banco de dados relacional, toda tabela deve possuir um nome único, além de toda e qualquer nomeclatura dentro do BD seguir um padrão, sempre tentando ser o mais claro possível.
-
-### - Colunas
-- A primeira linha da tabela representará as colunas, ou seja, definira o tipo de dados que teremos na nossa tabela
-
-### - Linha
-- As linhas da tabela, da segunda em diante, representam um item de informação cadastrado no bando de dados.
-
-### - Chaves
-- O conceito de chave designa um **item de busca**, ou seja, um dado que será usado para efetuar uma **consulta** no banco de dados. É um conceito lógico que só faz sentido para a aplicação e não existe fisicamente no banco de dados
-- Existem diferentes tipos de chaves em um modelo relacional:
-    - Chave Primária(PK): É usada para indentificar univocamente uma linha em uma tabela, ou seja, um indetificador único.
-        - Importante ressaltar que o valor da chave não pode se repetir, e quando declaramos que uma tabela receberá dados de chaves primárias, não é possivel ter nenhuma linha sem valor, devido ao que conhecemos como **restrição de integridade de entidade**
-
-    - Chave Secundária: Serve para acessar um conjunto de indetificador únicos, ou seja, caso queremos adicionar em nossa tabela um dado que pode se repetir e futuramente retrataremos esse conjunto de dados, podemos utilizar as chave secundária para encontrar facilmente um grupo de dados
-
-    - Chave Candidata:
-
-    - Chave Estrangeira (FK): Utilizada para relacionar duas tabelas atráves de uma coluna primária e na outra será uma chave estrangeira que fará a ligação entre as duas tabelas, estabelecendo o relacionamento.
-        - A chave estrangeira é formada por atributos que são chave primária em outra tabela.
-
-        <img src="./images/FK.png">
-
-Entendendo como o modelo de DT funciona, retrataremos como um DER se torna um DT.
-
-- **Mapeamento das Entidades** - Toda entidade torna-se uma tabela levando todos os atributos definidos na entidade que tornam-se colunas na tabela criada. O identificador da entidade torna-se a chave primária da tabela que não permitirá repetição de valores e nem valores nulos.
-
-- **Mapeamento de Relacionamentos** - O mapeamento dos relacionamentos implica na transformação de atributos das entidades em colunas nas tabelas e, em casos específicos, implica também na criação de novas tabelas a partir de relacionamentos
-
-- **Mapeamento de Atributos** - Os atributos das entidades e dos relacionamentos devem ser gerados de forma que minimizem o consumo de espaço de armazenamento e torne mais eficiente a consulta de dados. Devem ser consideradas as características do gerenciador de banco de dados que será utilizado para implementar o banco de dados físico. 
-
-- **Mapeamento de Generalização/Especialização** - Em geral, deve ser criada uma tabela para a entidade pai e uma tabela para cada entidade filha. Porém, veremos que existem três regras para essa transformação. 
-
-<img src="./images/foot_chicken_example.png">
-
-<img src="./images/Foot_chicken.png">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### ➜ Normalização
+### 📍 Normalização
 
 Um método que visa avaliar e aumentar a qualidade de um projeto de banco de dados relacional foi baseado de forma normal (FN), que pode ser vista como uma regra, a qual deve ser observada na semântica de uma tabela, para que a considerem bem projetada. Através do processo de normalização pode-se, gradativamente, substituir um conjunto de entidades e relacionamentos por um outro, mais eficiente em relação às anomalias de atualizações (inclusão, alteração e exclusão) as quais podem causar certos problemas, tais como:
 
@@ -469,9 +409,169 @@ Um método que visa avaliar e aumentar a qualidade de um projeto de banco de dad
 - Perdas acidentais de informação;
 - Dependências transitivas entre atributos não chave.
 
-Para resolver esses problemas foi desenvolvido uma **forma normal** que devem ser aplicadas a um modelo de dados com o objetivo de garantir um modelo de dados livres desses problemas citados, estável e eficiente.
+Para resolver esses problemas foi desenvolvido uma **forma normal** que devem ser aplicadas a um modelo de dados com o objetivo de garantir um modelo de dados livres desses problemas citados, estável e eficiente. A Normalização é necessária porque podem ocorrer erros de modelagem, sendo que a normalização se apresenta como uma técnica para garantir a integridade de um modelo de dados.
+
+### ➜ Primeira Forma Normal
+
+Diz-se que uma tabela está na primeira forma normal quando ela não contém tabelas aninhadas. A primeira forma normal assegura que não existam repetições de valores nos atributos nem grupos repetidos de atributos das entidades de um modelo de dados. 
+
+O objetivo da primeira forma normal é eliminar o aninhamento de tabelas para que cada tabela tenha informações de um único assunto. Não podemos ter mais de um assunto em uma tabela.
+
+Os procedimentos mais recomendados para aplicar a 1FN são os seguintes:
+
+- Identificar a chave primária da entidade;
+- Identificar o grupo repetitivo e removê-lo da entidade;
+- Criar uma nova entidade com a chave primária da entidade anterior e o grupo repetitivo.
+
+> Exemplo: 
+>
+> Código_cliente, Nome, * Telefone, Endereço
+>
+> <img src="./images/1FN_1.png">
+>
+> Mesmo com o ajuste, a tabela ainda não está na primeira forma normal, pois há clientes com mais de um telefone e os valores estão em uma mesma célula. Para normalizar será necessário criar uma nova tabela para armazenar os números dos telefones e o campo-chave da tabela cliente. 
+>
+> <img src="./images/1FN_2.png">
+>
+> Depois da alteração para assim de fato estarmos na primeira forma
+>
+> <img src="./images/1FN_3.png">
+
+### ➜ Segunda Forma Normal
+
+Uma tabela está na Segunda Forma Normal 2FN se ela estiver na 1FN e todos os atributos não chave forem totalmente dependentes da chave primária (dependente de toda a chave e não apenas de parte dela). Se o nome do produto já existe na tabela produtos, então não é necessário que ele exista na tabela de produtos
+
+A segunda forma normal trata destas anomalias e evita que valores fiquem em redundância no banco de dados.
+
+Procedimentos:
+
+- Identificar os atributos que não são funcionalmente dependentes de toda a chave primária;
+- Remover da entidade todos esses atributos identificados e criar uma nova entidade com eles.
+    - A chave primária da nova entidade será o atributo do qual os atributos do qual os atributos removidos são funcionalmente dependentes.
+    
+> Exemplo:
+>
+> N_pedido, Código_produto, Produto, Quant, Valor_unit, Subtotal
+>
+> <img src="./images/2FN_1.png">
+>
+> O nome do produto depende do código do produto, porém não depende de N_pedido que é a chave primária da tabela, portanto não está na segunda forma normal. Isto gera problemas com a manutenção dos dados, pois se houver alteração no nome do produto teremos que alterar em todos os registros da tabela venda. Para normalizar esta tabela teremos de criar a tabela Produto que ficará com os atributos Código_produto e produto e na tabela Venda manteremos somente os atributos N_pedido, código_produto, quant, valor_unit e subtotal. 
+>
+> <img src="./images/2FN_2.png">
+
+### ➜ Terceira Forman Normal
+
+A terceira forma normal é parte daquilo que chamamos de normalização de dados para fins de planejamento de bases de dados computacionais. É uma forma de analisar e refinar a estrutura dos dados a fim de torná-los íntegros e exclusivos, evitando repetições desnecessárias e possíveis sobrecargas no gerenciador de banco de dados. Uma tabela está na Terceira Forma Normal 3FN se ela estiver na 2FN e se nenhuma coluna não-chave depender de outra coluna não-chave.
+
+Na terceira forma normal temos de eliminar aqueles campos que podem ser obtidos pela equação de outros campos da mesma tabela.
+
+Procedimentos:
+- Identificar todos os atributos que são funcionalmente dependentes de outros atributos não chave e removê-los.
+
+> Exemplo: 
+>
+> Considerando a tabela Venda, veremos que a mesma não está na terceira forma normal, pois o subtotal é o resultado da multiplicação Quant X Valor_unit, desta forma a coluna subtotal depende de outras colunas não-chave.
+>
+> <img src="./images/3FN_1.png">
+>
+> <img src="./images/3FN_2.png">
+
+### 📍 Modelagem de Tabelas
+
+Agora iremos compreender oque antes chamavamos de **DER (Diagrama de Entidade-Relacionamento)** se tornando no **DT (Diagrama de Tabelas)**, que consiste principalmente em cada vez chegar ao nosso modelo de Banco de Dados final.    
+
+### ➜ Mapeamento das Entidades
+Toda **entidade** torna-se uma **tabela** levando todos os atributos definidos na entidade que tornam-se colunas na tabela criada. O identificador da entidade torna-se a chave primária da tabela que não permitirá repetição de valores e nem valores nulos
+
+<img src="./images/Entity_DT.png">
+
+> Exemplo acima demonstra como é feito a conversão de um uma **entidade em DER** para o modelo DT de forma prática
+
+Outro exemplo a seguir:
+
+<img src="./images/Entity_DT_example_02.png">
+
+Temos dentro das entidades a fortes e as fracas, retrataremos especificamente as fracas, que possuem uma regra especial de conversão, baseando-se no estudo dos tipos de chaves.
+
+<img src="./images/Entity_DT_Example_03.png">
+
+> Para tentar melhorar o entedimento do por que dessa medida, vamos tentar compreender. Uma entidade fraca depende de uma entidade forte, ou seja, elas estão vinculadas de uma forma muito mais próxima do que qualquer outra entidade, portanto, a entidade fraca se torna uma chave estrangeira da entidade forte **SEMPRE**
+
+### ➜ Mapeamento de Atributos
+Os atributos das entidades e dos relacionamentos devem ser gerados de forma que minimizem o consumo de espaço de armazenamento e torne mais eficiente a consulta de dados. Devem ser consideradas as características do gerenciador de banco de dados que será utilizado para implementar o banco de dados físico. 
+
+Dentro do mapeamento de atributos só teremos apenas uma modelagem, que seria sobre os atributos multivalorados. Quando formos converter de um DER para um DT, os atributos multivalorados terão que ser adicionados a uma coluna ou ser construida uma tabela própria somente para os seus valores compostos.
+
+<img src="./images/Entity_DT_example_04.png">
+
+> Aluno(<u>CodigoAluno</u>, Nome, CPF)
+> FoneAluno(<u>CodigoAluno, Numero, Tipo</u>)
+>
+> Temos duas tabelas distintas ligadas por uma chave estrangeira para termos os atributos multivalorados
+>
+> Aluno(<u>CodigoAluno</u>, Nome, CPF, Numero1, Numero2, Numero3)
+
+Vale ressaltar que você pode utilizar qualquer um dos dois métodos, mas precisamos sempre tentar ao máximo manter o nosso ambiente de Banco de Dados o mais limpo possível, portanto, teremos que analisar cada caso para enterdemos qual seria o melhor método a se aplicar.
+
+Tabela Própria: Utilizada principalmente para quando temos atributos multivalorados que possuem muitos outros atributos dentro deles.
+Adição de Coluna: Utilizada para atributos multivalorados que não possuem muitos atributos dentro deles.
+
+### ➜ Mapeamento de Relacionamentos
+ O mapeamento dos relacionamentos implica na transformação de atributos das entidades em colunas nas tabelas e, em casos específicos, implica também na criação de novas tabelas a partir de relacionamentos. 
+
+Existem diferentes estratégias para a transformação de relacionamentos em modelo lógico.
+
+- Tabela Própria
+- Adição de Coluna
+- Fusão de Tabelas
+
+Métodos que são utilizados dependendo de cada cardinalidade de relacionamentos
+
+> Vale Lembrar!
+>
+> A cardinalidade é declarada a partir da analise dos relacionamentos, onde teremos um número mínimo de relacionamentos e o máximo (minímo, máximo). E para analisarmos qual o tipo de cardinalidade montamos a partir da análise do máximo dos dois relacionamentos que se ligam.
+
+**Relacionamentos (1..1)**
+
+- Adicionar uma coluna (FK) para um DER com alguma cardinalidade que possua no **minímo igual a 0**
+
+<img src="./images/entity_DT_Example_05.png">
+
+- Fusão de tabelas para uma DER com alguma cardinalidaed que possua no **minímo igual a 1**
+
+<img src="./images/entity_DT_Example_06.png">
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### ➜ Mapeamento de Generalização/Especialização
+Em geral, deve ser criada uma tabela para a entidade pai e uma tabela para cada entidade filha. Porém, veremos que existem três regras para essa transformação. 
+
+
+
+
+
+
+
+
+
+
+<!--
 **DIAGRAMA PENDENTE**
 
 ### 📍 Projeto Físico
@@ -480,18 +580,6 @@ Afinal, na etapa de projeto físico, o modelo do banco de dados é enriquecido c
 
 **DIAGRAMA PENDENTE**
 
-
-
-
-
-
-
-
-
-
-
-
-
 > ### Desafio da Addiante
 >
 > Digamos que trabalhamos na empresa "Addiante", que exercer a locação e venda de caminhões, tratores... que está passando pela implementação de um novo BD para cuidar de um projeto de divulgação dos produtos, localizado em uma feira de apresentações de negócios agropecuários. Afinal, você foi designado para criar o projeto do BD que será armazenado todas as informações dos clientes que estão interresados nos nossos serviços.
@@ -499,3 +587,4 @@ Afinal, na etapa de projeto físico, o modelo do banco de dados é enriquecido c
 > Portanto, primeiramente, iremos exercer oque chamamos de **levamento de requisitos**, você precisa entender as necessidades do seu chefe, visto que, antes de iniciarmos um projeto precisamos entender a proposta que o cliente propôs, para assim ser cumprida, sendo uma das fases mais importante, já que, é nesse momento que teremos a parte inicial do projeto, que seria o esboço da modelagem principal.
 >
 > Digamos que nesse exemplo teremos que lidar com o cadastro de possíveis clientes interresados com os seguintes dados: **Nome, Idade, CPF e/ou CNPJ**. Além do mais, depois de apresentarmos os tipos de produtos em uma tabela que foi constituida por um BD de produto, que possui: **ID_product, Produto, Quantidade, Tipo e Valor** iremos solicitar ao usuário o preenchimento de um formulário para declarar interrese nos produtos, que pede: **ID_product, Quantidade, Tipo de contrato(compra ou aluguel) e Informações de entrega (Cidade, Rua e Número)**. Afinal, também teremos o setor de vendedores que serão a ponte do nosso sistema para o usuário, portanto, teremos que lidar com um espaço para declarar: **Nome e CPF** dos funcionários.
+-->
