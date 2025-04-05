@@ -322,16 +322,155 @@ Dentro da especialização/generalização temos duas classificações important
 
 ### 📍 Projeto Lógico
 
-A partir desse momento, a etapa de projeto lógico objetiva transformar o modelo conceitual obtido na primeira fase em um modelo lógico. O modelo lógico define como o banco de dados será implementado em um SGBD específico, portanto, **nessa fase se importamos com o tipo de SGBD que utilizaremos**, além do mais, nesse ponto do projeto não definiremos as características dos atributos, tais como tipos de dados e tamanho. Basta apenas que eles estejam vinculados às suas tabelas.
+A partir desse momento, a etapa de projeto lógico objetiva transformar o modelo conceitual obtido na primeira fase em um modelo lógico utilizando um **Diagrama de Tabela (DT)**. O modelo lógico define como o banco de dados será implementado em um SGBD específico, portanto, **nessa fase se importamos com o tipo de SGBD que utilizaremos**, além do mais, nesse ponto do projeto não definiremos as características dos atributos, tais como tipos de dados e tamanho. Basta apenas que eles estejam vinculados às suas tabelas. Ele é projetado com: Tabelas, Colunas e Chaves
 
 > Existem diversos modelos lógicos, por exemplo:
 >
 > Rede, hierárquico, relacional, orientado a objeto, grafos, chave-valor e XML. entretanto, o mais popular é o relacional, e também utilizaremos ele no nosso matérial.
+> Vamos somente refrescar como é representando graficamente o modelo relacional.
+>
+>| Linhas/Colunas  | Nome | Data de Nascimento | Sexo | Setor |
+>| -------- | ------ | ---------- | - | ------------- |
+>| Linha 1  | Lucas  | 28/06/2005 | M | Estudante de T.I |
+>| Linha 2  | Vitoria | 24/08/2005 | F | Psicologa | 
+>| Linha 3  | Paiva  | 11/03/1854 | M | Tech-Lead |
 
-- DT - Diagrama de Tabela
-- Projetado com: Tabelas, Colunas e Chaves
+A partir desse momento do projeto lidaremos com algumas diferenças que já foram citadas, que seria no modelo de modelagem, trabalharemos agora com: **Tabelas, Colunas e Chaves**
 
-    
+### ➜ Tabelas:
+
+Organizaremos nossa modelagem a partir de agora por meio de tabelas, que seriam as antigas **entidades**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### - Tabelas 
+- Em um banco de dados relacional, toda tabela deve possuir um nome único, além de toda e qualquer nomeclatura dentro do BD seguir um padrão, sempre tentando ser o mais claro possível.
+
+### - Colunas
+- A primeira linha da tabela representará as colunas, ou seja, definira o tipo de dados que teremos na nossa tabela
+
+### - Linha
+- As linhas da tabela, da segunda em diante, representam um item de informação cadastrado no bando de dados.
+
+### - Chaves
+- O conceito de chave designa um **item de busca**, ou seja, um dado que será usado para efetuar uma **consulta** no banco de dados. É um conceito lógico que só faz sentido para a aplicação e não existe fisicamente no banco de dados
+- Existem diferentes tipos de chaves em um modelo relacional:
+    - Chave Primária(PK): É usada para indentificar univocamente uma linha em uma tabela, ou seja, um indetificador único.
+        - Importante ressaltar que o valor da chave não pode se repetir, e quando declaramos que uma tabela receberá dados de chaves primárias, não é possivel ter nenhuma linha sem valor, devido ao que conhecemos como **restrição de integridade de entidade**
+
+    - Chave Secundária: Serve para acessar um conjunto de indetificador únicos, ou seja, caso queremos adicionar em nossa tabela um dado que pode se repetir e futuramente retrataremos esse conjunto de dados, podemos utilizar as chave secundária para encontrar facilmente um grupo de dados
+
+    - Chave Candidata:
+
+    - Chave Estrangeira (FK): Utilizada para relacionar duas tabelas atráves de uma coluna primária e na outra será uma chave estrangeira que fará a ligação entre as duas tabelas, estabelecendo o relacionamento.
+        - A chave estrangeira é formada por atributos que são chave primária em outra tabela.
+
+        <img src="./images/FK.png">
+
+Entendendo como o modelo de DT funciona, retrataremos como um DER se torna um DT.
+
+- **Mapeamento das Entidades** - Toda entidade torna-se uma tabela levando todos os atributos definidos na entidade que tornam-se colunas na tabela criada. O identificador da entidade torna-se a chave primária da tabela que não permitirá repetição de valores e nem valores nulos.
+
+- **Mapeamento de Relacionamentos** - O mapeamento dos relacionamentos implica na transformação de atributos das entidades em colunas nas tabelas e, em casos específicos, implica também na criação de novas tabelas a partir de relacionamentos
+
+- **Mapeamento de Atributos** - Os atributos das entidades e dos relacionamentos devem ser gerados de forma que minimizem o consumo de espaço de armazenamento e torne mais eficiente a consulta de dados. Devem ser consideradas as características do gerenciador de banco de dados que será utilizado para implementar o banco de dados físico. 
+
+- **Mapeamento de Generalização/Especialização** - Em geral, deve ser criada uma tabela para a entidade pai e uma tabela para cada entidade filha. Porém, veremos que existem três regras para essa transformação. 
+
+<img src="./images/foot_chicken_example.png">
+
+<img src="./images/Foot_chicken.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### ➜ Normalização
+
+Um método que visa avaliar e aumentar a qualidade de um projeto de banco de dados relacional foi baseado de forma normal (FN), que pode ser vista como uma regra, a qual deve ser observada na semântica de uma tabela, para que a considerem bem projetada. Através do processo de normalização pode-se, gradativamente, substituir um conjunto de entidades e relacionamentos por um outro, mais eficiente em relação às anomalias de atualizações (inclusão, alteração e exclusão) as quais podem causar certos problemas, tais como:
+
+- Informações redundantes no banco de dados;
+- Dependências parciais em relação a chave concatenada;
+- Redundâncias de dados desnecessárias;S
+- Perdas acidentais de informação;
+- Dependências transitivas entre atributos não chave.
+
+Para resolver esses problemas foi desenvolvido uma **forma normal** que devem ser aplicadas a um modelo de dados com o objetivo de garantir um modelo de dados livres desses problemas citados, estável e eficiente.
+
 
 **DIAGRAMA PENDENTE**
 

@@ -344,7 +344,7 @@ SO (Sistema Operacional) é o software responsável por gerenciar e controlar o 
 
 As principais funções de um sistema operacional incluem:
 
-- Gerenciamento de Processos: O SO controla a execução de programas, alocando tempo de CPU para os processos e gerenciando a execução de várias tarefas simultaneamente (multitarefa).
+- Gerenciamento de Processos: O SO controla a execução de programas, alocando tempo de CPU para os processos e gerenciando a execução de várias tarefas simultaneamente (multitarefa). **ESSE SISTEMA DE GERENCIAR AS EXECUÇÕES DOS PROGRAMAS É FEITO ATRAVÉS DO ESCALONADOR**
 
 - Gerenciamento de Memória: Ele controla a memória do computador, alocando espaço para os programas e gerenciando o uso da RAM.
 
@@ -433,3 +433,402 @@ Por uma questão de simplicidade, as empresas de telefonia assumiram o papel de 
 Uma das barreiras a serem vencidas para interligar tantas máquinas foi a forma de endereçamento, ou seja, como identificar unicamente um computador com o qual se deseja falar. A solução foi dar um endereço – como o da sua casa, por exemplo – para cada máquina. Trata-se de um processo denominado endereço IP, abreviação de Internet Protocol (ou Protocolo de Internet, em português). O endereço IP consistia em uma sequência de quatro números entre 0 a 255 (representados em 8 bits). Como exemplos de endereço IP, temos:
 
 Em posse do endereço de destino, um pacote (também chamado de datagrama) é enviado através das diversas redes existentes entre o remetente e o destino. Nas fronteiras delas, existem os roteadores, que funcionam como agências de correio e escolhem a rota que o pacote seguirá para chegar a seu destino. Dessa forma, passando de roteador em roteador, o pacote de dados consegue alcançá-lo com a sua mensagem.
+
+### ➜ E-mail e páginas disponíveis na rede:
+</br>
+A conexão de tantos usuários em rede não trouxe só dificuldades técnicas a serem superadas como também – e principalmente – propiciou a criação de oportunidades para outros mercados e outras tecnologias.
+
+<img src="./images/mail.jpg">
+
+Inicialmente, os correios eletrônicos (e-mail) eram transmitidos por rede em uma analogia direta com o sistema de correios em que se baseou o conceito da ARPANET. Passadas três décadas, o sistema tradicional de correios raramente transporta cartas, limitando-se a encomendas e boletos. A maior parte do tráfego de correio é eletrônico.
+
+Da mesma forma, quando se desenvolveu o conceito de páginas disponíveis na rede (originalmente chamado de World Wide Web: WWW) e se criou um navegador capaz de passear por essa rede de páginas, surgiu o que a maior parte das pessoas entende ser a internet. Essa tecnologia mudou a maneira como:
+
+- Fazemos comércio (por meio de sites de e-commerce);
+- Vamos ao banco (internet banking);
+- Acessamos serviços públicos (a maioria está disponível na rede);
+- Adquirimos informação.
+
+Páginas de pesquisa, chats e programas de troca de mensagens
+
+Para organizar a procura por tanta informação e pelas páginas disponíveis na World Wide Web, o software de busca Google se mostrou vitorioso entre diversos concorrentes. Atualmente, é possível buscar qualquer página ou tópico na web. Isso tornou a Google uma das empresas mais ricas do mundo.
+
+Após alguns anos, as pessoas se acostumaram a ficar sentadas diante de seus computadores, estando conectadas à internet em grande parte do dia. Com essa nova realidade, a comunicação por e-mail ficou lenta, pois podia levar dias para que uma troca de mensagens fosse realizada. Surgiram, então, os servidores de chat, nos quais os usuários podiam interagir entre si em tempo real. O IRC, por exemplo, é usado até hoje. Também foram desenvolvidos programas de trocas de mensagem, como o ICQ.
+
+### ➜ Interação entre usuários
+</br>
+Com a conexão de diversos usuários domésticos, uma nova geração que crescia na década de 1990 via seus jogos eletrônicos começarem a permitir uma interação entre usuários.
+
+<img src="./images/gaming.jpg">
+
+Inicialmente, essa interação foi realizada em redes locais (chamadas de LAN), o que impulsionou o surgimento de LAN houses: lojas onde era possível jogar em rede usando os computadores e a LAN dos estabelecimentos. Em um processo de evolução natural, as empresas começaram a realizar jogos por meio da internet.
+
+Com sua Battle.net, a Blizzard Entertainment pavimentou o caminho para o surgimento do que é conhecido como e-sports: jogos competitivos entre usuários de computador via internet.
+
+### ➜ Banda Larga:
+</br>
+Graças ao desenvolvimento de novas tecnologias de transmissão, como a fibra ótica, o aumento da banda de internet disponível ao usuário doméstico permitiu que novos serviços fossem oferecidos, como música e vídeo via internet. Atualmente, testemunhamos a gradual – embora inevitável – substituição da televisão por serviços de streaming, como:
+
+1. Netlfix;
+2. Youtube;
+3. Prime Video;
+4. Disney Plus...
+
+De fato, a profissão de influenciador digital já é algo rentável. Novos conceitos de programas surgiram quando passamos a estar conectados em nível pessoal. Os celulares se tornaram computadores de bolso, e a tecnologia de comunicação de dados permite, hoje, transmissões até de vídeo (acima de 1 Mbps – bilhão de bits por segundo). Por isso, as pessoas estão cada vez mais conectadas a todo momento. Os aplicativos de mensagem, as redes sociais e até os jogos migraram para os celulares. Dessa forma, surgiram aplicativos colaborativos para:
+
+1. Waze
+    - Mostrar o caminho para qualquer destino 
+2. Uber
+    - Contratar um meio de transporte
+3. Tinder
+    - Aplicativo para relacionamentos
+4. Entre outros...
+
+---
+### Passando para o Módulo 02
+---
+</br>
+
+# 📌 Componentes de Hardware
+
+Entedemos anteriormente cada componente de hardware, mas agora retrataremos como eles funcionam em um conjunto, estudando oque chamamos de **Sistema de Computação**, estudam como a tecnologia pode ser usada para processar informações e resolver problemas, sendo a base para quase tudo na área de TI.
+
+Primeiramente, é importante ressaltar que todo o sistema de computador precisa obrigatóriamente de 3 componentes para processar dados, que são: **Processador, Memmória, Dispositivos de Entrada**, sem as duas peças o computador nem ao menos ligaria.
+
+### 📍 Sistema de Computação
+
+O **Sistema de Computação** é um conjunto de elementos que contem o hardware e o softare para trabalhar sicronizados para atingir um determinado objetivo
+
+A área conhecida como **implementação de computadores** se relaciona, em geral, com a abordagem de aspectos que são desnecessários ao programador. Por exemplo, a tecnologia usada na construção da memória, a frequência do relógio, sinais de controle para iniciar as micro-operações etc.
+
+A implementação de computadores difere do conceito de **arquitetura de computadores**, cujo termo se relaciona, em geral, ao tratamento de pontos que são de interesse do programador, a saber, conjunto de instruções do processador, tamanho da palavra, modos de endereçamento de instruções, entre outros. A implementação de computadores e a arquitetura de computadores estão inseridas no domínio mais geral dos **sistemas de computação**. Podemos citar como alguns exemplos de sistema
+
+A definição de computação pode ser entendida como a realização de cálculos de forma ordenada ou apenas a manipulação de valores.
+
+> Um sistema de computação é um conjunto de partes coordenadas que concorrem para a realização do objetivo de computar (dados).
+
+> Relembrando
+>
+> É preciso entender um conceito básico que já foi apresentando em outras matérias como Banco de Dados para compreender essa parte melhor, que seria a definição de dados e de informações.
+>
+> Dados :Constituem um conjunto de fatos em estado bruto a partir dos quais conclusões podem ser tiradas.
+> Informações: É a inteligência e o conhecimento derivados dos dados.
+
+Outro termo importante que devemos incluir no vocabulário é o data processing ou, processamento de dados que consiste em uma série de atividades ordenadamente realizadas (receita), com o objetivo de produzir um arranjo determinado de informações a partir de outras obtidas inicialmente.
+
+Veja a seguir as etapas de um processamento de dados:
+
+<img src="./images/data_processing_steps.jpg">
+
+> Etapas do processamento de dados
+
+### 📌 Organização de um Computador
+
+<img src="./images/Computing_system_components.jpg">
+
+> Componentes de um sistema de computação
+
+Iremos analisar a arquitetura desenvolvida por John Von Neumann, matématico húngaro, considerado um dos grandes gênios da humannidade, sua arquiteturas foi desenvolvida em 1946, precursora da arquitetura que conhecemos hoje. Ela possibilita a uma máquina digital armazenar seus programas no mesmo espaço de memória que os dados, permitindo, assim, a manipulação de tais programas.
+
+--- 
+
+A arquitetura a seguir é um projeto modelo de um computador digital de programa armazenado que utiliza uma unidade de processamento (CPU) e uma de armazenamento (memória) para comportar, respectivamente, instruções e dados, conforme ilustrado.
+
+<img src="./images/Model_project_digital_computer.jpg">
+
+### 📍 Barramento
+
+De forma menos técnica possivel de se explicar algo, **barramento** seria os encaixes localizado em uma placa para você conectar os componentes do hardware
+
+Fundamentalmente, todo sistema de computação (computador) é organizado (funcionalmente) em três grandes módulos ou subsistemas:
+
+1. Processador
+2. Memória 
+3. Entrada/Saída (ES)
+
+Como se trata de componentes eletrônicos, a comunicação e o controle entre eles realiza-se por sinais elétricos que percorrem fios. Estes fios são chamados, em conjunto, de barramento, que seriam comumente conhecidos como os soquetes da placa-mãe.
+
+<img src="./images/bus.jpg">
+
+> Resumindo:
+>
+>Barramento é um conjunto de fios que têm por função transportar sinais de informação e sinais de controle e comunicação entre os componentes interligados. Famosamente conhecido como o soquete da placa.
+
+Portanto, podemos edificar que o barramento é um conjunto de fios que têm por função transportar **sinais de informação** e **sinais de controle e comunicação** entre os componentes interligados.
+
+Dentro dos barramentos teremos vários tipos, mas retrataremos alguns mais importantes:
+
+1. Barramento de Dados (BD)
+    - São bidirecionais, transportam bits de dados entre o processador e outro componente, vice-versa.
+
+2. Barramento de Endereços (BE)
+    - São unidirecionais, transportam bits de um endereço de acesso de memória ou de um dispositivo de E/S, do processador para o controlador do barramento.
+    - Podemos calcular também a largura de um barramento de endereço, que consiste em 22 bits
+
+3. Barramento de Controle (BC)
+    - Possuem fios que enviam sinais específicos de controle e comunicação durante uma determinada operação, sendo então um programa sendo utilizado no momento ele é responsável por garantir que os dados que trafegam dentro do processador e entre a memória, ocorra de maneira correta.
+    
+
+A soma dos fios do BC, do BD e do BE é igual ao total de pinos do processador ou total de furos do soquete, ou seja: Totalpinos = BD + BE + BC.
+
+Em uma operação de transferência ou acesso seja para leitura ou para escrita, exemplificado na (figura A), o barramento é único, embora dividido em grupos de fios que realizam funções diferentes (figura B):
+
+<img src="./images/transfer_operation.jpg">
+
+> Operação de Transferência
+
+Se o processador precisar de um dado específico ao longo da execução de uma instrução, ele saberá o endereço dele, que, por exemplo, é o endereço 37 em decimal, 0000100101 em binário [com o barramento de endereços (BE) possuindo 10 fios]. Ao acessar o endereço especificado através do barramento de endereços, o processador, então, realizará uma operação de leitura, transferindo o dado, por exemplo, 7510, que se encontra no interior da célula de memória, pelo barramento de dados (BD). O barramento de controle (BC) será responsável pelos sinais de controle (exemplificados a seguir).
+
+Após o dado chegar ao processador e ser processado, um dado resultante desse processamento poderá agora seguir pelo BD, para ser armazenado em um endereço de memória, em uma operação denominada operação de escrita. O exemplo aqui descrito encontra-se ilustrado na figura a seguir:
+
+
+<img src="./images/Operation_BE_BD_BC.jpg">
+
+--- 
+
+### 📍 Funções básicas dos Processadores 
+
+Apenas retratando as funções básicas do processadores, eles são projetados com a capacidade de realizar diretamente no hardware pequenas e primitivas operações, como por exemplo executar operações aritméticas, sendo elas somas, subtrações, divisões e multiplicações, apenas reforçando, suas funcionalidades básicas são:
+
+- Executar operações aritméticas com 2 números (somar, subtrair, multiplicar, dividir)
+- Mover um número (dado) de um local para outro
+- Mover um número (dado) de dispositivo de entrada ou de saída
+- Desviar a sequência de controle
+
+A execução de um comando em linguagem de alto nível (por exemplo, Pascal), como X = A + B requer, primeiro, sua conversão para instruções de máquina e, em seguida, sua execução propriamente dita (figura), ou seja, somar o valor indicado por A com o valor indicado por B e armazenar o resultado no local indicado por A.
+
+<img src="./images/programming_example.jpg">
+
+> Uma mesma instrução em linguagens diferentes.
+
+Então os processadores interpretam oque fazer como por exemplo qual a operação requisitada e executa, como fazer.
+
+Uma instrução de máquina consiste no conjunto de bits que identifica uma determinada operação primitiva a ser realizada diretamente pelo hardware, por exemplo, 1001 00111 00001.
+
+Podemos citar como exemplos de operações primitivas:
+
+- Operações aritméticas– Somar, subtrair, multiplicar e dividir;
+- Operações lógicas– AND, OR, XOR;
+- Operações de entrada e saída de dados;
+- Operações de desvio de controle;
+- Operações de movimentação de dados.
+
+### ➜ Ciclo de Instruções
+
+Você sabe a diferença entre conjunto de instrução e ciclo de instrução?
+
+Conjunto de instruções são todas as possíveis instruções que podem ser interpretadas e executadas por um processador. Por exemplo, o Intel 8080 tinha 78 instruções de máquina, o Pentium 4 tinha 247;
+
+Ciclo de instruções é um conjunto de instruções de máquina sequencialmente organizadas para a execução de um programa.
+
+<img src="./images/introdution_circle.jpg">
+
+> Ciclo de Introdução
+
+O formato básico de uma instrução de máquina é constituído de duas partes. Vamos conferir!
+
+Código de operação (C.Op.): Identificação da operação a ser realizada.
+Operando(s) (Op.): Pode ter 1, 2 ou 3.
+
+<img src="./images/introdution_circle_2.jpg">
+
+> Introduções de máquinas com um dois e três operando.
+
+### 📍 Aprofudamento dos Processadores 
+
+Enterdemos quais as funções básicas e primitivas do processador, entretanto, entederemos como ele de fato funciona dentro do nosso sistema. Primeiramente, a Unidade de Processamento (UCP) possui basicamente duas funções principais, sendo elas:
+
+- Função de Processamento
+    - Responsável pelo processamento dos dados referentes as requisições dos clientes
+    - São constistuidas pelo **Registradores de Dados** que cuidará de gravar os dados para assim serem processados
+
+- Função de Controle
+    - É a parte funcional que realiza as atividades de buscar a instrução; interpretar as ações; gerar os sinais de controle para ativar as atividades requeridas (dentro ou fora do processador).
+    - Quando trabalhamos enviando requisições para o processador estamos lidando com bits sendo encaminhados que precisam ser decodificados para o funcionamento, para tanto, existe o **Decodificador de instrução**, que vai interpretar a o pedido dos bits
+    
+### 📍 Memórias
+
+A memória é um sistema constituído de vários componentes, cada um com velocidades, custos e capacidades diferentes. Todos, no entanto, com mesma função – armazenar e recuperar valores, quando desejado.
+
+Existem diferentes tipos de memória, para diferentes finalidades, no que é conhecido como **hierarquia de memórias**:
+
+- Registradores;
+- Memória cache;
+- Memória principal (RAM);
+- Memória secundária (HD e SSD);
+- Memória virtual.
+
+### ➜ Registradores
+
+Os registradores são memórias com as características do topo da pirâmide, localizadas dentro do processador, ou seja, acabam sendo os primeiros a ter contato com os dados que serão processados na UCP, visto que, ela está mais próxima dele e que a distância menor comparada as outras memórias faz o registrador ser mais rápido.
+
+1. Registradores de Dados
+    - Armazenam os dados que serão processados pelas unidades de cálculo, separados em unidades para números inteiros e números de ponto flutuante.
+
+2. Registrador de Dados de Memória - RDM (Memoru Buffer Registrer - MBR)
+    - Para transferências externas de dados.
+
+3. Registrador de Endereço - REM (Memory Address Register - MAR)
+    - Para transferências externas de endereços de memória.
+
+4. Contador de Intrução ou Contador de Programa - CI (Program Counter - PC)
+    - Para buscar a próxima instrução.
+
+5. Registrador de Intrução - RI (Instruction Register - IR)
+    - Armazena instrução.
+
+6. Segmentos
+    - Para armazenar endereços de Segmentos [apontam para determinados segmentos (programa, dados, pilha, etc.)].
+
+7. Flags
+    - Podem ser usadas para indicar o resultado de certas instruções.
+
+### ➜ Princípio da localidade
+
+O princípio da localidade é um princípio de programação que determina o modo de como as instruções são executadas (em sequência, durante certo tempo), ele, os programas são organizados de modo que as linhas de código costumam ser executadas em sequência. Apenas em alguns momentos a sequência é interrompida e o processo desvia da sequência, sendo esta retomada em seguida.
+
+Utilizado principalmente nesse sistema de memórias, devido a localidade que cada componente de memória, que estão mais próximos nessas ordem:
+
+1. Registradores
+2. Memória Cache
+3. Memória Principal
+
+Portanto, quanto mais próximo do processador, mais rápido teremos uma resposta.
+
+<img src="./images/principle_of_locality.jpg">
+
+### ➜ Memória Cache
+
+A memória cache é uma memória de pequena capacidade, situada entre a memória principal (MP) e o processador. Essa memória armazena certa quantidade dos dados que estão sendo utilizados no momento, e que são transferidos para o processador em alta velocidade.
+
+Explicando para um exemplo mais relacionado ao cotidiano, seria todos os dados que são rodados a partir de um acesso a um determinado programa, mas ele cria alguns dados tempórarios que são usualmente utlizados, como: navegadores, calculadoras, jogos... Resultando assim, em dados que já são "gravados" para assim que usamos novamente os aplicativos, parte do seu processamento já esteja encaminhado.
+
+> Você deve está se perguntando por que existe diversas memórias, para exemplificar melhor:
+>
+>1. Tempo de Acesso muito curto (semelhante ao processador)
+    - Estamos falando em uma placa que pode ser considerada pequena, mas para o processador que está funcionando calculando e realizando requisições em questões de nanosegundos, é preciso que o tempo de reação das memórias seja rápido igual, para tanto, existem diversas memórias, que estão localizadas em áreas diferentes, então as diversas memórias, servem para sanar a questão do distaciamento.
+>
+>2. Grande Capacidade de Armazenamento
+    - Com os HD e até mesmo os SSD's é capaz de armazenas muitos gigabytes de dados
+>
+>3. Armazenamento Permamente (Não Volátil)
+    - Diferentemente das memórias principais, é preciso ter um HD ou SSD's, para aqueles clientes que querem armazenar dados, mas sem a memória principal, não é possível o tratamento desses dados, portanto, todas possuem sua função.
+>
+>4. Baixo Custo
+
+Como, em termos práticos, hoje ainda não é possível a existência desse tipo de memória, faz-se necessária a adoção de soluções mais viáveis para compensar a diferença de velocidades que existe entre o processador e a Memória Principal.
+
+A figura ao lado ilustra a comparação de velocidades que existem entre o processador e a MP (apenas processador e MP).
+
+<img src="./images/Comparison_of_speeds.jpg">
+
+Há uma grande diferença de tempo entre a transferência da MP para o processador e este usar os dados. No exemplo, o processador gasta 2 nanosegundos para somar e espera 100 nanosegundos para receber novos dados.
+
+<img src="./images/Speed_comparison.jpg">
+
+### ➜ Memória Principal
+
+A memória principal (MP) é a memória básica, na qual o programa que será executado e seus dados são armazenados, para que o processador busque cada instrução ao longo do tempo de processamento. 
+
+Memórias muito antigas usavam o método de acesso sequencial, em que o endereço de cada acesso era sempre relativo ao endereço inicial. Exemplo de acesso sequencial é o dos sistemas VHS (videocassete) e das fitas magnéticas.
+
+> Em 1968, um cientista da IBM criou uma memória constituída apenas de componentes eletrônicos e cujo acesso dependia apenas de seu endereço, sendo independente dos demais. Por isso, ele chamou-a de memória de acesso aleatório ou RAM (Ramdom-Access Memory). Estas memórias (logo chamadas de DRAM, cujo D vem da palavra dinâmica) passaram progressivamente a ser o tipo usado para acesso pelo processador e, daí, tornaram-se a memória principal de praticamente todos os sistemas de computação.
+
+A memória é organizada como um conjunto de N partes iguais, com cada parte possuindo um conteúdo fixo de M bits.
+
+O valor de M depende do tipo de memória. Usualmente é 8 bits (1 Byte) nas memórias RAM, mas existem valores maiores para outras memórias.
+
+<img src="./images/ram_sizes.jpg">
+
+Cada parte (chama-se célula ou, em alguns casos, palavra nas memórias RAM, linha nas memórias cache, setor nos HDs etc.) é identificada por um número, chamado endereço. Todos os N endereços têm mesma largura de endereço, de E bits. Vejamos um breve exemplo.
+
+> Exemplo:
+>
+> Para o endereço 1011101, a largura de endereço E será 7 bits.
+
+Uma memória com N partes também possui N endereços. O cálculo de N no endereçamento pode ser realizado da seguinte maneira:
+
+<img src="./images/sum_ram.png">
+
+Onde:
+</br>
+E = Largura de cada endereço;
+</br>
+N = Quantidade de endereços (partes endereçáveis).
+
+> Exemplo: 
+>
+> Se a largura de endereços é igual a 6 bits, a quantidade de endereços N será: 26 = 64 endereços
+
+Esta figura esquematiza simplificadamente os termos apresentados anteriormente:
+
+<img src="./images/Organization_Memory.jpg">
+
+> Organização básica de uma memória.
+
+As memórias RAM são constituídas de dois tipos:
+
+1. SRAM (Static Random-Acess Memory)
+    - Cada bit é constituído de 5 a 7 transístores;
+    - Não requer recarregamento, sendo, por isso, mais rápidas, mas ocupam mais espaço e são mais caras;
+    - Usadas como memória cache.
+
+2. DRAM (Dynamic Random-Acesso Memory)
+    - Cada bit é constituído por 1 capacitor e 1 transístor;
+    - O capacitor serve para representar o valor do bit e o transístor para ser usado nas leituras/escritas;
+    - Como o capacitor se descarrega, é preciso recarregar periodicamente (sinal de refresh – gasta tempo);
+    - Usadas como memória principal.
+        - Dentro das Memorias Dinâmicas teremos ainda dois tipos:
+            - **Memórias Dinâmicas Assíncronas:**
+                - Não são sincronizadas com o processador, por exemplo, Dynamic RAM (DRAM), Fast Page Mode (FPM), Extended Data Out DRAM (EDO), Burst Extended Data Out DRAM (BEDO).
+            - **Memórias Dinâmicas Síncronas:**
+                - Sincronizadas com o processador, evitam que o processador espere os dados, por exemplo, Synchronous DRAM (SDRAM), Double Data Rate (DDR), Double Data Rate 2 (DDR2).
+
+> Hoje em dia, é comum o uso de memórias DDR SDRAM, pois as memórias Single Data Rate (SDRAM) só transferem dados na subida do sinal de clock; Já as memórias Double Data Rate (DDR-SDRAM) transferem dados na subida e na descida do sinal de clock, dobrando a taxa de transferência de dados (data rate); Assim, uma memória DDR-SDRAM operando num clock de 100MHz (real) consegue desempenho equivalente a 200MHz (efetivo).
+
+Também existe a classificação quanto ao tipo de encapsulamento das memórias (formatos dos módulos):
+
+1. SIMM (Single In Line Memory Module)
+    - O contato elétrico de um lado é igual ao do outro lado.
+
+2. DIMM (Dual In Line Memory Module)
+    - Os contatos dos dois lados são independentes.
+
+### ➜ Memória Secundária
+
+Terminando a pirâmide da hierarquia de memória, a memória secundária objetiva o armazenamento persistente aos programas de usuário e seus dados, pois até o momento nenhuma memória ficou responsável pelo armazenamento de dados de forma permamente, além de serem dados com um grande volume, ou seja, não são voláteis.
+
+Vale ressaltar que memórias secundárias não são somente os HD's e SSD's, mas também se enquadram:
+
+- PenDrive
+- Cartões de Memória (SD, MicroSD)
+- CD/DVD/BluRay
+- HD Externo
+
+Todo componente que possa guardar dados de forma não volátil
+
+---
+
+Finalizando, para os tipos de memória da hierarquia, podem ser exemplificados alguns parâmetros de análise, conforme exibido na tabela:
+
+
+|                              | Registrador(es) | Cache L1       | Cache L2      | Memória principal (RAM)             | Memória secundária                                |
+| ---------------------------- | --------------- | -------------- | ------------- | ----------------------------------- | ------------------------------------------------- | 
+| **Tecnologia de fabricação** | Eletrônica      | Eletrônica     | Eletrônica    | Eletrônica                          | Várias tecnologias (ótica, magnética, eletrônica) |
+| **Volatilidade**             | Volátil         | Volátil        | Volátil       | Volátil (parte é não volátil ‒ ROM) | Não volátil                                       |
+| **Tempo de acesso**          | Ex.: 1 a 2ns    | Ex.: 2 a 6ns   | Ex.: 2 a 6ns  | Ex.: 5 a 10ns                       | Ex.: de 8ns até alguns segundos                   |
+| **Capacidade**               | 32 ou 64 bits   | 8KB, 256KB, ...| 2MB, 8MB, ... | 4GB, 8GB, 12GB, 32GB, ...           | Depende da mídia (500GB, 1TB, 5TB)                |
+
+A sequência de transferência de dados realizada entre o processador e as memórias em um sistema computacional é hierárquica, conforme mostrado na imagem a seguir.
+
+Ou seja, grosso modo, em uma operação de leitura, o processador:
+
+1. Irá verificar primeiro se o dado está localizado na cache L1.
+2. Caso não esteja, verificará se o dado se encontra na cache L2 e L3 (se houver).
+3. Finalmente, irá buscar o dado na memória principal, caso o dado não esteja localizado em nenhuma das memórias cache consultadas.
+
+O mesmo raciocínio pode ser aplicado na operação de escrita, na qual o processador escreverá sempre na cache mais próxima dele, mas o dado precisa estar atualizado na memória principal (RAM) para, em seguida, ser armazenado na memória permanente (HD, por exemplo).
+
+<img src="./images/Different_memory_sizes.jpg">
+
+### 📍 Subsistemas de Entrada e Saída (E/S)
