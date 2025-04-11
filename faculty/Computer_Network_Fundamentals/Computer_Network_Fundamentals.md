@@ -730,3 +730,12 @@ Agora que terminamos a apresentação dos principais protocolos da arquitetura T
 > Inicialmente, os protocolos da camada de aplicação eram concentrados nas aplicações textuais, com um pequeno volume de informação a ser trocado, como o Serviço Web criado por Sir Tim Berners-Lee (físico britânico, cientista da computação e professor do MIT. É o criador da World Wide Web (WWW)), com foco em páginas textuais para troca de informações entre os centros de pesquisa.
 >
 > Atualmente, os protocolos evoluíram significativamente para oferecer maior qualidade de serviço, suporte ao tráfego de vídeo, segurança, transações financeiras, entre outros. Falando novamente do serviço Web, o protocolo https:// evoluiu de um protocolo textual para binário, a fim de dar suporte aos diversos usos do serviço Web, como assistir a vídeos, CRMs, ERPs, entre muitos outros sistemas complexos.
+
+</br>
+
+---
+### Passando para o Módulo 03
+---
+</br>
+
+# Camadas de Aplicação e Transporte

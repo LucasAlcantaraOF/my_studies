@@ -832,3 +832,13 @@ O mesmo raciocínio pode ser aplicado na operação de escrita, na qual o proces
 <img src="./images/Different_memory_sizes.jpg">
 
 ### 📍 Subsistemas de Entrada e Saída (E/S)
+
+O subsistema de entrada e saída (E/S) tem por função interligar o mundo exterior (o nosso mundo) ao mundo interior (processador-memória). Os dispositivos de entrada e saída também são chamados periféricos, pois estão na periferia do núcleo processador/memória principal.
+
+São funções do subsistema de E/S:
+
+1. Receber ou enviar informações do/para o meio exterior.
+2. Converter as informações (de entrada ou de saída) em uma forma inteligível para a máquina (se estiver recebendo) ou para o operador (estar enviando).
+
+### ➜ Interface
+

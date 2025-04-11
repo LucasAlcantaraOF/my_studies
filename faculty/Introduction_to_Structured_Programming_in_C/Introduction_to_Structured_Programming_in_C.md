@@ -45,7 +45,7 @@ __Lógica:__
 
 Declarado na lingua portuguesa como modo de raciocinar de forma coerente e mais produtiva possível, ou seja, o ato de pensar e desenvolver essa lógica para constituir uma ação com uma finalidade que ocasionara em um resultado com maior qualidade possível. Caso não esteja tão claro tentarei exemplificar melhor:
 
-> Digamos que você trabalha no setor de matriculas de novos alunos da faculdade Estacio - Via Corpus, e precisa fazer o cadastro de um novo aluno no curso de Sistemas de Informação, mas o computador nesse momento está indisponível e você terá que realizar tudo a mão. Sempre mantendo a ideia de agilidade e organização para armazenar dados importantes.
+> Digamos que você trabalha no setor de matriculas de novos alunos da faculdade Estácio - Via Corpus, e precisa fazer o cadastro de um novo aluno no curso de Sistemas de Informação, mas o computador nesse momento está indisponível e você terá que realizar tudo a mão. Sempre mantendo a ideia de agilidade e organização para armazenar dados importantes.
 </br>
 </br>
 1 - Primeiro você irá destinar um espaço somente para anotar esses dados, que por enquanto será uma folha;
@@ -142,7 +142,7 @@ Esse é um exemplo de algumas perguntas que são padrões no momento que estiver
 
 Vamos demonstrar como seria esse fluxograma de forma prática agora, reutilizando a ideia de uma interface que possui cadastro:
 
-<img  src="./images/flow_request.png">
+<img src="./images/flow_request.png">
 
 > Site: Miro.com.br
 
@@ -153,7 +153,7 @@ Vamos demonstrar como seria esse fluxograma de forma prática agora, reutilizand
 
 Antes de utilizarmos a linguagem C realmente, precisamos entender algumas definições importantes para facilitar o entendimento de como a programação funciona, para tanto, vamos compreender qual o significado de **algoritmo** e **portugol**, respectivamente.
 
-### Algoritmos:
+### 📍 Algoritmos:
 
 A ideia de algoritmo é muito antiga e foi bastante discutida entre matemáticos e filósofos que vislumbravam, no século XVII, máquinas universais de calcular e estranhas linguagens simbólicas para representar ideias complexas por meio de sinais convencionais. A matemática clássica é, em grande parte, o estudo de determinados algoritmos que são manipulados por meio de regras práticas, como uma receita, um guia. Isso acontece na álgebra elementar, que substitui os números por letras e define um conjunto de símbolos.
 
@@ -170,7 +170,7 @@ Existem diversos tipos de algoritmos utilizados na computação e o que difere u
 3. Pseudocódigo 
 4. Fluxograma 
 
-### Descrição Narrativa (Linguagem Textual):
+### 📍 Descrição Narrativa (Linguagem Textual):
 
 > A mais simples de entender, visto que utilizamos o a linguagem natural, ou seja, nosso idioma para criar uma lógica
 
@@ -188,16 +188,15 @@ A descrição narrativa utiliza linguagem natural para especificar os passos da 
 9. Fim
 ```
 
-### Diagrama de Chapin
+### 📍 Diagrama de Chapin
 
 O diagrama de Chapin, também conhecido como diagrama Nassi-Shneiderman ou diagrama N-S, apresenta a solução do problema por meio de um diagrama de quadros com uma visão hierárquica e estruturada. Esse tipo de diagrama não é muito utilizado, pois é difícil representar alguns procedimentos
 
 <img src="./images/chapin.png">
 
-### Pseudocódigo 
+### 📍 Pseudocódigo 
 
 > A mais próxima dos códigos de programação, já que utilizamos um estilo de sintaxe similar as linguagens de programação.
-
 
 O pseudocódigo é uma forma de representação de algoritmos que utiliza uma linguagem flexível, intermediária entre a linguagem natural e a linguagem de programação. É utilizado para organizar o raciocínio lógico a ser seguido para a resolução de um problema ou para definir os passos para a execução de uma tarefa. 
 
@@ -222,36 +221,6 @@ Esse nome se deve à proximidade que existe entre um algoritmo escrito em pseudo
 ```
 Todo algoritmo representado por um pseudocódigo deve, primeiramente, ser identificado, como aparece na linha 1 do Exemplo 2.3. 
 
-> ### Linguagem de baixo nível:
->
-> Definição: São linguagens que têm uma abstração muito próxima do hardware. Elas fornecem pouco ou nenhum controle automático de recursos e dependem de detalhes específicos da arquitetura do computador, como registros, memória e instruções da CPU.
-> Exemplos: Assembly, Linguagem de Máquina, C.
->
-> **Características:**
->
->1. Mais difíceis de aprender e usar.
->
->2. Maior controle sobre os recursos de hardware.
->
->3. Normalmente mais rápidas e eficientes, pois o código gerado é muito próximo das instruções da máquina.
->
->4. O programador precisa gerenciar detalhes como alocação de memória, registros e instruções específicas.
-
-> ### Linguagem de alto nível:
->
-> Definição: São linguagens que oferecem maior abstração, tornando a programação mais fácil e intuitiva, ao ocultar detalhes complexos do hardware. O foco está em tarefas mais complexas e na produtividade do desenvolvedor.
-> Exemplos: Python, Java, JavaScript, C++, Ruby.
-> 
-> **Características:**
->
->1. Mais fáceis de aprender e usar, pois têm uma sintaxe mais próxima da linguagem humana.
->
->2. O programador não precisa se preocupar com os detalhes do hardware, como gerenciamento de memória e registros.
->
->3. Normalmente mais lentas em termos de execução, pois o código precisa ser interpretado ou compilado para se adaptar à arquitetura do sistema.
->
->4. Mais eficientes para desenvolvimento rápido de aplicativos, sistemas complexos e interativos.
-
 1. Variáveis: 
     - Todas as variáveis que serão utilizadas na resolução do problema devem ser previamente declaradas, isto é, todas as informações necessárias à resolução do problema devem ser representadas. 
     - No exemplo anterior, a palavra reservada Var indica a área para declaração das variáveis e, na linha 3, as variáveis a e b são declaradas.
@@ -267,7 +236,7 @@ Todo algoritmo representado por um pseudocódigo deve, primeiramente, ser identi
     a exibição dos resultados.
     
 
-### Fluxograma:
+### 📍 Fluxograma:
 
 > A mais difundida e compreendida mundialmente, já que foi estabelecido um padrão para os fluxogramas, portanto, é entendida por qualquer projetista.
 
@@ -276,56 +245,253 @@ O fluxograma é um tipo de algoritmo que se utiliza de símbolos gráficos para 
 É utilizado para organizar o raciocínio lógico a ser seguido para a resolução de um problema ou para definir os passos para a execução de uma tarefa. O fluxograma, por utilizar figuras para representação das ações, é considerado um algoritmo universal.
 Cada instrução ou ação a ser executada deve ser representada por meio de um símbolo gráfico (Simbologia).
 
-<img src="./assets/images/flowchart_1.png">
+<img src="./images/flowchart_1.png">
 
-<img src="./assets/images/flowchart_2.png">
+<img src="./images/flowchart_2.png">
 
+---
+### Passando para o módulo 02
+---
 
+# <img align="center" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" /> Programação em C
 
+Estudaremos a fundo agora como a sintaxe e todo o processo de desenvolvimento de fato na linguagem C funciona. Entretanto, antes iremos retratar algumas definições padrões de todas as linguagens de programação, que seria: **estrutura básica, variáveis, tipos de dados, entrada e saídas, expressões e operadores**.
 
+### 📍 Estrutura Básica
 
+```c
+#include <stdio.h> // Adicionado a biblioteca padrão e simples que irá atender as requisições de algoritmos simples.
 
+int main () { // Identifica a área o inicio do código
 
+    // Colocaremos a variáveis e o próprio algoritmo dentro desse escopo
 
+} // Simboliza o fim da área de código
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 
 
+> ### 📍 Linguagem de baixo nível:
+>
+> Definição: São linguagens que têm uma abstração muito próxima do hardware. Elas fornecem pouco ou nenhum controle automático de recursos e dependem de detalhes específicos da arquitetura do computador, como registros, memória e instruções da CPU.
+> Exemplos: Assembly, Linguagem de Máquina, C.
+>
+> **Características:**
+>
+>1. Mais difíceis de aprender e usar.
+>
+>2. Maior controle sobre os recursos de hardware.
+>
+>3. Normalmente mais rápidas e eficientes, pois o código gerado é muito próximo das instruções da máquina.
+>
+>4. O programador precisa gerenciar detalhes como alocação de memória, registros e instruções específicas.
+
+> ### 📍 Linguagem de alto nível:
+>
+> Definição: São linguagens que oferecem maior abstração, tornando a programação mais fácil e intuitiva, ao ocultar detalhes complexos do hardware. O foco está em tarefas mais complexas e na produtividade do desenvolvedor.
+> Exemplos: Python, Java, JavaScript, C++, Ruby.
+> 
+> **Características:**
+>
+>1. Mais fáceis de aprender e usar, pois têm uma sintaxe mais próxima da linguagem humana.
+>
+>2. O programador não precisa se preocupar com os detalhes do hardware, como gerenciamento de memória e registros.
+>
+>3. Normalmente mais lentas em termos de execução, pois o código precisa ser interpretado ou compilado para se adaptar à arquitetura do sistema.
+>
+>4. Mais eficientes para desenvolvimento rápido de aplicativos, sistemas complexos e interativos.
+
+### 📍 Variáveis e Tipos de Dados
+
+Variáveis são espaços na memória do computador que usamos para armazenar informações temporariamente enquanto um programa está em execução. Elas funcionam como uma espécie de "caixa" onde guardamos valores que podem ser usados e alterados durante a execução do programa.
+
+Cada linguagem de programação possui um modelo declaração de variáveis, mas como o foco dos nossos estudos é a linguagem C, aprenderemos como declaramos variáveis na sintaxe proposta e os tipos de dados referentes:
+
+```c
+char "Caractere"
+// Qualquer caractere
+int Inteiros
+// Números inteiros, positivos e negativos (...-13, -6, -2, 0, 4, 7, 16...)
+float Reais
+// Números reais, positivos, negativos e fracionados (...-15.53, -4.31, -2, 0, 0.14, 3.31, 5, 7.98...)
+double Reais_Cientificos
+// Números reais, positivos, negativos e fracionados científicos (PI = 3,1415926535897932384626...), valores enormes
+````
+
+> Vamos ressaltar que eles servem para armazenar informações temporárias, ou seja, são voláteis e assim que a aplicação é encerrada, todos os dados que não foram destinados a serem guardados, serão perdidos.
+>
+> Iremos futuramente retratar melhor como funciona a ligação das linguagens de programação, juntamente, com os Banco de Dados, que serão responsáveis por armazenar os dados de forma integral.
+
+Uma variável possui: nome, tipo e conteúdo e existem algumas regras sobre como fazemos oque chamamos de **declaração de variável**, que consiste em criar variáveis. Para tanto, utilizaremos os ensinamentos de Robert.C. Martin que escreveu o famoso livro "Código Limpo".
+
+1. **Nomenclatura**: Os nomes da variáveis devem ser claras e descritivas, não é recomendado usar de abreviações e nem do que conhecemos na lingua portuguesa de "gírias". Finalizando, o mais importante é que uma variável é única, não pode possuir nenhuma que tenha a nomenclatura igual, paralelamente, é proibido utilizar qualquer acento na sua nomenclatura.
+
+```c
+char acadll
+char acadhr
+// Exemplos de variáveis ruins, pois consistem em abreviações que não são claras e não seguem uma conduta adequada
+```
+```c
+char Academia_Local, /*ou*/ AcademiaLocal
+char Academia_Horario, /*ou*/ AcademiaHorario
+// Exemplos de variáveis boas, que são descritivas, explicam o que se espera dessas variáveis e não conta com algum tipo de abreviação
+```
+
+> A linguagem C foi desenvolvida seguindo um sistema de **case sensitive**, que consiste em ser sensível as letras maiúsculas e minúsculas, portanto:
+>
+> perfil, Perfil e PERFIL são completamente diferentes paras as variáveis.
+
+2. **Variáveis Inúteis**: É comum por falta de atenção criamos variáveis que não possuem alguma funcionalidade de fato, é sempre preciso rememorar que as variáveis acabam alocando memória do nosso software sem alguma função.
+
+```c
+int a = 5;
+int b = 4;
+int sum:
+
+sum = a + b;
+return 0;
+// Criamos uma variável que não possui uma função realmente útil.
+```
+
+```c
+int a = 5;
+int b = 4;
+
+return a + b;
+// Podemos retornar o valor dessa soma que não precisaria de fato de uma variável para ser desenvolvida.
+```
+
+3. **Variáveis inexistentes e valores mágicos**: É comum enquanto estamos desenvolvendo, construímos algumas "gambiarras" no nosso código, para evitar trabalhos mais complexos ou até tediosos no meio do nosso desenvolvimento
+
+```c
+int Salario_Mensal = 1.235;
+
+return Salario_Mensal + 1000;
+// O acrescimo ao Salario_Mensal seria uma bonificação mensal que os funcionários irão receber.
+```
+```c
+int Salario_mensal = 1.235;
+int Bonus_Mensal = 1000;
+
+return Salario_Mensal + Bonus_Mensal;
+// Temos a soma do Salario_mensal mais o Bonus_Mensal que consiste uma variável que será utilizada
+```
+
+- Muito importante essa conduta para desenvolvedores que trabalhem em uma equipe de T.I, visto que assim fica claro qual o sentindo desse acréscimo de 1000 que antes não havia uma variável para exemplificar da onde viria esse valor, e criando a variável fica mais evidente de ondem vem esse valor.
+
+### 📍 Entradas e Saídas
+
+Outro conceito comum em qualquer linguagem de programação seria a sintaxe de entrada e saídas de dados, para tanto, na linguagem C iremos compreender como essa sintaxe se organiza.
+
+### ➜ Saídas
+
+Quando queremos escrever dados formatados na tela usando a forma geral de função, a qual possui os tipos de saídas, utiliza-se oque chamamos de ```printf("")```, que consiste em um comando de sintaxe de expôs os dados que o desenvolvedor gostaria de mostrar para o usuário, por exemplo:
+
+```c
+#include <stdio.h>
+
+int main () {
+
+    printf("Seja bem vindo(a) ao material de desenvolvimento em C") // O console retornaria a frase que está dentro dos ("")
+
+}
+```
+
+Assim funciona a sintaxe básica de saídas de dados, demonstrando como colocamos uma frase simples para visualização, mas dentro do nosso código trabalhamos com variáveis e outros tipos de dados, mas focaremos no momento na saída dos valores das variáveis, que possuem certas formatações para podermos ter o resultado esperado
 
 
+| Elementos      | Função                                                         |
+| -------------- | -------------------------------------------------------------- |
+| ```%c```       | Escrita de um caractere ```char```                             |
+| ```%d ou %i``` | Escrita de números ```int```                                   |
+| ```%f```       | Escrita de números reais com flutuação (```float ou double```) |
+| -------------- | -------------------------------------------------------------- |
+| ```%s```       | Escrita de vários caracteres                                   |
+| ```%p```       | Escrita de um endereço de memória                              |
+| ```%e ou %E``` | Escrita em notação científica                                  |
 
+Tratando-se com variáveis precisamos utilizar os elementos acima, exemplificando de forma prática, teria-mos isso da seguinte maneira:
 
+```c
+#include <stdio.h>
 
+int main () {
 
+    char Name = "Lucas";
+    int Idade = 19;
+    float Salario_Hora = 23.75;
 
+    printf("%c é o usuário que possui %i e ganha R$ %f por hora", Name, Idade, Salario_Hora); // O console retornaria: "Lucas é o usuário que possui 19 anos e ganha R$ 23.75 por hora"
 
+}
 
+```
 
+> Algo importante a ressaltar seria essa interpolação de variáveis que foi utilizado, visto que, colocamos somente os elementos para identificar o tipo de variável que ficaria naquela parte do ```printf("")```, e depois colocamos as variáveis na mesma ordem.
+ 
+### ➜ Entradas
 
+Outra sintaxe comumente utilizada em qualquer linguagem de programação seria o comando de entrada, que consiste em um código responsável por receber um valor dado pelo usuário. Dentro da linguagem C seria o ```scanf("")```.
 
-## Tipos de Dados, Expressões, Operadores e Tabela Verdade
+Também utilizaremos os elementos referentes a sintaxe da linguagem C e acompanharemos as variáveis antecedendo do E comercial (&). Primeiramente, só para reforçar nesse momento, segue os elementos da sintaxe de variáveis:
+
+| Elementos      | Função                                                         |
+| -------------- | -------------------------------------------------------------- |
+| ```%c```       | Escrita de um caractere ```char```                             |
+| ```%d ou %i``` | Escrita de números ```int```                                   |
+| ```%f```       | Escrita de números reais com flutuação (```float ou double```) |
+
+Exemplificando:
+
+```c
+
+int main () {
+
+    char Name;
+    int Idade;
+    float Salario_Hora;
+
+    printf("Qual seu nome?");
+        scanf("%c" &Name);
+
+    printf("Qual sua idade?");
+        scanf("%d" &Idade);
+        
+    printf("Qual seu Salario por hora?");
+        scanf("%f" &Salario_Hora);
+
+}
+
+```
+
+### 📍 Expressões e Operadores Aritméticos
+
+As expressões e operadores aritméticas básicas seriam:
+
+1. Soma (+)
+2. Subtração (-)
+3. Multiplicação (*)
+4. Divisão (/)
+
+| Operações Matemáticas | Simbolo Utilizado |
+| --------------------- | ----------------- |
+| Maior                 | >                 |
+| Menor                 | <                 |
+| Maior ou Igual        | <=                |
+| Menor ou Igual        | >=                |
+| Igualdade             | ==                |
+| Desigualdade          | !=                |
 
 ---
 
 ### 📌 Considerações Finais:
 
-Esse material todo se baseando no sistema de ensino da Estacio - Via Corpus (Fortaleza-CE), sendo uma parte anotado a partir das explicações da professora e coordenadora: Danielle Amorim e outra tirada dos matérias de estudo do SAVA.
+Esse material todo se baseando no sistema de ensino da Estacio - Via Corpus (Fortaleza-CE), sendo uma parte anotado a partir das explicações da professora e coordenadora: Danielle Amorim e outra tirada dos matérias de estudo do SAVA, sistema de estudos da própria Estacio.
 
-Algumas Fontes:
+Algumas Fontes de Matérias Extras:
 
 > BRACKMANN, C. P. Desenvolvimento do pensamento computacional através de atividades desplugadas na educação básica. Tese (Doutorado em Informática na Educação) - Universidade Federal do Rio Grande do Sul, Porto Alegre, 2017.
 
 > GROVER, S.; PEA, R. Computational Thinking in K-12: A Review of the State of the Field. Educational Researcher, 2013, v. 42, n. 1, p. 38 - 43.
+
+> MARTIN, Robert. Código Limpo: Habilidades Práticas do Agile Software. São Paulo: Alta Books, 2009.
