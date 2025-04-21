@@ -322,7 +322,7 @@ Dentro da especialização/generalização temos duas classificações important
 
 ### 📍 Projeto Lógico
 
-A partir desse momento, a etapa de projeto lógico objetiva transformar o modelo conceitual obtido na primeira fase em um modelo lógico utilizando um **Diagrama de Tabela (DT)**. O modelo lógico define como o banco de dados será implementado em um SGBD específico, portanto, **nessa fase se importamos com o tipo de SGBD que utilizaremos**, além do mais, nesse ponto do projeto não definiremos as características dos atributos, tais como tipos de dados e tamanho. Basta apenas que eles estejam vinculados às suas tabelas. Ele é projetado com: Tabelas, Colunas e Chaves
+A partir desse momento, a etapa de projeto lógico objetiva transformar o modelo conceitual obtido na primeira fase em um modelo lógico utilizando um **Diagrama de Tabela (DT)**. **A modelagem lógica (MCL)** define como o banco de dados será implementado em um SGBD específico, portanto, **nessa fase se importamos com o tipo de SGBD que utilizaremos**, além do mais, nesse ponto do projeto não definiremos as características dos atributos, tais como tipos de dados e tamanho. Basta apenas que eles estejam vinculados às suas tabelas. Ele é projetado com: Tabelas, Colunas e Chaves
 
 > Existem diversos modelos lógicos, por exemplo:
 >

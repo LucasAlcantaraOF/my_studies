@@ -452,13 +452,13 @@ int main () {
     float Salario_Hora;
 
     printf("Qual seu nome?");
-        scanf("%c" &Name);
+        scanf("%c", &Name);
 
     printf("Qual sua idade?");
-        scanf("%d" &Idade);
+        scanf("%d", &Idade);
         
     printf("Qual seu Salario por hora?");
-        scanf("%f" &Salario_Hora);
+        scanf("%f", &Salario_Hora);
 
 }
 
