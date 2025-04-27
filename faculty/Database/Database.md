@@ -564,14 +564,16 @@ Em geral, deve ser criada uma tabela para a entidade pai e uma tabela para cada 
 <img src="./images/entity_DT_Example_10.png">
 <img src="./images/entity_DT_Example_11.png">
 
-<!--
-**DIAGRAMA PENDENTE**
-
 ### 📍 Projeto Físico
 
 Afinal, na etapa de projeto físico, o modelo do banco de dados é enriquecido com detalhes que influenciam no desempenho do banco de dados, mas não interfere em sua funcionalidade. O modelo obtido neste passo é o modelo físico do banco de dados. Afinal, definimos os detalhes de implementação dos objetos do banco de dados. No caso das tabelas, escolhemos os tipos de dados e tamanho das colunas, e especificamos se elas são opcionais ou obrigatórias.
 
-**DIAGRAMA PENDENTE**
+
+
+
+
+
+<!-->
 
 > ### Desafio da Addiante
 >
