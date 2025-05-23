@@ -482,6 +482,159 @@ As expressões e operadores aritméticas básicas seriam:
 | Igualdade             | ==                |
 | Desigualdade          | !=                |
 
+### 📌 Estruturas Codicionais
+
+Uma estrutura condicional é um recurso de programação usado para tomar decisões no fluxo de execução de um programa. Ela permite que certas partes do código sejam executadas apenas se uma condição específica for verdadeira. Ou seja, serve diretamente para lidarmos com problemas de lógica que precisamos lidar com uma validação e manipulação de dados a partir de condições.
+
+### 📍 Simples (``if``)
+
+Digamos que só trataremos com uma condição simples que só terá um ponto de acesso, podemos tratar essa lógica com o ``if``, para tanto, apresentaremos sua estrutura básica:
+
+```c
+if (condição) {
+    // área de codificação da nossa lógica
+}
+```
+
+Para exemplificar isso, montaremos um simples algoritimo que receberá um valor para uma variavel ``temp`` que trará uma lógica de aceder um LED de aquecimento caso a temperatura for menor ou igual a 30ºc
+
+```c
+#include <stdio.h>
+
+int main () {
+
+    float temp;
+
+    printf(Digite a temperatura ambiente: );
+    scanf("%f", &temp);
+
+    if (tempo >= 30) {  
+        printf("LED de aquecimento acesso!");
+    }
+
+}
+```
+Montamos uma estrutura codicional simples que utiliza da condição de um operador matematico para visualizar o valor de uma variavel e entregar um resultado com printf.
+
+### 📍 Composta (``if`` e ``else``)
+
+Digamos que precisamos lidar com decisões que possuem mais de uma possibilidade de resultado, ou seja, digamos que estamos trabalhando com uma lógica que existe o valor certo, o valor possivelmente certo e o errado, para tratarmos isso, utilizaremos a estrutura codicional mais conhecida como ``if else``. Para tanto, apresentaremos a sua estrutura básica a seguir:
+
+```c
+    if(condição){
+        //área de codificação da nossa lógica
+    } else {
+        //área de codificação da nossa lógica
+    };
+
+/* 
+if = SE
+else = SE NÃO
+*/
+```
+
+Além de tipo de estrutura do if else, que explicando de uma forma mais didática, retrata um condição e caso ela não seja cumprida, encaminhe outro resultado. Mas caso quisermos lidar com uma série de condições em cadeia, podemos utilizar a sintaxe básica a seguir:
+
+```c
+    if(condição){
+        //área de codificação da nossa lógica
+    } else if (condição) {
+        //área de codificação da nossa lógica
+    } else if (condição) {
+        //área de codificação da nossa lógica
+    }`
+```
+
+Exemplificaremos como aplicar essa estrutura codicional composta a partir de um algoritimo que irá verificar as notas de um aluno, fazendo sua média e caso seja maior a 6, estará aprovado, caso sua média esteja entre os valores 4 a 6, estará de recuperação, caso não, foi reprovado.
+
+```c
+#include <stdio.h>
+
+int main () {
+
+    int note1, note2, sum_notes;
+
+    printf("Diga qual foi sua Nota da primeira prova: ");
+    scanf("%d", &note1); 
+    printf("Diga qual foi sua Nota da segunda prova: ");
+    scanf("%d", &note2);
+
+    sum_notes = (note1 + note2) / 2;
+
+    if (sum_notes >= 6) {
+        printf("Voce foi aprovado!");
+    } else if (sum_notes >= 4 && sum_notes <6){
+        printf("Voce esta de recupecao");
+    } else {
+        printf("Voce foi reprovado!");
+    }
+
+    return 0;
+}
+```
+
+### 📍 Multiplas Alternativas (``SWITCH CASE``)
+
+E caso formos trabalhar com uma lógica codicional que possue situações em que há várias possibilidades específicas possam ser verdadeiras, podemos utilizar o ``SWITCH CASE``, que consiste em averiguar varios casos.
+
+```c
+    switch (opcao) {
+        case 1:
+            printf("Você escolheu a opção 1.\n");
+            break;
+        case 2:
+            printf("Você escolheu a opção 2.\n");
+            break;
+        case 3:
+            printf("Você escolheu a opção 3.\n");
+            break;
+        default:
+            printf("Opção inválida!\n");
+            break;
+    }
+```
+
+Exemplifcaremos com uma estrutura de calculadora, teremos a inserção de números e definir que tipo de operador iremos exercer dentro da nossa calculadora.
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+	
+	int number1, number2;
+    char operation
+
+    printf("Insira um valor para o numero A: ");
+    scanf("%d", &number1);
+    printf("Insira um valor para o numero B: ");
+    scanf("%d",  &number2);
+
+    printf("Qual tipo de operacao você gostaria de realizar com os numeros que voce forneceu: (+, -, * ou /)");
+    scanf(" %c", operation)
+
+	switch (operation) {
+		case +:
+            printf("Soma: %d", number1 + number2);
+        break;
+        case -:
+            printf("Subtracao: %d", number1 - number2);
+        break;
+        case *:
+            printf("Multiplicacao: %d", number1 * number2);
+        break;
+        case /:
+            printf("Divisao: %d", number1 / number2);
+        break;
+        default: 
+            printf("Esse operador nao esta na lista!");
+        break;
+	}
+
+	return 0;
+}
+```
+
 ---
 
 ### 📌 Considerações Finais:

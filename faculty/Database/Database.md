@@ -568,18 +568,269 @@ Em geral, deve ser criada uma tabela para a entidade pai e uma tabela para cada 
 
 Afinal, na etapa de projeto físico, o modelo do banco de dados é enriquecido com detalhes que influenciam no desempenho do banco de dados, mas não interfere em sua funcionalidade. O modelo obtido neste passo é o modelo físico do banco de dados. Afinal, definimos os detalhes de implementação dos objetos do banco de dados. No caso das tabelas, escolhemos os tipos de dados e tamanho das colunas, e especificamos se elas são opcionais ou obrigatórias.
 
+## 📌 Tipos de Dados
+
+Antes de criamos nosso Banco de Dados e utilizarmos os nossos comandos SQL, precisamos entender quais os tipos de dados que poderemos ter dentro do nosso Sistema de Banco de Dados.
+
+### ➜ Dados Númericos
+
+``INT``: Números Inteiros (..., -3150, - 1056, 0, 2565, 4821, ...)
+
+``SMALLINT``: Números Inteiros Pequenos (..., -31, -15, -3, 0, 5, 12, 24, ...)
+
+``BIGNINT``: Números Inteiros Grandes (..., -515316, -31532, 0, 54156, 925012)
+
+``DECIMAL``: Números Decimais (..., -23.75, -9.31, 0, 12.53, 31.53)
+
+``FLOAT / REAL / DOUBLE``: Números Decimais mais complexos, como: PI
+
+``MONEY``: Número Monétario
+
+### ➜ Dados de Textos
+
+``CHAR(n)``: Texto de tamanho fixo, sempre ocupa ``n`` caracteres.
+
+``VARCHAR(n)``: Texto de tamanho variado, sempre ocupa ``n`` caracteres.
+
+``TEXT``: Texto longo, geralmente usado para descrições, comentários.
+
+### ➜ Dados de Data e Hora
+
+``DATE``: Armazena data (ano/mês/dia)
+
+``TIME``: Armezena hora (horas:minutos:segundos)
+
+``DATATIME / TIMESTAMP``: Armazena data e hora completa
+
+### ➜ Dados Booleanos
+
+``BOOLEAN``: Valores Booleanos (True or False)
+
+## 📌 Comandos SQL
+
+Agora depois de enterdemos como os Banco de Dados se desenvolveram nos avanços tecnologicos e como ele opera, podemos passar para a parte realmente manual do nosso projeto, que consiste em construir um Banco de Dados de forma prática, utilizando o **Postgress**. Para tanto iniciamos o nosso Banco de Dados...
+
+### 📍 CREATE, INSERT e ALTER
+
+Quando formos de fato construir nossas tabela dentro do SGBD de escolha para o nosso sistema de Banco de Dados, teremos que utilizar os Comandos SQL, para tanto, primeiramente, antes de podermos manipular nossas tabelas, precisamos criar o nosso Banco de Dados, ou ``DATABASE``, e por isso utilizaremos o comando ``CREATE``.
+
+```SQL
+CREATE DATABASE bancodedados
+
+CREATE TABLE tabela (
+    coluna1 tipo_de_dados,
+    coluna2 tipo_de_dados,
+    coluna3 tipo_de_dados,
+    coluna4 tipo_de_dados
+);
+```
+
+Para exemplificar todo esses comandos SQL, utilizaremos uma tabela de exemplo que denominaremos de ``funcionarios`` que receberam os dados referentes a uma lista de contribuintes de uma empresa, para isso, primeiramente, criaremos a ``DATABASE`` da empresa para podermos ter nossas tabelas que receberam os dados.
+
+```SQL
+CREATE DATABASE empresa
+
+CREATE TABLE funcionarios(
+    ID int Primary Key,
+    Nome varchar(30) NOT NULL,
+    Data_de_Nascimento date NOT NULL,
+    Sexo varchar(1) NOT NULL,
+    Cargo varchar(40) NOT NULL,
+    Salario money NOT NULL
+)
+```
+
+Teriamos assim a tabela exemplo sendo montada e representada da seguinte maneira:
+
+| ID       | Nome     | Data de Nascimento | Sexo | Cargo      | Salario |
+| -------- | -------- | ------------------ | ---- | ---------- | ------- |
+| X | X | X | X | X | X
+
+E agora com a nossa tabela construida teremos que inserir dados, para tanto, utilizaremos o comando SQL ``INSERT`` que serve diretamente para acrescentar novos dados dentro da nossa tabela.
+
+``` SQL
+INSERT INTO tabela (coluna1, coluna2, coluna3, coluna4, coluna5, coluna6) 
+VALUES (valor1, valor2, valor3, valor4, valor5, valor6),
+(valor1, valor2, valor3, valor4, valor5, valor6)
+```
+
+Exemplificando isso, teriamo o seguinte comando SQL:
+
+```SQL
+INSERT INTO funcionarios (ID, Nome, DataDeNascimento, Sexo, Cargo, Salario)
+VALUES
+(2022031, 'Claubia', '1987-08-13', 'F', 'Marketing', 2200),
+(2025022, 'Lucas', '2005-06-28', 'M', 'Junior T.I', 4500),
+(2025011, 'Vitoria', '2005-08-24', 'F', 'RH', 3200),
+(2024021, 'Paiva', '1854-03-11', 'M', 'Tech-Lead', 10000),
+(2025023, 'Cleylton', '1984-04-18', 'M', 'Estagiário T.I', 2400),
+(2023011, 'Mara', '1987-10-30', 'F', 'Diretora de RH', 5600);
+```
+
+Teriamos assim, a tabela resultado a seguir:
+
+| ID       | Nome     | Data de Nascimento | Sexo | Cargo      | Salario |
+| -------- | -------- | ------------------ | ---- | ---------- | ------- |
+| 2022031  | Claubia  | 13/08/1987         | F    | Marketing  | 2.200   |
+| 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I | 4.500   |
+| 2025011  | Vitoria  | 24/08/2005         | F    | RH         | 3.200   |
+| 2024021  | Paiva    | 11/03/1854         | M    | Tech-Lead  | 10.000  |
+| 2025023  | Cleylton | 18/04/1984         | M    | Estagiário T.I | 2.400   |
+| 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   |
+
+Além do mais podemos alterar o nome da nossa tabela por meio do comando ``ALTER``
+
+```SQL
+ALTER TABLE nome_tabela TO nome_tabela_nova;
+```
+
+### 📍 DELETE
+
+Agora que criamos uma tabela, precisamos aprender a como deleta-las para tratarmos melhor a manipulação dos nossos dados, primeiramente, aprendermos a apagar toda nossa tabela, é evidente ressaltar que essa medida é muito precisa e precisa se tomar cuidado para lidarmos com esse tipo de coisa, apagando todos os dados
+
+```SQL
+DELETE FROM tabela
+```
+
+Teriamos assim a exclusão total de todos os dados presentes na tabela fornecida, ou seja, não teriamos mais nenhum dado armazenado no nosso Banco de Dados.
+
+Além disso, podemos apagar somente um linha da nossa tabela, especificando ela pelo comando ``WHERE``, que defini uma condição especifica para a exclusão de dados, ou seja, somente apaga um campo definido.
+
+```sql
+DELETE FROM tabela WHERE condição = 'valor';
+```
+
+Utilizaremos a tabela ``funcionarios`` que criamos anteriormente para um melhor entedimento
+
+| ID       | Nome     | Data de Nascimento | Sexo | Cargo      | Salario |
+| -------- | -------- | ------------------ | ---- | ---------- | ------- |
+| 2022031  | Claubia  | 13/08/1987         | F    | Marketing  | 2.200   |
+| 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I | 4.500   |
+| 2025011  | Vitoria  | 24/08/2005         | F    | RH         | 3.200   |
+| 2024021  | Paiva    | 11/03/1854         | M    | Tech-Lead  | 10.000  |
+| 2025023  | Cleylton | 18/04/1984         | M    | Estagiário T.I | 2.400   |
+| 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   | 
+
+```SQL
+DELETE FROM funcionarios WHERE ID = '2025031';
+```
+
+Deletariamos a coluna com o ID ``2025031``, apagando então os dados referents a Clabuia, que trabalha no Marketing. Afinal, teriamos a seguinte tabela resultado.
+
+| ID       | Nome     | Data de Nascimento | Sexo | Setor      | Salario |
+| -------- | -------- | ------------------ | ---- | ---------- | ------- |
+| 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I | 4.500   |
+| 2025011  | Vitoria  | 24/08/2005         | F    | RH         | 3.200   |
+| 2024021  | Paiva    | 11/03/1854         | M    | Tech-Lead  | 10.000  |
+| 2025023  | Cleylton | 18/04/1984         | M    | Estagiário T.I | 2.400   |
+| 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   | 
+
+### 📍 UPDATE
+
+Comando que utilizamos para atualiar algum dado já existente dentro do nosso Banco de Dados, para isso utilizamos o ``UPDATE``.
+
+```sql
+UPDATE nomeTabela SET nomeColuna = "Novo Valor" WHERE condição = Valor;
+```
+Para exemplificarmos melhor, vamos utilizar um exemplo a seguir:
+
+| ID       | Nome     | Data de Nascimento | Sexo | Cargo      | Salario |
+| -------- | -------- | ------------------ | ---- | ---------- | ------- |
+| 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I | 4.500   |
+| 2025011  | Vitoria  | 24/08/2005         | F    | RH         | 3.200   |
+| 2024021  | Paiva    | 11/03/1854         | M    | Tech-Lead  | 10.000  |
+| 2025023  | Cleylton | 18/04/1984         | M    | Estagiário T.I | 2.400   |
+| 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   | 
+
+Digamos que o funcionário recebeu uma promoção e agora se tornou Diretor de T.I e queremos altera-lo na tabela ``funcionarios``, além do seu novo salário
+
+```SQL 
+UPDATE funcionarios SET Setor = "Diretor de T.I" WHERE ID = 2024021;
+UPDATE funcionarios SET Salario = 15000 WHERE ID = 2024021;
+```
+
+| ID       | Nome     | Data de Nascimento | Sexo | Cargo          | Salario |
+| -------- | -------- | ------------------ | ---- | -------------- | ------- |
+| 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I     | 4.500   |
+| 2025012  | Vitoria  | 24/08/2005         | F    | RH             | 3.200   |
+| 2024021  | Paiva    | 11/03/1854         | M    | ``Diretor T.I``    | ``15.000``  |
+| 2025023  | Cleylton | 18/04/1984         | M    | Estagiário T.I | 2.400   |
+| 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   | 
+| 2026024  | Leonardo | 16/02/2007         | M    | Estagiario     | 1.200   |
+
+### 📍 SELECT
+
+O comando SQL ``SELECT`` serve para trazer as informações para visualização.
+
+```SQL
+SELECT coluna1,coluna2 FROM tabela WHERE condição  = valor;
+```
+Exemplificando, iremos trazer novamente o exemplo da tabela ``funcionarios`` que tratamos em ``UPDATE``, para tanto, digamos que queremos trazer apenas os dados relacionado a Vitoria, do seu ID, Cargo e Salario, fariamos isso da seguinte forma:
+
+```SQL
+SELECT ID, Nome, Cargo, Salario FROM funcionarios WHERE id = 2025011;
+```
+
+| ID      | Nome    | Cargo | Salario |
+| ------- | ------- | ----- | --------|
+| 2025012 | Vitoria | RH    | 3200    |
+
+Portanto, utilizamos o ``SELECT`` para podermos visualizar os dados do nosso banco de dados, como no exemplo acima, teremos apenas valores especificos declarados, mas também podemos consultar a tabela inteira, com o comando abaixo:
+
+Outro tipo de pesquisa que podemos fazer é utilizando operadores matemáticos para termos um resultado baseado em consulta de valores, como por exemplo:
+
+```sql
+SELECT * FROM funcionarios WHERE salario > 4000;
+```
+
+| ID       | Nome     | Data de Nascimento | Sexo | Cargo          | Salario |
+| -------- | -------- | ------------------ | ---- | -------------- | ------- |
+| 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I     | 4.500   |
+| 2024021  | Paiva    | 11/03/1854         | M    | Diretor T.I    | 15.000  |
+| 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   | 
 
 
+```sql
+SELECT * FROM tabela /* O * (sinal de multiplicação), serve como um indetificador global da nossa tabela, ou seja, trará todos os dados */
+```
 
+### ➜ SELECT(Like)
 
+O ``SELECT`` possui uma propriedade chamada ``LIKE`` é usado no SQL para fazer comparações de padrões em consultas de texto. Ele é especialmente útil quando você quer buscar valores em uma coluna que seguem um formato ou contêm uma parte específica do texto. Além disso, vale salientar que ele é sensitive case, ou seja, "A" é diferente de "a"
 
-<!-->
+```sql
+SELECT coluna1, coluna2 FROM tabela WHERE condicao = valor LIKE =  'regra';
+```
 
-> ### Desafio da Addiante
->
-> Digamos que trabalhamos na empresa "Addiante", que exercer a locação e venda de caminhões, tratores... que está passando pela implementação de um novo BD para cuidar de um projeto de divulgação dos produtos, localizado em uma feira de apresentações de negócios agropecuários. Afinal, você foi designado para criar o projeto do BD que será armazenado todas as informações dos clientes que estão interresados nos nossos serviços.
->
-> Portanto, primeiramente, iremos exercer oque chamamos de **levamento de requisitos**, você precisa entender as necessidades do seu chefe, visto que, antes de iniciarmos um projeto precisamos entender a proposta que o cliente propôs, para assim ser cumprida, sendo uma das fases mais importante, já que, é nesse momento que teremos a parte inicial do projeto, que seria o esboço da modelagem principal.
->
-> Digamos que nesse exemplo teremos que lidar com o cadastro de possíveis clientes interresados com os seguintes dados: **Nome, Idade, CPF e/ou CNPJ**. Além do mais, depois de apresentarmos os tipos de produtos em uma tabela que foi constituida por um BD de produto, que possui: **ID_product, Produto, Quantidade, Tipo e Valor** iremos solicitar ao usuário o preenchimento de um formulário para declarar interrese nos produtos, que pede: **ID_product, Quantidade, Tipo de contrato(compra ou aluguel) e Informações de entrega (Cidade, Rua e Número)**. Afinal, também teremos o setor de vendedores que serão a ponte do nosso sistema para o usuário, portanto, teremos que lidar com um espaço para declarar: **Nome e CPF** dos funcionários.
--->
+``%caracetere`` = Declaramos com o % que antes do caractere que colocaremos qualquer valor é permitido
+
+``caracetere%`` = Declaramos com o % que depois do caracetere que colocaremos qualquer valor é permitido
+
+```sql
+SELECT * FROM funcionarios WHERE nome LIKE = 'L%';
+```
+
+| ID       | Nome     | Data de Nascimento | Sexo | Cargo      | Salario |
+| -------- | -------- | ------------------ | ---- | ---------- | ------- |
+| 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I | 4.500   |
+| 2026024  | Leonardo | 16/02/2007         | M    | Estagiario | 1.200   |
+
+### ➜ SELECT (NotLike)
+
+O ``SELECT`` possui também uma propriedade chamada ``NOT LIKE`` é usado no SQL para fazer comparações de padrões em consultas de texto contrárias ao ``LIKE``, ou seja, eles serve para declarar quais os valores que não queremos dentro da nossa pesquisa. Além do mais, vale ressatar que ele é sensitive case, ou seja "B" é diferente de "b".
+
+```sql
+SELECT coluna1, coluna2 FROM tabela WHERE condicao = valor NOT LIKE =  'regra';
+```
+
+Ou seja, para exemplificarmos queremos trazer os dados de todos os funcionarios e somente ignorar os que possuem o caractere L no começo do nome, ficaria da seguinte maneira:
+
+```SQL
+SELECT * FROM funcionarios WHERE nome NOT LIKE = 'L%";
+```
+| ID       | Nome     | Data de Nascimento | Sexo | Cargo          | Salario |
+| -------- | -------- | ------------------ | ---- | -------------- | ------- |
+| 2025012  | Vitoria  | 24/08/2005         | F    | RH             | 3.200   |
+| 2024021  | Paiva    | 11/03/1854         | M    | Diretor T.I    | 15.000  |
+| 2025023  | Cleylton | 18/04/1984         | M    | Estagiário T.I | 2.400   |
+| 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   | 
