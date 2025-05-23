@@ -570,7 +570,7 @@ Afinal, na etapa de projeto físico, o modelo do banco de dados é enriquecido c
 
 ## 📌 Tipos de Dados
 
-Antes de criamos nosso Banco de Dados e utilizarmos os nossos comandos SQL, precisamos entender quais os tipos de dados que poderemos ter dentro do nosso Sistema de Banco de Dados.
+Antes de criamos nosso Banco de Dados e utilizarmos os nossos comandos SQL, precisamos entender quais os tipos de dados que poderemos ter dentro do nosso Sistema de Banco de Dados, vale salientar que estamos trabalhando o desenvolvimento de Banco de Dados e utilizaremos o SGBD Relacional, PostgresSQL, portanto, alguns comandos SQL serão exclusivos desse SGBD, mas o conceito basico de SQL segue o mesmo padrão, só existem alguns casos especificos do PostgresSQL..
 
 ### ➜ Dados Númericos
 
@@ -815,6 +815,14 @@ SELECT * FROM funcionarios WHERE nome LIKE = 'L%';
 | 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I | 4.500   |
 | 2026024  | Leonardo | 16/02/2007         | M    | Estagiario | 1.200   |
 
+### ➜ SELECT (ILike)
+
+Tem o mesmo proposito e funcionamento do método ``LIKE``, mas não é case sensitive, ou seja, não tem distinção se tiver um caractere de letra maiscula ou minuscula, exemplificando, para o ``ILIKE``, "A" e "a" são a mesma coisa.
+
+```sql
+SELECT * FROM funcionarios WHERE nome ILIKE = 'L%';
+```
+
 ### ➜ SELECT (NotLike)
 
 O ``SELECT`` possui também uma propriedade chamada ``NOT LIKE`` é usado no SQL para fazer comparações de padrões em consultas de texto contrárias ao ``LIKE``, ou seja, eles serve para declarar quais os valores que não queremos dentro da nossa pesquisa. Além do mais, vale ressatar que ele é sensitive case, ou seja "B" é diferente de "b".
@@ -826,7 +834,7 @@ SELECT coluna1, coluna2 FROM tabela WHERE condicao = valor NOT LIKE =  'regra';
 Ou seja, para exemplificarmos queremos trazer os dados de todos os funcionarios e somente ignorar os que possuem o caractere L no começo do nome, ficaria da seguinte maneira:
 
 ```SQL
-SELECT * FROM funcionarios WHERE nome NOT LIKE = 'L%";
+SELECT * FROM funcionarios WHERE nome NOT LIKE = 'L%';
 ```
 | ID       | Nome     | Data de Nascimento | Sexo | Cargo          | Salario |
 | -------- | -------- | ------------------ | ---- | -------------- | ------- |
@@ -834,3 +842,53 @@ SELECT * FROM funcionarios WHERE nome NOT LIKE = 'L%";
 | 2024021  | Paiva    | 11/03/1854         | M    | Diretor T.I    | 15.000  |
 | 2025023  | Cleylton | 18/04/1984         | M    | Estagiário T.I | 2.400   |
 | 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   | 
+
+
+### ➜ SELECT (IN)
+
+O ``IN`` é utilizado para fazer um filtragem a partir de uma lista de buscas.
+
+```sql
+SELECT FROM tabela WHERE condicao
+```
+
+### ➜ SELECT (BETWEEN)
+
+O ``BETWEEN`` serve para fazer uma filtagrem de intervalos, ou seja, o ``SELECT`` retorna os dados que estão entre aquele intervalo.
+
+```sql
+SELECT tabela FROM coluna WHERE condição BETWEEN '0000/00/00' AND '0000/00/00';
+```
+
+SELECT * FROM funcionarios WHERE salario BETWEEN 5000 AND 7000;
+
+### ➜ SELECT (NOBETWEEN)
+
+O ``BETWEEN`` serve para fazer uma filtagrem de intervalos, ou seja, o ``SELECT`` retorna os dados que estão entre aquele intervalo.
+
+```sql
+SELECT tabela FROM coluna WHERE condição NOBETWEEN '0000/00/00' AND '0000/00/00';
+```
+
+### ➜ SELECT (ORDERBY)
+
+O ``BETWEEN`` serve para fazer uma filtagrem de intervalos, ou seja, o ``SELECT`` retorna os dados que estão entre aquele intervalo.
+
+```sql
+SELECT tabela FROM coluna ORDER BY coluna /*DESC OR ASC*/ ;
+```
+
+DESC = Descrente
+ASC = Crescente
+
+### 📍 Funções de Agrupamento
+
+AVG
+
+MIN
+
+MAX
+
+SUM
+
+COUNT
