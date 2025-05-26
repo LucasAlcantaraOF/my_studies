@@ -608,287 +608,435 @@ Antes de criamos nosso Banco de Dados e utilizarmos os nossos comandos SQL, prec
 
 ## 📌 Comandos SQL
 
-Agora depois de enterdemos como os Banco de Dados se desenvolveram nos avanços tecnologicos e como ele opera, podemos passar para a parte realmente manual do nosso projeto, que consiste em construir um Banco de Dados de forma prática, utilizando o **Postgress**. Para tanto iniciamos o nosso Banco de Dados...
+Compreendendos os tipos de dados que podemos trabalhar com o nosso Banco de Dados, precisamos aprender a manipula-los dentro do nosso SGBD, para tanto, dentro do nosso material, utilizaremos o PostgreSQL, vale ressaltar, que alguns métodos são exclusivos desse SGBD, mas todos os conceitos são retirados dos comandos SQL, ou seja, são padrões para lidar com qualquer tipo de Banco de Dados.
 
-### 📍 CREATE, INSERT e ALTER
+Para tanto, primeiramente, iremos aprender como utilizar os comandos de DDL (Data Definition Language ou Linguagem de Definição de Dados), ou seja, o ``CREATE`` ``ALTER`` ``DROP``.
 
-Quando formos de fato construir nossas tabela dentro do SGBD de escolha para o nosso sistema de Banco de Dados, teremos que utilizar os Comandos SQL, para tanto, primeiramente, antes de podermos manipular nossas tabelas, precisamos criar o nosso Banco de Dados, ou ``DATABASE``, e por isso utilizaremos o comando ``CREATE``.
+### 📍 CREATE 
+
+O comando SQL ``CREATE`` é utilizado para criar novas **databases** e **tabelas**, sendos os principais para esse material intródutorio, mas teriamos muitos outros que serão utilizados para desenvolvedores mais experientes.
+
+### ➜ DATABASE
 
 ```SQL
-CREATE DATABASE bancodedados
+CREATE DATABASE nomeBancoDeDados;
+```
+> Sintaxe básica utilizada na criação de um Banco de Dados.
 
-CREATE TABLE tabela (
-    coluna1 tipo_de_dados,
-    coluna2 tipo_de_dados,
-    coluna3 tipo_de_dados,
-    coluna4 tipo_de_dados
+### ➜ TABLE
+
+```SQL
+CREATE TABLE nomeDaTabela (
+    coluna1 tipoDeDado restrições,
+    coluna2 tipoDeDados restrições,
+    coluna3 tipoDeDados restrições,
+    ...
+    colunaN tipoDeDados retrições
+);
+```
+> Sintaxe básica utilizada na criação de uma tabela.
+
+A cada assunto que formos tratando dentro do nosso material de comandos SQL traremos um exemplo prática para melhor compreensão de como trabalharemos com esses comandos no futuro. Ou seja, para comerçamos, digamos que somos CEO de uma empresa chamada **"L2A Code"** e criaremos um Banco de Dados que receberá os dados de todos os funcionários presentes.
+
+```SQL
+CREATE DATABASE L2A_Code
+
+CREATE TABLE Funcionarios (
+    ID INT PRIMARY KEY,
+    Nome VARCHAR(50) NOT NULL,
+    CPF VARCHAR(11) NOT NULL,
+    DataNasc DATE NOT NULL,
+    Sexo CHAR(1) NOT NULL,
+    Cidade VARCHAR(20) NOT NULL,
+    Cargo VARCHAR(20) NOT NULL,
+    Salario INT NOT NULL
 );
 ```
 
-Para exemplificar todo esses comandos SQL, utilizaremos uma tabela de exemplo que denominaremos de ``funcionarios`` que receberam os dados referentes a uma lista de contribuintes de uma empresa, para isso, primeiramente, criaremos a ``DATABASE`` da empresa para podermos ter nossas tabelas que receberam os dados.
+Assim, criaremos o nosso primeiro Banco de Dados chamado ``L2A Code`` e teremos a nossa primeira tabelas de ``funcionarios``. Para tanto, precisamos compreender como acrescentaremos, manipularemos e buscaremos dados no nosso Banco de Dados, entretanto, de forma gráfica a nossa tabela ``funcionarios`` está estruturada até o momento da seguinte maneira:
+
+| ID | Nome | CPF | DataNasc | Sexo | Cidade | Cargo | Salario |
+| -- | ---- | --- | -------- | ---- | ------ | ----- | ------- |
+|    |      |     |          |      |        |       |         |
+
+### 📍 INSERT
+
+Agora que criamos nossa tabela precisamos inserir dados nela, para tanto, teremos os comandos SQL de ``INSERT``. sua sintaxe básica é definida como:
 
 ```SQL
-CREATE DATABASE empresa
-
-CREATE TABLE funcionarios(
-    ID int Primary Key,
-    Nome varchar(30) NOT NULL,
-    Data_de_Nascimento date NOT NULL,
-    Sexo varchar(1) NOT NULL,
-    Cargo varchar(40) NOT NULL,
-    Salario money NOT NULL
-)
+INSERT INTO nomeDaTabela (coluna1, coluna2, coluna3, ..., colunaN) VALUES
+(valor1, valor2, valor3, ..., valorN),
+(valor1, valor2, valor3, ..., valorN),
+(valor1, valor2, valor3, ..., valorN),
+(valor1, valor2, valor3, ..., valorN);
 ```
+> Sintaxe Básica de inserir dados
 
-Teriamos assim a tabela exemplo sendo montada e representada da seguinte maneira:
-
-| ID       | Nome     | Data de Nascimento | Sexo | Cargo      | Salario |
-| -------- | -------- | ------------------ | ---- | ---------- | ------- |
-| X | X | X | X | X | X
-
-E agora com a nossa tabela construida teremos que inserir dados, para tanto, utilizaremos o comando SQL ``INSERT`` que serve diretamente para acrescentar novos dados dentro da nossa tabela.
-
-``` SQL
-INSERT INTO tabela (coluna1, coluna2, coluna3, coluna4, coluna5, coluna6) 
-VALUES (valor1, valor2, valor3, valor4, valor5, valor6),
-(valor1, valor2, valor3, valor4, valor5, valor6)
-```
-
-Exemplificando isso, teriamo o seguinte comando SQL:
+Ou seja, trabalhando ainda com aquela tabela que estamos construindo para nossa empresa, iremos inserir dados na tabela ``funcionario``, exemplificando, ficaria da seguinte forma:
 
 ```SQL
-INSERT INTO funcionarios (ID, Nome, DataDeNascimento, Sexo, Cargo, Salario)
-VALUES
-(2022031, 'Claubia', '1987-08-13', 'F', 'Marketing', 2200),
-(2025022, 'Lucas', '2005-06-28', 'M', 'Junior T.I', 4500),
-(2025011, 'Vitoria', '2005-08-24', 'F', 'RH', 3200),
-(2024021, 'Paiva', '1854-03-11', 'M', 'Tech-Lead', 10000),
-(2025023, 'Cleylton', '1984-04-18', 'M', 'Estagiário T.I', 2400),
-(2023011, 'Mara', '1987-10-30', 'F', 'Diretora de RH', 5600);
+INSERT INTO Funcionarios (ID, Nome, CPF, DataNasc, Sexo, Cidade, Cargo, Salario)
+VALUES 
+    (2025011, 'Lucas Alcantara', '123.957.321-87', '2005-06-28', 'M', 'Fortaleza', 'CEO', NULL),
+    (2025012, 'Vitoria Pedrosa', '231.574.958-14', '2005-08-24', 'F', 'Fortaleza', 'CFO', NULL),
+    (2025021, 'Mara Edwirges', '958.478.321-98', '1987-10-18', 'F', 'São Paulo', 'Diretora do RH', 15600),
+    (2025022, 'Claubia Mesquita', '157.987.546-32', '1984-11-21', 'F', 'Sobral', 'Diretora de SG', 16200),
+    (2025023, 'Felipe Paiva', '684.315.984-73', '1993-04-12', 'M', 'Curitiba', 'Diretor de TI', 23700),
+    (2025031, 'Cleylton Alcantara', '315.753.391-61', '1987-05-30', 'M', 'São Paulo', 'Tech-Lead TI', 15100),
+    (2025032, 'Vivian Pedrosa', '591.931.681-91', '2015-04-07', 'F', 'Aquiraz', 'Estagiária TI', 2400),
+    (2025033, 'Guilherme Soares', '851.641.317-85', '2006-10-28', 'M', 'Natal', 'Junior TI', 3200),
+    (2025041, 'Bruna Alencar', '931.513.093-03', '2006-07-05', 'F', 'Fortaleza', 'Estagiaria RH', 1900),
+    (2025042, 'Iohana Madeira', '003.315.910-31', '2002-12-15', 'F', 'Pernambuco', 'Junior RH', 2500);
+
 ```
 
-Teriamos assim, a tabela resultado a seguir:
+E nossa tabela finalizaria da seguinte maneira:
 
-| ID       | Nome     | Data de Nascimento | Sexo | Cargo      | Salario |
-| -------- | -------- | ------------------ | ---- | ---------- | ------- |
-| 2022031  | Claubia  | 13/08/1987         | F    | Marketing  | 2.200   |
-| 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I | 4.500   |
-| 2025011  | Vitoria  | 24/08/2005         | F    | RH         | 3.200   |
-| 2024021  | Paiva    | 11/03/1854         | M    | Tech-Lead  | 10.000  |
-| 2025023  | Cleylton | 18/04/1984         | M    | Estagiário T.I | 2.400   |
-| 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   |
+| ID      | Nome               | CPF            | DataNasc   | Sexo | Cidade     | Cargo          | Salario |
+| ------- | ------------------ | -------------- | ---------- | ---- | ---------- | -------------- | ------- |
+| 2025011 | Lucas Alcantara    | 123.957.321-87 | 2005-06-28 | M    | Fortaleza  | CEO            | N/A     |
+| 2025012 | Vitoria Pedrosa    | 231.574.958-14 | 2005-08-24 | F    | Fortaleza  | CFO            | N/A     |
+| 2025021 | Mara Edwirges      | 958.478.321-98 | 1987-10-18 | F    | São Paulo  | Diretora do RH | 15.600  |
+| 2025022 | Claubia Mesquita   | 157.987.546-32 | 1984-11-21 | F    | Sobral     | Diretora de SG | 16.200  |
+| 2025023 | Felipe Paiva       | 684.315.984-73 | 1993-04-12 | M    | Curitiba   | Diretor de TI  | 23.700  |
+| 2025031 | Cleylton Alcantara | 315.753.391-61 | 1987-05-30 | M    | São Paulo  | Tech-Lead TI   | 15.100  | 
+| 2025032 | Vivian Pedrosa     | 591.931.681-91 | 2015-04-07 | F    | Aquiraz    | Estagiária TI  | 2.400   |
+| 2025033 | Guilherme Soares   | 851.641.317-85 | 2006-10-28 | M    | Natal      | Junior TI      | 3.200   |
+| 2025041 | Bruna Alencar      | 931.513.093-03 | 2006-07-05 | F    | Fortaleza  | Estagiaria RH  | 1.900   |
+| 2025042 | Iohana Madeira     | 003-315-910-31 | 2002-12-15 | F    | Pernambuco | Junior RH      | 2.500   |
 
-Além do mais podemos alterar o nome da nossa tabela por meio do comando ``ALTER``
+### 📍 ALTER
+
+Além do mais, criando e inserindo dados aprenderemos a altera-los caso necessário a partir dos comandos SQL de ``ALTER``, que servem para adicionar, remover, modificar, renomemear colunas ou adicionar ou remover restrições.
+
+### ➜ ALTER em Tabelas
 
 ```SQL
-ALTER TABLE nome_tabela TO nome_tabela_nova;
+ALTER TABLE nomeDaTabelaAntiga RENAME TO nomeDaTabelaNova;
 ```
+> Sintaxe básica para renomear tabelas
+
+```SQL
+ALTER TABLE nomeDaTabela ADD nomeDaColuna tipoDeDado [restrições];
+```
+> Sintaxe básica de adicionar colunas a tabela
+
+```SQL
+ALTER TABLE nomeDaTabela DROP COLUMN nomeDaColuna;
+```
+> Sintaxe básica de remover colunas da tabela
+
+### ➜ ALTER em Colunas
+
+```SQL
+ALTER TABLE nomeDaColuna MODIFY nomeDaColuna novoTipoDeDado [restrições];
+```
+> Sintaxe básica de modificar uma colunas
+
+```SQL
+ALTER TABLE nomeDaTabela RENAME COLUMN nomeDaColunaAntiga TO nomeDaColunaNova;
+```
+> Sintaxe básica para renomear uma coluna
+
+### ➜ ALTER em Restrições
+
+```SQL
+ALTER TABLE nomeDaTabelaADD CONSTRAINT nomeDaRestrição tipoDeRestrição (nomeDaColuna);
+```
+
+```SQL
+ALTER TABLE nomeDaTabela DROP CONSTRAINT nomeDaRestrição;
+```
+> Sintaxe básica para remover restrições
 
 ### 📍 DELETE
 
-Agora que criamos uma tabela, precisamos aprender a como deleta-las para tratarmos melhor a manipulação dos nossos dados, primeiramente, aprendermos a apagar toda nossa tabela, é evidente ressaltar que essa medida é muito precisa e precisa se tomar cuidado para lidarmos com esse tipo de coisa, apagando todos os dados
+Os comandos SQL de ``DELETE`` serve exclusivamente para trabalhar em remover **Tabelas** da nossa **DataBase** ou em remover **Linhas(ou Registros)**. Afinal, sua sintaxe se forma da seguinte maneira:
 
 ```SQL
-DELETE FROM tabela
+DELETE FROM nomeDaTabela;
 ```
-
-Teriamos assim a exclusão total de todos os dados presentes na tabela fornecida, ou seja, não teriamos mais nenhum dado armazenado no nosso Banco de Dados.
-
-Além disso, podemos apagar somente um linha da nossa tabela, especificando ela pelo comando ``WHERE``, que defini uma condição especifica para a exclusão de dados, ou seja, somente apaga um campo definido.
-
-```sql
-DELETE FROM tabela WHERE condição = 'valor';
-```
-
-Utilizaremos a tabela ``funcionarios`` que criamos anteriormente para um melhor entedimento
-
-| ID       | Nome     | Data de Nascimento | Sexo | Cargo      | Salario |
-| -------- | -------- | ------------------ | ---- | ---------- | ------- |
-| 2022031  | Claubia  | 13/08/1987         | F    | Marketing  | 2.200   |
-| 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I | 4.500   |
-| 2025011  | Vitoria  | 24/08/2005         | F    | RH         | 3.200   |
-| 2024021  | Paiva    | 11/03/1854         | M    | Tech-Lead  | 10.000  |
-| 2025023  | Cleylton | 18/04/1984         | M    | Estagiário T.I | 2.400   |
-| 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   | 
+> Sintaxe básica para deletar tabelas
 
 ```SQL
-DELETE FROM funcionarios WHERE ID = '2025031';
+DELETE FROM nomeDaTabela WHERE condição;
+```
+> Sintaxe básica para deletar um registro de uma tabela
+
+Exemplificando como funciona a questão de deletar um registro traremos o nosso exemplo da Tabela ``funcionarios``, para tanto, vamos apenas revisar uma questão. Quando formos trabalhar com a exclusão de uma coluna, utilizaremos um ``ALTER``, e quando formos apagar apenas uma linha(ou registro), utilizaremos o ``DELETE``. Ou seja, digamos que queremos apagar o funcionario com **ID:** 2025042 por que não trabalha mais na nossa empresa, utilizaremos o comando a seguir:
+
+```SQL
+DELETE FROM funcionarios WHERE ID = 2025042;
 ```
 
-Deletariamos a coluna com o ID ``2025031``, apagando então os dados referents a Clabuia, que trabalha no Marketing. Afinal, teriamos a seguinte tabela resultado.
+| ID      | Nome               | CPF            | DataNasc   | Sexo | Cidade     | Cargo          | Salario |
+| ------- | ------------------ | -------------- | ---------- | ---- | ---------- | -------------- | ------- |
+| 2025011 | Lucas Alcantara    | 123.957.321-87 | 2005-06-28 | M    | Fortaleza  | CEO            | N/A     |
+| 2025012 | Vitoria Pedrosa    | 231.574.958-14 | 2005-08-24 | F    | Fortaleza  | CFO            | N/A     |
+| 2025021 | Mara Edwirges      | 958.478.321-98 | 1987-10-18 | F    | São Paulo  | Diretora do RH | 15.600  |
+| 2025022 | Claubia Mesquita   | 157.987.546-32 | 1984-11-21 | F    | Sobral     | Diretora de SG | 16.200  |
+| 2025023 | Felipe Paiva       | 684.315.984-73 | 1993-04-12 | M    | Curitiba   | Diretor de TI  | 23.700  |
+| 2025031 | Cleylton Alcantara | 315.753.391-61 | 1987-05-30 | M    | São Paulo  | Tech-Lead TI   | 15.100  | 
+| 2025032 | Vivian Pedrosa     | 591.931.681-91 | 2015-04-07 | F    | Aquiraz    | Estagiária TI  | 2.400   |
+| 2025033 | Guilherme Soares   | 851.641.317-85 | 2006-10-28 | M    | Natal      | Junior TI      | 3.200   |
+| 2025041 | Bruna Alencar      | 931.513.093-03 | 2006-07-05 | F    | Fortaleza  | Estagiaria RH  | 1.900   |
 
-| ID       | Nome     | Data de Nascimento | Sexo | Setor      | Salario |
-| -------- | -------- | ------------------ | ---- | ---------- | ------- |
-| 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I | 4.500   |
-| 2025011  | Vitoria  | 24/08/2005         | F    | RH         | 3.200   |
-| 2024021  | Paiva    | 11/03/1854         | M    | Tech-Lead  | 10.000  |
-| 2025023  | Cleylton | 18/04/1984         | M    | Estagiário T.I | 2.400   |
-| 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   | 
+
+A Linha do ID = 2025041 foi excluida da nossa tabela e apenas para demonstrar qual linha foi excluida, teremos a seguir: 
+
+| ID      | Nome               | CPF            | DataNasc   | Sexo | Cidade     | Cargo          | Salario |
+| ------- | ------------------ | -------------- | ---------- | ---- | ---------- | -------------- | ------- |
+| 2025042 | Iohana Madeira     | 003-315-910-31 | 2002-12-15 | F    | Pernambuco | Junior RH      | 2.500   |
+
 
 ### 📍 UPDATE
 
-Comando que utilizamos para atualiar algum dado já existente dentro do nosso Banco de Dados, para isso utilizamos o ``UPDATE``.
+Enteremos como alteramos dados de uma determinada coluna e de uma determinada condição, para isso, trabalharemos com os comandos SQL de ``UPDATE``, sua sintaxe básica é formada:
 
-```sql
-UPDATE nomeTabela SET nomeColuna = "Novo Valor" WHERE condição = Valor;
-```
-Para exemplificarmos melhor, vamos utilizar um exemplo a seguir:
-
-| ID       | Nome     | Data de Nascimento | Sexo | Cargo      | Salario |
-| -------- | -------- | ------------------ | ---- | ---------- | ------- |
-| 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I | 4.500   |
-| 2025011  | Vitoria  | 24/08/2005         | F    | RH         | 3.200   |
-| 2024021  | Paiva    | 11/03/1854         | M    | Tech-Lead  | 10.000  |
-| 2025023  | Cleylton | 18/04/1984         | M    | Estagiário T.I | 2.400   |
-| 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   | 
-
-Digamos que o funcionário recebeu uma promoção e agora se tornou Diretor de T.I e queremos altera-lo na tabela ``funcionarios``, além do seu novo salário
-
-```SQL 
-UPDATE funcionarios SET Setor = "Diretor de T.I" WHERE ID = 2024021;
-UPDATE funcionarios SET Salario = 15000 WHERE ID = 2024021;
+```SQL
+ALTER TABLE nomeDaTabela SET nomeDaColuna1 = novoValor1, nomeDaColuna2 = novoValor2 WHERE condição;
 ```
 
-| ID       | Nome     | Data de Nascimento | Sexo | Cargo          | Salario |
-| -------- | -------- | ------------------ | ---- | -------------- | ------- |
-| 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I     | 4.500   |
-| 2025012  | Vitoria  | 24/08/2005         | F    | RH             | 3.200   |
-| 2024021  | Paiva    | 11/03/1854         | M    | ``Diretor T.I``    | ``15.000``  |
-| 2025023  | Cleylton | 18/04/1984         | M    | Estagiário T.I | 2.400   |
-| 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   | 
-| 2026024  | Leonardo | 16/02/2007         | M    | Estagiario     | 1.200   |
+Ou seja, exemplificando na nossa Tabela ``funcionarios``, digamos que queremos alterar o cargo e salario do funcionario com ID 2025041.
+
+```SQL
+UPDATE funcionarios SET Cargo = 'Junior de RH', Salario = 2.500 WHERE ID = 2025041;
+```
+
+| ID      | Nome               | CPF            | DataNasc   | Sexo | Cidade     | Cargo          | Salario |
+| ------- | ------------------ | -------------- | ---------- | ---- | ---------- | -------------- | ------- |
+| 2025011 | Lucas Alcantara    | 123.957.321-87 | 2005-06-28 | M    | Fortaleza  | CEO            | N/A     |
+| 2025012 | Vitoria Pedrosa    | 231.574.958-14 | 2005-08-24 | F    | Fortaleza  | CFO            | N/A     |
+| 2025021 | Mara Edwirges      | 958.478.321-98 | 1987-10-18 | F    | São Paulo  | Diretora do RH | 15.600  |
+| 2025022 | Claubia Mesquita   | 157.987.546-32 | 1984-11-21 | F    | Sobral     | Diretora de SG | 16.200  |
+| 2025023 | Felipe Paiva       | 684.315.984-73 | 1993-04-12 | M    | Curitiba   | Diretor de TI  | 23.700  |
+| 2025031 | Cleylton Alcantara | 315.753.391-61 | 1987-05-30 | M    | São Paulo  | Tech-Lead TI   | 15.100  | 
+| 2025032 | Vivian Pedrosa     | 591.931.681-91 | 2015-04-07 | F    | Aquiraz    | Estagiária TI  | 2.400   |
+| 2025033 | Guilherme Soares   | 851.641.317-85 | 2006-10-28 | M    | Natal      | Junior TI      | 3.200   |
+| 2025041 | Bruna Alencar      | 931.513.093-03 | 2006-07-05 | F    | Fortaleza  | Junior de RH   | 2.500   |
 
 ### 📍 SELECT
 
-O comando SQL ``SELECT`` serve para trazer as informações para visualização.
+Agora que entedemos como criar, alterar, deletar e atulizar nossas Tabelas, Colunas e Dados, precisamos entender como visualizar essas Tabelas, no nosso material sempre trouxemos graficamente como estava ficando nossa Tabela na execução de cada comando exemplo, mas agora teremos que entender como lidar com isso no próprio SGBD a partir de comandos SQL de ``SELECT``, que são responsáveis por codificar como funcionará nossa busca de dados. Ademais, a sua sintaxe básica para termos como resultado a nossa tabela toda, como estavamos apresentando, seria a seguinte:
 
 ```SQL
-SELECT coluna1,coluna2 FROM tabela WHERE condição  = valor;
+SELECT * FROM nomeDaTabela
 ```
-Exemplificando, iremos trazer novamente o exemplo da tabela ``funcionarios`` que tratamos em ``UPDATE``, para tanto, digamos que queremos trazer apenas os dados relacionado a Vitoria, do seu ID, Cargo e Salario, fariamos isso da seguinte forma:
+> Sintaxe básica para retornar toda a tabela
 
 ```SQL
-SELECT ID, Nome, Cargo, Salario FROM funcionarios WHERE id = 2025011;
+SELECT nomeDaColuna1, nomeDaColuna2, ..., nomeDaColunaN FROM nomeDaTabela;
 ```
-
-| ID      | Nome    | Cargo | Salario |
-| ------- | ------- | ----- | --------|
-| 2025012 | Vitoria | RH    | 3200    |
-
-Portanto, utilizamos o ``SELECT`` para podermos visualizar os dados do nosso banco de dados, como no exemplo acima, teremos apenas valores especificos declarados, mas também podemos consultar a tabela inteira, com o comando abaixo:
-
-Outro tipo de pesquisa que podemos fazer é utilizando operadores matemáticos para termos um resultado baseado em consulta de valores, como por exemplo:
-
-```sql
-SELECT * FROM funcionarios WHERE salario > 4000;
-```
-
-| ID       | Nome     | Data de Nascimento | Sexo | Cargo          | Salario |
-| -------- | -------- | ------------------ | ---- | -------------- | ------- |
-| 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I     | 4.500   |
-| 2024021  | Paiva    | 11/03/1854         | M    | Diretor T.I    | 15.000  |
-| 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   | 
-
-
-```sql
-SELECT * FROM tabela /* O * (sinal de multiplicação), serve como um indetificador global da nossa tabela, ou seja, trará todos os dados */
-```
-
-### ➜ SELECT(Like)
-
-O ``SELECT`` possui uma propriedade chamada ``LIKE`` é usado no SQL para fazer comparações de padrões em consultas de texto. Ele é especialmente útil quando você quer buscar valores em uma coluna que seguem um formato ou contêm uma parte específica do texto. Além disso, vale salientar que ele é sensitive case, ou seja, "A" é diferente de "a"
-
-```sql
-SELECT coluna1, coluna2 FROM tabela WHERE condicao = valor LIKE =  'regra';
-```
-
-``%caracetere`` = Declaramos com o % que antes do caractere que colocaremos qualquer valor é permitido
-
-``caracetere%`` = Declaramos com o % que depois do caracetere que colocaremos qualquer valor é permitido
-
-```sql
-SELECT * FROM funcionarios WHERE nome LIKE = 'L%';
-```
-
-| ID       | Nome     | Data de Nascimento | Sexo | Cargo      | Salario |
-| -------- | -------- | ------------------ | ---- | ---------- | ------- |
-| 2025022  | Lucas    | 28/06/2005         | M    | Junior T.I | 4.500   |
-| 2026024  | Leonardo | 16/02/2007         | M    | Estagiario | 1.200   |
-
-### ➜ SELECT (ILike)
-
-Tem o mesmo proposito e funcionamento do método ``LIKE``, mas não é case sensitive, ou seja, não tem distinção se tiver um caractere de letra maiscula ou minuscula, exemplificando, para o ``ILIKE``, "A" e "a" são a mesma coisa.
-
-```sql
-SELECT * FROM funcionarios WHERE nome ILIKE = 'L%';
-```
-
-### ➜ SELECT (NotLike)
-
-O ``SELECT`` possui também uma propriedade chamada ``NOT LIKE`` é usado no SQL para fazer comparações de padrões em consultas de texto contrárias ao ``LIKE``, ou seja, eles serve para declarar quais os valores que não queremos dentro da nossa pesquisa. Além do mais, vale ressatar que ele é sensitive case, ou seja "B" é diferente de "b".
-
-```sql
-SELECT coluna1, coluna2 FROM tabela WHERE condicao = valor NOT LIKE =  'regra';
-```
-
-Ou seja, para exemplificarmos queremos trazer os dados de todos os funcionarios e somente ignorar os que possuem o caractere L no começo do nome, ficaria da seguinte maneira:
+> Sintaxe básica para retornar colunas especiíficas
 
 ```SQL
-SELECT * FROM funcionarios WHERE nome NOT LIKE = 'L%';
-```
-| ID       | Nome     | Data de Nascimento | Sexo | Cargo          | Salario |
-| -------- | -------- | ------------------ | ---- | -------------- | ------- |
-| 2025012  | Vitoria  | 24/08/2005         | F    | RH             | 3.200   |
-| 2024021  | Paiva    | 11/03/1854         | M    | Diretor T.I    | 15.000  |
-| 2025023  | Cleylton | 18/04/1984         | M    | Estagiário T.I | 2.400   |
-| 2023011  | Mara     | 30/10/1987         | F    | Diretora de RH | 5.600   | 
-
-
-### ➜ SELECT (IN)
-
-O ``IN`` é utilizado para fazer um filtragem a partir de uma lista de buscas.
-
-```sql
-SELECT FROM tabela WHERE condicao
+SELECT nomeDaColuna FROM nomeDaTabela WHERE condição;
 ```
 
-### ➜ SELECT (BETWEEN)
+Ou seja, represetandando alguns exemplos aleátorios, vamos utilizar esses comandos de ``SELECT``
 
-O ``BETWEEN`` serve para fazer uma filtagrem de intervalos, ou seja, o ``SELECT`` retorna os dados que estão entre aquele intervalo.
-
-```sql
-SELECT tabela FROM coluna WHERE condição BETWEEN '0000/00/00' AND '0000/00/00';
+```SQL
+SELECT ID, Nome * FROM funcionarios;
 ```
 
-SELECT * FROM funcionarios WHERE salario BETWEEN 5000 AND 7000;
+| ID      | Nome               | 
+| ------- | ------------------ | 
+| 2025011 | Lucas Alcantara    | 
+| 2025012 | Vitoria Pedrosa    | 
+| 2025021 | Mara Edwirges      | 
+| 2025022 | Claubia Mesquita   | 
+| 2025023 | Felipe Paiva       | 
+| 2025031 | Cleylton Alcantara |
+| 2025032 | Vivian Pedrosa     | 
+| 2025033 | Guilherme Soares   | 
+| 2025041 | Bruna Alencar      |
 
-### ➜ SELECT (NOBETWEEN)
-
-O ``BETWEEN`` serve para fazer uma filtagrem de intervalos, ou seja, o ``SELECT`` retorna os dados que estão entre aquele intervalo.
-
-```sql
-SELECT tabela FROM coluna WHERE condição NOBETWEEN '0000/00/00' AND '0000/00/00';
+```SQL
+SELECT * FROM funcionarios WHERE salario > 5000:
 ```
 
-### ➜ SELECT (ORDERBY)
+| ID      | Nome               | CPF            | DataNasc   | Sexo | Cidade     | Cargo          | Salario |
+| ------- | ------------------ | -------------- | ---------- | ---- | ---------- | -------------- | ------- |
+| 2025011 | Lucas Alcantara    | 123.957.321-87 | 2005-06-28 | M    | Fortaleza  | CEO            | N/A     |
+| 2025012 | Vitoria Pedrosa    | 231.574.958-14 | 2005-08-24 | F    | Fortaleza  | CFO            | N/A     | 
+| 2025032 | Vivian Pedrosa     | 591.931.681-91 | 2015-04-07 | F    | Aquiraz    | Estagiária TI  | 2.400   |
+| 2025033 | Guilherme Soares   | 851.641.317-85 | 2006-10-28 | M    | Natal      | Junior TI      | 3.200   |
+| 2025041 | Bruna Alencar      | 931.513.093-03 | 2006-07-05 | F    | Fortaleza  | Junior de RH   | 2.500   |
 
-O ``BETWEEN`` serve para fazer uma filtagrem de intervalos, ou seja, o ``SELECT`` retorna os dados que estão entre aquele intervalo.
+Além desses ``SELECT`` básicos, temos alguns que podem realizar buscar mais precisas em determinada condições.
 
-```sql
-SELECT tabela FROM coluna ORDER BY coluna /*DESC OR ASC*/ ;
+### ➜  LIKE 
+
+Usado para buscar padrões específicos em colunas de texto, mas é canse sensitive, ou seja, o caractere "A" e "a" são diferentes. Utiliza caracteres coringas:
+
+- % corresponde a qualquer número de caracteres.
+
+- _ corresponde a exatamente um caractere.
+
+```SQL
+SELECT nomeDaColuna FROM nomeDaTabela WHERE condição LIKE '%caractere%';
 ```
 
-DESC = Descrente
-ASC = Crescente
+Aplicando isso na nossa Tabela, teriamos o seguinte resultados:
+
+```SQL
+SELECT * FROM funcionarios WHERE nome LIKE 'Vi%';
+```
+
+| ID      | Nome               | CPF            | DataNasc   | Sexo | Cidade     | Cargo          | Salario |
+| ------- | ------------------ | -------------- | ---------- | ---- | ---------- | -------------- | ------- |
+| 2025012 | Vitoria Pedrosa    | 231.574.958-14 | 2005-08-24 | F    | Fortaleza  | CFO            | N/A     |
+| 2025032 | Vivian Pedrosa     | 591.931.681-91 | 2015-04-07 | F    | Aquiraz    | Estagiária TI  | 2.400   |
+
+### ➜ ILIKE
+
+Usado para buscar padrões específicos em colunas de texto, parecido com o ``LIKE``, mas com a diferença que não é case sensitive. 
+
+```SQL
+SELECT nomeDaColuna FROM nomeDaTabela WHERE condição ILIKE '%caractere%';
+```
+
+Aplicando isso na nossa Tabela, teriamos o seguinte resultados:
+
+```SQL
+SELECT * FROM funcionarios WHERE nome ILIKE '%A';
+```
+
+| ID      | Nome               | CPF            | DataNasc   | Sexo | Cidade     | Cargo          | Salario |
+| ------- | ------------------ | -------------- | ---------- | ---- | ---------- | -------------- | ------- |
+| 2025011 | Lucas Alcantara    | 123.957.321-87 | 2005-06-28 | M    | Fortaleza  | CEO            | N/A     |
+| 2025012 | Vitoria Pedrosa    | 231.574.958-14 | 2005-08-24 | F    | Fortaleza  | CFO            | N/A     |
+| 2025022 | Claubia Mesquita   | 157.987.546-32 | 1984-11-21 | F    | Sobral     | Diretora de SG | 16.200  |
+| 2025023 | Felipe Paiva       | 684.315.984-73 | 1993-04-12 | M    | Curitiba   | Diretor de TI  | 23.700  |
+| 2025031 | Cleylton Alcantara | 315.753.391-61 | 1987-05-30 | M    | São Paulo  | Tech-Lead TI   | 15.100  | 
+| 2025032 | Vivian Pedrosa     | 591.931.681-91 | 2015-04-07 | F    | Aquiraz    | Estagiária TI  | 2.400   |
+
+### ➜ NOT LIKE
+
+Retorna registros que não correspondem ao padrão especificado. Ou seja, serve para declarar que tipo de padrão você não quer que seja retornada.
+
+```SQL
+SELECT nomeDaColuna FROM funcionarios WHERE cargo NOT LIKE '%caractere%';
+```
+
+Aplicando isso na nossa Tabela, teriamos o seguinte resultados:
+
+```SQL
+SELECT * FROM funcionarios WHERE nome NOT LIKE '%TI%';
+```
+
+| ID      | Nome               | CPF            | DataNasc   | Sexo | Cidade     | Cargo          | Salario |
+| ------- | ------------------ | -------------- | ---------- | ---- | ---------- | -------------- | ------- |
+| 2025023 | Felipe Paiva       | 684.315.984-73 | 1993-04-12 | M    | Curitiba   | Diretor de TI  | 23.700  |
+| 2025031 | Cleylton Alcantara | 315.753.391-61 | 1987-05-30 | M    | São Paulo  | Tech-Lead TI   | 15.100  | 
+| 2025032 | Vivian Pedrosa     | 591.931.681-91 | 2015-04-07 | F    | Aquiraz    | Estagiária TI  | 2.400   |
+| 2025033 | Guilherme Soares   | 851.641.317-85 | 2006-10-28 | M    | Natal      | Junior TI      | 3.200   |
+
+### ➜ IN
+
+Verifica se o valor de uma coluna está em uma lista específica de valores.
+
+```SQL
+SELECT colunas FROM tabela WHERE coluna IN (valor1, valor2, valor3);
+```
+
+### ➜ BETWEEMN
+
+Filtra valores dentro de um intervalo. Funciona para números, datas e até textos (com base na ordenação ASCII).
+
+```SQL
+SELECT nomeDaColuna FROM nomeDaTabela WHERE condição BETWEEN '0000-00-00' AND '0000-00-00';
+```
+
+Aplicando isso na nossa Tabela, teriamos o seguinte resultados:
+
+```SQL
+SELECT * FROM funcionarios WHERE DataNasc BETWEEN '2000-01-01' AND '2025-12-30';
+```
+
+| ID      | Nome               | CPF            | DataNasc   | Sexo | Cidade     | Cargo          | Salario |
+| ------- | ------------------ | -------------- | ---------- | ---- | ---------- | -------------- | ------- |
+| 2025011 | Lucas Alcantara    | 123.957.321-87 | 2005-06-28 | M    | Fortaleza  | CEO            | N/A     |
+| 2025012 | Vitoria Pedrosa    | 231.574.958-14 | 2005-08-24 | F    | Fortaleza  | CFO            | N/A     |
+| 2025032 | Vivian Pedrosa     | 591.931.681-91 | 2015-04-07 | F    | Aquiraz    | Estagiária TI  | 2.400   |
+| 2025033 | Guilherme Soares   | 851.641.317-85 | 2006-10-28 | M    | Natal      | Junior TI      | 3.200   |
+| 2025041 | Bruna Alencar      | 931.513.093-03 | 2006-07-05 | F    | Fortaleza  | Junior de RH   | 2.500   |
+
+### ➜ NOT BETWEEN
+
+Filtra valores fora de um intervalo, como o caso do ``BETWEEN``, mas teremos como resultado o que está fora do intervalo apresentado.
+
+```SQL
+SELECT nomeDaColuna FROM nomeDaTabela WHERE condição NOT BETWEEN '0000-00-00' AND '0000-00-00';
+```
+
+Aplicando isso na nossa Tabela, teriamos o seguinte resultados:
+
+```SQL
+SELECT * FROM funcionarios WHERE DataNasc NOT BETWEEN '2000-01-01' AND '2025-12-30';
+```
+
+| ID      | Nome               | CPF            | DataNasc   | Sexo | Cidade     | Cargo          | Salario |
+| ------- | ------------------ | -------------- | ---------- | ---- | ---------- | -------------- | ------- |
+| 2025021 | Mara Edwirges      | 958.478.321-98 | 1987-10-18 | F    | São Paulo  | Diretora do RH | 15.600  |
+| 2025022 | Claubia Mesquita   | 157.987.546-32 | 1984-11-21 | F    | Sobral     | Diretora de SG | 16.200  |
+| 2025023 | Felipe Paiva       | 684.315.984-73 | 1993-04-12 | M    | Curitiba   | Diretor de TI  | 23.700  |
+| 2025031 | Cleylton Alcantara | 315.753.391-61 | 1987-05-30 | M    | São Paulo  | Tech-Lead TI   | 15.100  |
+
+### ➜ ORDER BY
+
+Ordena os resultados da consulta com base em uma ou mais colunas. O padrão é crescente (ASC), mas pode ser definido como decrescente (DESC).
+
+```SQL
+SELECT nomeDaTabela FROM nomeDaTabela ORDER BY condição /* DESC ou ASC */;
+```
+
+Aplicando isso na nossa Tabela, teriamos o seguinte resultados:
+
+```SQL
+SELECT * FROM funcionarios ORDER BY DataNasc DESC;
+```
+
+| ID      | Nome               | CPF            | DataNasc   | Sexo | Cidade     | Cargo          | Salario |
+| ------- | ------------------ | -------------- | ---------- | ---- | ---------- | -------------- | ------- |
+| 2025032 | Vivian Pedrosa     | 591.931.681-91 | 2015-04-07 | F    | Aquiraz    | Estagiária TI  | 2.400   |
+| 2025033 | Guilherme Soares   | 851.641.317-85 | 2006-10-28 | M    | Natal      | Junior TI      | 3.200   |
+| 2025041 | Bruna Alencar      | 931.513.093-03 | 2006-07-05 | F    | Fortaleza  | Junior de RH   | 2.500   |
+| 2025012 | Vitoria Pedrosa    | 231.574.958-14 | 2005-08-24 | F    | Fortaleza  | CFO            | N/A     |
+| 2025011 | Lucas Alcantara    | 123.957.321-87 | 2005-06-28 | M    | Fortaleza  | CEO            | N/A     |
+| 2025031 | Cleylton Alcantara | 315.753.391-61 | 1987-05-30 | M    | São Paulo  | Tech-Lead TI   | 15.100  |
+| 2025021 | Mara Edwirges      | 958.478.321-98 | 1987-10-18 | F    | São Paulo  | Diretora do RH | 15.600  |
+| 2025023 | Felipe Paiva       | 684.315.984-73 | 1993-04-12 | M    | Curitiba   | Diretor de TI  | 23.700  |
+| 2025022 | Claubia Mesquita   | 157.987.546-32 | 1984-11-21 | F    | Sobral     | Diretora de SG | 16.200  |
 
 ### 📍 Funções de Agrupamento
 
-AVG
+### ➜ AVG: Calcula a média dos valores de uma coluna numérica.
 
-MIN
+```SQL
+SELECT AVG(condição) FROM nomeDaTabela;
+```
 
-MAX
+### ➜ MIN: Retorna o menor valor em uma coluna.
 
-SUM
+```SQL
+SELECT MIN(condição) FROM nomeDaTabela;
+```
 
-COUNT
+### ➜ MAX: Retorna o maior valor em uma coluna.
+
+```SQL
+SELECT MAX(condição) FROM nomeDaTabela;
+```
+
+### ➜ SUM: Retorna a soma dos valores de uma coluna numérica.
+
+```SQL
+SELECT SUM(condição) FROM nomeDaTabela;
+```
+
+### ➜ COUNT: Retorna o número de linhas em um grupo ou tabela.
+
+```SQL
+SELECT COUNT(condição) FROM nomeDaTabela;
+```

@@ -484,9 +484,6 @@ De fato, a profissão de influenciador digital já é algo rentável. Novos conc
     - Aplicativo para relacionamentos
 4. Entre outros...
 
----
-### Passando para o Módulo 02
----
 </br>
 
 # 📌 Componentes de Hardware
@@ -840,5 +837,93 @@ São funções do subsistema de E/S:
 1. Receber ou enviar informações do/para o meio exterior.
 2. Converter as informações (de entrada ou de saída) em uma forma inteligível para a máquina (se estiver recebendo) ou para o operador (estar enviando).
 
+Dentre o Subsistemas de E/S, teremos separadamente os de Entrada e Saída, sendo assim:
+
+### ➜ Dispositivos de Entrada
+
+São usados para capturar dados do ambiente externo e convertê-los em dados digitais:
+
+- **Teclado**: Entrada de texto e comandos, converte teclas em códigos binários (ex: ASCII).  
+- **Mouse**: Dispositivo apontador para interação gráfica, traduz movimentos e cliques em comandos digitais.  
+- **Scanner**: Digitaliza imagens ou documentos físicos para formato digital.  
+- **Microfone**: Converte ondas sonoras em sinais digitais para gravação ou comunicação.  
+- **Sensores**: Incluem câmeras, sensores de temperatura, acelerômetros, usados em sistemas embarcados e IoT.
+
+### ➜ Dispositivos de Saída
+
+Convertem dados digitais em formas interpretáveis pelo usuário:
+
+- **Monitor**: Exibe imagens, texto e vídeos (LCD, LED, OLED).  
+- **Impressora**: Converte dados em documentos físicos (jato de tinta, laser, matricial).  
+- **Caixas de Som / Headset**: Convertem dados digitais em som para entretenimento ou comunicação.  
+- **Projetores**: Ampliam imagens para telas grandes.
+
+
 ### ➜ Interface
 
+Interface é o ponto de contato onde dois sistemas, componentes ou módulos trocam informações e comandos. Ela define as regras e protocolos para essa comunicação, garantindo que as partes diferentes “conversem” e trabalhem juntas sem erros. No contexto de hardware, uma interface é o conjunto de sinais, conexões, comandos e protocolos usados para permitir que componentes diferentes se comuniquem, por exemplo, entre a CPU e a memória, ou entre o processador e um dispositivo de entrada/saída. Por que a Interface é importante?
+
+- **Padronização:** Permite que diferentes dispositivos e componentes possam se conectar e operar juntos, mesmo se forem de fabricantes diferentes.  
+- **Modularidade:** Facilita a substituição, atualização e manutenção dos componentes sem alterar todo o sistema.  
+- **Comunicação eficiente:** Controla o fluxo de dados, comandos e sinais de controle para evitar conflitos e garantir integridade.
+
+### Tipos de Interface
+
+### A) Interface de Hardware
+
+- **Barramentos:** Conjunto de linhas elétricas que transportam dados, endereços e sinais de controle entre componentes.  
+  - Exemplo: Barramento PCI, USB, SATA.  
+- **Portas de Entrada/Saída:** Interfaces físicas onde dispositivos se conectam (USB, HDMI, Ethernet).  
+- **Controladores de Dispositivos:** Hardware intermediário que gerencia a comunicação entre o dispositivo e o processador.
+
+### B) Interface de Software
+
+- **APIs (Application Programming Interfaces):** Conjunto de rotinas e protocolos que permitem que programas se comuniquem com hardware ou entre si.  
+- **Drivers:** Software que atua como tradutor entre o sistema operacional e o hardware.
+
+### Características principais de uma Interface
+
+- **Velocidade:** A taxa com que os dados podem ser transmitidos.  
+- **Formato dos dados:** Como os dados são organizados e enviados.  
+- **Protocolo:** Regras para iniciar, manter e encerrar a comunicação.  
+- **Sincronização:** Coordenação temporal entre emissor e receptor para evitar erros.
+
+
+# 📌 Representação de Dados
+
+A representação de dados é fundamental para a ciência da computação, pois tudo o que um computador processa, armazena e transmite deve estar codificado em um formato binário. Entender os diferentes métodos e padrões de representação é crucial para o design de sistemas, linguagens, arquiteturas de hardware e algoritmos eficientes.
+
+- Um conjunto ordenado de bytes, que representa uma informação útil para os computadores, constitui uma **palavra**.
+- Um conjunto estruturado de palavras forma um **registro**.
+- Um conjunto organizado de registros forma um **arquivo**.
+- Um conjunto organizado de arquivos forma um **banco de dados**.
+
+Dentre essas afirmações podemos comprender como trabalharemos com a quantidade de Bits e Bytes, como médidas iguais a da matemática fundamental de Metros e Kilometros. Portanto, primeriramente entederemos que tudo se baseia em 8 bits, assim, podemos afirmar que:
+
+``8 Bits`` equivale a ``1 Byte``
+
+| Unidade    | Simbolo | Valor         |
+| ---------- | ------- | ------------- |
+| 1 Bit      | 1 b     | (0 ou 1)      |
+| 1 Byte     | 1 B     | 8 Bits        |
+| 1 Kilobyte | 1 KB    | 1024 Bytes    |
+| 1 Megabyte | 1 MB    | 1024 Kilobyte |
+| 1 Gigabyte | 1 GB    | 1024 Megabyte |
+| 1 Terabyte | 1 TB    | 1024 Gigabyte |
+| 1 Petabyte | 1 PB    | 1024 Terabyte |
+| 1 Exabyte  | 1 EB    | 1024 Petabyte |
+
+Para não termos que aprender a tabela completa, podemos tratar com uma regra de 3 simples para entender quantos bytes seriam:
+
+``8 Bits`` equivale a ``1 Byte``
+</br>
+``X Bits`` equivale a ``100 Byte``
+
+``8 * 100 = 1 * X => X / 800 => X = 800`` ou seja ``800 Bits``
+
+E digamos que precisaremos tratar com grandes valores, para encurtarmos trabalhos, utilizaremos de notações cientificas. Trataremos esses dados em sistemas de numerações; Decimais, Binários, Octagonais e Hexadecimais.
+
+<img src="./images/data_representation.png">
+
+
+terminar de estudar essa bagaça depois menino.....
