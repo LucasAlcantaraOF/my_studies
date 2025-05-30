@@ -635,6 +635,305 @@ int main() {
 }
 ```
 
+### 📌 Estruturas de Repetição (Loopings)
+
+Entederemos uma estrutura de repetição como uma metodologia de realizar um "looping" ou laço de repetição, é um conceito fundamental na programação. Ele permite que um bloco de código seja executado repetidamente, até você estabelecer um fim, em vez de você ter que codificar o mesmo código varias vezes. Ou seja, você desenvolve um algoritmo que faça o mesmo código ser executado varias vezes de forma mais "clean code".
+
+### 📍Lopping em variável de controle (for)
+
+o ``for`` é um laço de repetição (ou loop) que permite executar um bloco de código várias vezes, de forma controlada. Ele é ideal quando você sabe (ou pode calcular) o número exato de repetições que precisa realizar. Sua sintaxe básica é composta por três partes:
+
+- Inicialização:
+    - Esta parte é executada apenas uma vez no início do for
+    - É aqui que você geralmente declara e inicializa uma variável de controle do loop (também conhecida como contador).
+        - Exemplo: ``int i = 0;`` (declara um inteiro ``i`` e declara seu valor inicial como 0).
+
+- Condição:
+    - Esta expressão é avaliada antes de cada iteração do loop, ou seja, ele que define se seu looping vai ser executado ou não.
+    - Se a ``condição`` foi ``true`` (verdadeira, diferente de zero), o bloco de código dentro do ``for`` é executado.
+    - Se a ``condição`` foi ``false`` (falso, igual a zero), o bloco do código dentro do ``for`` não é executado.
+        - Exemplo: ``i < 10``(o loop continua enquanto o ``i`` for menor que 10).
+
+- Incrememento ou Decremento:
+    - Esta parte é executada após cada iteração do loop (depois que o bloco de código é executado).
+    - É aqui que você geralmente atualiza a variável de controle, seja incrementando-a ``i++`` ou decrementando-a ``i--``.
+    - Essa atualização é crucial para que a ``condição`` eventualmente se torne falsa e o loop termine, evitando um loop infinito.
+
+Afinal, explicando resumidamente como todo o processo de looping se constitui, primeiramente, temos a execução da ``inicialização``, e caso a ``condição`` seja positiva, teremos a executação do looping, caso não, o looping não será executado. Digamos que ele foi positivo, o ``imcremento ou decremeto`` é executado. Este ciclo se repete até que a ``condição`` seja atendida.
+
+```C
+for (inicialização, condição, incremento_decremento) {
+
+}
+```
+> Sintaxe básica de looping ``for``
+
+Agora iremos tratar um exemplo real para melhor compreensão de como trabalharemos com o looping ``for`` em nossas aplicações. Afinal, digamos que queremos fazer um looping básico que perguntará um número qualquer e então calcularia a soma de 1 até o valor desejado, tendo como resultado a soma de todos os números.
+
+```c
+#include <stdio.h>
+
+int main() {
+    int n;
+    int soma = 0; // Variável para acumular a soma, inicializada com 0
+
+    printf("Digite um número inteiro positivo para somar de 1 até ele: "); // Declarando qual valor iremos realizar o nosso processo de soma
+    scanf("%d", &n); // Lê o valor de N fornecido pelo usuário
+
+    if (n <= 0) {
+        printf("Por favor, digite um número inteiro positivo.\n"); // Validando se o valor escolhido não foi 0 com estrutura de condições
+    } else {
+        // O loop for vai de 1 até N, somando cada número
+        for (int i = 1; i <= n; i++) {
+            soma += i; // Equivalente a: soma = soma + i;
+        }
+        printf("A soma dos números de 1 até %d é: %d\n", n, soma);
+    }
+
+    return 0;
+}
+```
+
+### 📍 Com teste de condição no Início (while)
+
+Ao contrário do ``for``, que é ideal quando você sabe de antemão o número de iterações, o ``while`` é perfeito para situações onde o loop deve continuar enquanto uma determinada condição ``for`` verdadeira, e você não sabe quantas vezes isso acontecerá. Sua esturutura básica e denominada apenas por uma parte:
+
+- Condição
+    - Tem a mesma função do ``for``, irá validar se a ``condição`` de funcionamneto é verdadeira para executar o código de repetição, ou se é falso para não executar o código de repetição.
+
+```c
+while(condição){
+     // Bloco de código que deve ser repetido
+}
+```
+
+Resumidamente, o ``while`` é um ``for`` mais encurtado, que só terá uma condição para sabermos se iremos realizar um looping ou não, ou seja, a sua ``condição`` é avaliada, se positivo, ele executará o código de repetição, se falso, o ``while`` será encerrado.
+
+Afinal, Comparando com o ``for``, a inicialização, condição e incremento/decremento ficam na mesma linha, na assinatura do loop. No while:
+
+- A inicialização da variável de controle ``int i = 1;`` precisa ser feita antes do while.
+- A condição ``i <= 5;`` é o único argumento entre parênteses.
+- O incremento/decremento ``1++;`` ou qualquer outra atualização da variável de controle deve ser feito dentro do bloco de código do while. Se você esquecer de atualizar essa variável, o loop pode se tornar infinito!
+
+Exemplificando, iremos tratar um exemplo prático do uso do ``while`` na construção de uma interface que irá validar o momento que o usuário quer sair da nossa aplicação em C:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int opcao = 0; // Variável para armazenar a opção do menu
+    
+    printf("Seja Bem-vindo(a) ao meu programa de demonstração!\n");
+
+    // O loop continua enquanto a opção não for 4 (Sair)
+    while (opcao != 4) { 
+        printf("\n--- MENU ---\n");
+        printf("1. Opção Um\n");
+        printf("2. Opção Dois\n");
+        printf("3. Opção Três\n");
+        printf("4. Sair\n");
+        printf("Escolha uma opção: ");
+        scanf("%d", &opcao); // Lê a opção do usuário
+        
+        switch (opcao) { // Usa um switch para lidar com as opções
+            case 1:
+                printf("Você escolheu a Opção Um.\n");
+                break;
+            case 2:
+                printf("Você escolheu a Opção Dois.\n");
+                break;
+            case 3:
+                printf("Você escolheu a Opção Três.\n");
+                break;
+            case 4:
+                printf("Saindo do programa. Até mais, Star!\n");
+                break;
+            default:
+                printf("Opção inválida. Por favor, escolha uma opção de 1 a 4.\n");
+                break;
+        }
+    }
+
+    return 0;
+}
+```
+
+### 📍 Com teste de condição no Final (do while)
+
+A principal diferença do ``do-while`` é que ele garante que o bloco de código seja executado pelo menos uma vez, antes mesmo da condição ser avaliada. Isso porque a condição é verificada apenas no final de cada iteração. Sua sintaxe básica é composta somente por uma parte:
+
+```c
+do {
+    // Bloco de código a ser repetido
+} while (condição); 
+```
+
+Resumidamente, o ``do-while`` opera a primeira vez independemente do que a ``condição`` está declarando, ou seja, ele executa ao menos sem validar uma ``condição`` e no final, ele validará, caso seja verdadeira, irá entrar no looping novamente, caso falso, o ``do-while`` será encerrado.
+
+Exemplificando, iremos trazer uma algoritimos que trabalha em analisar se o valor inserido é um valor negativo e só será valido quando for um:
+
+```c
+#include <stdio.h>
+
+int main() {
+    int numero;
+
+    printf("Por favor, digite um número.\n");
+
+    do {
+        printf("Digite um número: ");
+        scanf("%d", &numero); // Lê o número do usuário
+
+        if (numero >= 0) { // Se o número for positivo (maior ou igual a zero)
+            printf("Número inválido! Digite um número menor que zero.\n");
+        }
+
+    } while (numero <= 0); // Repete enquanto o número for inválido (maior ou igual a zero)
+
+    printf("Você digitou o número negativo: %d. Ótimo!\n", numero);
+
+    return 0;
+}
+```
+
+Teremos um exemplo muito mais aprofundado a seguir, que trabalheremos com bibliotecas especificas para termos alguns métodos na criação de um jogo simples que lançará dados até ser igual ao valor desejado pelo usuário:
+
+```c
+#include <stdio.h>
+#include <stdlib.h> // Para rand() e srand()
+#include <time.h>   // Para time()
+#include <windows.h> // Para Sleep() no Windows
+
+int main() {
+    int valorDado, valorDesejado;
+    int lancamentos = 0;
+
+    printf("Vou lançar um dado até tirar o valor que você escolher.\n");
+
+    // Validação da entrada do usuário para valorDesejado
+    do {
+        printf("Por favor, digite um valor entre 1 e 6 que você quer tirar: "); // Pedindo para o usuário declarar um valor desejado para quando der o resultado esperado, parar de lançar os dados
+        scanf("%d", &valorDesejado);
+
+        if (valorDesejado < 1 || valorDesejado > 6) { 
+            printf("Valor inválido! O valor deve estar entre 1 e 6. Tente novamente.\n");
+        }
+    } while (valorDesejado < 1 || valorDesejado > 6); // Repete enquanto o valor for inválido
+
+    srand(time(NULL)); 
+
+    do {
+        valorDado = (rand() % 6) + 1; // Gera um número entre 1 e 6
+        lancamentos++; // Conta o lançamento
+        printf("Lançamento %d: O dado caiu em %d\n", lancamentos, valorDado);
+        
+        Sleep(1000); // Pausa de 1 segundo
+        
+    } while (valorDado != valorDesejado);
+
+    printf("\nUau! Conseguimos alcançar o valor %d após %d lançamentos. Bom jogo! \n", valorDesejado, lancamentos);
+
+    return 0;
+}
+```
+
+### 📌 Array: Vetores
+
+Um vetor (ou array) em C é uma coleção de elementos do mesmo tipo de dado, armazenados em posições de memória contíguas (uma após a outra). Pense nele como uma sequência de "caixas" idênticas, cada uma podendo guardar um valor, e todas essas caixas são acessadas por um único nome de variável.
+
+Imagine que você precisa armazenar a idade de 5 alunos. Sem vetores, você teria que declarar 5 variáveis separadas: int idade1, idade2, idade3, idade4, idade5;. Isso se torna inviável se você precisar de 100 ou 1000 idades! Com um vetor, você declara apenas uma variável int idades[5]; e gerencia tudo de forma mais eficiente.
+
+Afinal, quando formos trabalhar com vetores e precisarmos declara-los teremos que especificar:
+
+- O tipo de dados dos elementos que ele armazenará (ex: int, float, char, double, etc...).
+- O nome do vetor.
+- O tamanho do vetor, ou seja, o número de elementos que ele pode conter entre colchetes ``[]``.
+
+```c
+tipoDoDado nomeDoVetor[tamanho] = {valores};
+```
+
+Além do mais, vale ressaltar que o armazenamento de vetores começa a se contar do 0. Ou seja, caso você tenha um vetor ``notas[5]`` os elementos que podem ser acessados serão os:
+
+``notas[0]`` Primeiro Elemento
+
+``notas[1]`` Segundo Elemento
+
+``notas[2]`` Terceiro Elemento
+
+``notas[3]`` Quarto Elemento
+
+``notas[4]`` Quinto Elemento
+
+Digamos que trabalharemos com vetores, o algoritmo de notas a seguir declara um vetor para 4 notas, atribui valores a elas, as exibe uma por uma usando um for e mostra como acessar/modificar uma nota específica. É um exemplo básico para entender declaração, acesso por índice e iteração em vetores.
+
+```c
+#include <stdio.h>
+
+int main() {
+    // 1. Declaração de um vetor para armazenar 4 notas
+    float notas[4]; 
+
+    printf("Seja bem vindo! Vamos trabalhar com vetores (arrays) agora.\n");
+
+    // 2. Inicializando os elementos do vetor (atribuindo valores)
+    notas[0] = 7.5;
+    notas[1] = 8.0;
+    notas[2] = 6.5;
+    notas[3] = 9.0;
+
+    printf("\nAs notas dos alunos são:\n");
+
+    // 3. Acessando e exibindo os elementos do vetor usando um loop 'for' (Olha os loops de novo!)
+    // O loop vai do índice 0 até o (tamanho-1)
+    for (int i = 0; i < 4; i++) {
+        printf("Nota do aluno %d: %.1f\n", i + 1, notas[i]); // i+1 para mostrar "Aluno 1", "Aluno 2", etc.
+    }
+
+    printf("\nPrimeira nota (índice 0): %.1f\n", notas[0]);
+    printf("Última nota (índice 3): %.1f\n", notas[3]);
+
+    // Exemplo de como você pode mudar um valor
+    notas[1] = 8.5; // Altera a segunda nota
+    printf("Segunda nota atualizada (índice 1): %.1f\n", notas[1]);
+
+    return 0;
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 
 ### 📌 Considerações Finais:

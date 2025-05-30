@@ -1,25 +1,21 @@
-// Questão 08
-
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-	
-	int number1, number2, sum_numbers;
-    
-    
-    printf("Digite um valor para o numero A: ");
-    scanf("%d", &number1);
-    printf("Digite um valor para o numero B: ");
-    scanf("%d", &number2);
-    
-    sum_numbers = number1 + number2;
-    
-    if (sum_numbers % 2 == 0){
-    	printf("A Soma desses dois numeros eh par, %d", sum_numbers);
-	} else if (sum_numbers % 3 == 0) {
-		printf("A soma desses dois numeros eh impar, %d", sum_numbers);
-	}
+    int numero;
 
-	return 0;
+    printf("Por favor, digite um número.\n");
+
+    do {
+        printf("Digite um número: ");
+        scanf("%d", &numero); // Lê o número do usuário
+
+        if (numero >= 0) { // Se o número for positivo (maior ou igual a zero)
+            printf("Número inválido! Digite um número menor que zero.\n");
+        }
+
+    } while (numero >= 0); // Repete enquanto o número for inválido (maior ou igual a zero)
+
+    printf("Você digitou o número negativo: %d. Ótimo!\n", numero);
+
+    return 0;
 }

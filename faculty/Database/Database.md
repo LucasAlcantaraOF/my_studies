@@ -724,12 +724,17 @@ ALTER TABLE nomeDaTabela ADD nomeDaColuna tipoDeDado [restrições];
 ```SQL
 ALTER TABLE nomeDaTabela DROP COLUMN nomeDaColuna;
 ```
-> Sintaxe básica de remover colunas da tabela
+> Sintaxe básica de remover colunas da tabela 
+
+```SQL
+DROP TABLE nomeDaTabela;
+```
+> Exclusão da tabela
 
 ### ➜ ALTER em Colunas
 
 ```SQL
-ALTER TABLE nomeDaColuna MODIFY nomeDaColuna novoTipoDeDado [restrições];
+ALTER TABLE NomeDaTabela ALTER COLUMN NomeDaColuna TYPE NovoTipoDeDados;
 ```
 > Sintaxe básica de modificar uma colunas
 
@@ -749,14 +754,9 @@ ALTER TABLE nomeDaTabela DROP CONSTRAINT nomeDaRestrição;
 ```
 > Sintaxe básica para remover restrições
 
-### 📍 DELETE
+### 📍 DELETE e DROP    
 
 Os comandos SQL de ``DELETE`` serve exclusivamente para trabalhar em remover **Tabelas** da nossa **DataBase** ou em remover **Linhas(ou Registros)**. Afinal, sua sintaxe se forma da seguinte maneira:
-
-```SQL
-DELETE FROM nomeDaTabela;
-```
-> Sintaxe básica para deletar tabelas
 
 ```SQL
 DELETE FROM nomeDaTabela WHERE condição;
@@ -788,6 +788,17 @@ A Linha do ID = 2025041 foi excluida da nossa tabela e apenas para demonstrar qu
 | ------- | ------------------ | -------------- | ---------- | ---- | ---------- | -------------- | ------- |
 | 2025042 | Iohana Madeira     | 003-315-910-31 | 2002-12-15 | F    | Pernambuco | Junior RH      | 2.500   |
 
+Caso queiramos lidar com a exclusão de tabelas ou colunas, precisaremos utilizar o método ``DROP``, sua sintaxe básica consiste na seguinte:
+
+```SQL
+DROP DATABASE databaseNome
+```
+> Sintaxe básica para exclusão do Banco de Dados
+
+```SQL
+DROP TABLE nomeDaTabela
+```
+> Sintaxe básica para exclusão de uma tabela
 
 ### 📍 UPDATE
 
@@ -1009,6 +1020,352 @@ SELECT * FROM funcionarios ORDER BY DataNasc DESC;
 | 2025023 | Felipe Paiva       | 684.315.984-73 | 1993-04-12 | M    | Curitiba   | Diretor de TI  | 23.700  |
 | 2025022 | Claubia Mesquita   | 157.987.546-32 | 1984-11-21 | F    | Sobral     | Diretora de SG | 16.200  |
 
+### 📍 SELECT com Chaves Estrangeiras (Foreign Key)
+
+Entendendo os casos do ``SELECT`` trabalhando com informações mais básicas, aprenderemos como operar **Chaves Estrangeiras**, ou seja, **Foreign Key**. Para tanto, precisaremos entender métodos que utilizam de conceitos básicos da matemática para funciona, visto que, além de entender oque cada método faz e como utilizar a sintaxe certa, precisamos compreender de forma acadêmica como isso foi desenvolvido.
+
+### ➜ INNER JOIN
+
+O ``INNER JOIN``é um método do ``SELECT`` que visa combinar linhas de duas ou mais tabelas, baseando-se em uma condição de correspondência entre colunas relacionadas. O resultado de um ``INNER JOIN`` é um novo conjunto de resultados que contém apenas as linhas onde a condição de junção é satisfeita em ambas as tabelas, ou seja, demonstrando isso de forma gráfica utilizando os conceitos básicos de conjuntos da matemática, podemos tratar que o ``INNER JOIN`` retrata a junção de dois conjuntos, que seriam no caso as tabelas. Sua sintaxe básica a seguir:
+
+```SQL
+SELECT
+-- 01. Colunas que desejamos buscar
+Apelido.colunaDeBuscaTabelaA, 
+Apelido.colunaDeBuscaTabelaB
+FROM
+-- 02. Declarando a primeira tabela que iremos buscar os dados
+nomeDaTabelaA AS apelidoTabelaA (A) -- Tabela Esquerda
+INNER JOIN
+-- 03. Declarando a segunda tabela que iremos buscar os dados e um apelido
+nomeDaTabelaB AS apelidoTabelaB (B) -- Tabela Direita
+ON
+-- 04. Definindo quais colunas possuem uma condição de junção
+ApelidoA.colunaFK = ApelidoB.ColunaFK
+```
+
+Assim seria sua sintaxe básica e como graficamente esse junção de dados funciona é a seguinte:
+
+<IMG>
+
+Exemplificando como vamos tratar esses dados iremos criar uma tabela, mas não demonstrarei todos os comandos até chegar na nossa tabela ``ALUNOS`` e ``CURSOS``, só iremos apresentá-las e construir os demais comandos ``SELECT`` na manipulação de chaves estrangeiras.   
+
+| AlunoID (PK) | AlunoNome         | CursoID (FK) |
+|--------------|-------------------|--------------|
+| 1            | Lucas Alencar     | 101          |
+| 2            | Vitoria Pedrosa   | 102          |
+| 3            | Vivian Mesquita   | 101          |
+| 4            | Breno Mesquita    | 103          |
+| 5            | Claubia Rodrigues | 105          |
+| 6            | Valdemar Firmino  | 104          |
+| 7            | Alice Silva       | 101          |
+| 8            | Bruno Costa       | 102          |
+| 9            | Carla Dias        | 103          |
+| 10           | Daniel Lima       | 104          |
+| 11           | Yelena Alcantara  |              |
+
+| CursoID (PK) | CursoNome  |
+|--------------|------------|
+| 101          | JavaScript |
+| 102          | Python     |
+| 103          | Java       |
+| 104          | C#         |
+| 105          | PHP        |
+| 106          | Ruby       |
+| 107          | Golang     |
+
+```SQL
+SELECT
+A.AlunoNome
+C.CursoNome
+FROM
+ALUNOS AS A
+INNER JOIN
+CURSOS AS C
+ON
+A.CursoID = C.CursoID
+```
+
+Resultado: 
+
+| AlunoNome         | CursoNome  |
+|-------------------|------------|
+| Lucas Alencar     | JavaScript |
+| Vitoria Pedrosa   | Python     |
+| Vivian Mesquita   | JavaScript |
+| Breno Mesquita    | Java       |
+| Claubia Rodrigues | PHP        |
+| Valdemar Firmino  | C#         |
+| Alice Silva       | JavaScript |
+| Bruno Costa       | Python     |
+| Carla Dias        | Java       |
+| Daniel Lima       | C#         |
+
+Retrataremos mais a frente no ``LEFT JOIN``, mas já podemos perceber que existiam 11 Alunos, mas uma não estava matriculada em nenhum curso, portanto não apareceu no nosso SELECT.
+
+### ➜ LEFT JOIN
+
+O método ``LEFT JOIN`` do ``SELECT``, que trabalha igualmente como a ``INNER JOIN``, na manipulação e junção de tabelas que estão ligadas por meio de uma **FK**, serve mais especificamente para retornar todas as linhas da tabela "esquerda" (a primeira tabela listada na cláusula ``FROM`` ou antes do ``LEFT JOIN``) e as linhas correspondentes da tabela "direita" (a segunda tabela listada após o ``LEFT JOIN``). A diferença crucial para o INNER JOIN é: se não houver correspondência para uma linha da tabela esquerda na tabela direita, a linha da tabela esquerda será incluída no conjunto de resultados, e as colunas da tabela direita correspondentes terão valores **NULL**. Além do mais sua sintaxe básica é igual a do ``INNER JOIN``, só mudaremos o método, ou seja:
+
+```SQL
+SELECT
+-- 01. Colunas que desejamos buscar
+Apelido.colunaDeBuscaTabelaA, 
+Apelido.colunaDeBuscaTabelaB
+FROM
+-- 02. Declarando a primeira tabela que iremos buscar os dados
+nomeDaTabelaA AS apelidoTabelaA (A) -- Tabela Esquerda
+LEFT JOIN
+-- 03. Declarando a segunda tabela que iremos buscar os dados e um apelido
+nomeDaTabelaB AS apelidoTabelaB (B) -- Tabela Direita
+ON
+-- 04. Definindo quais colunas possuem uma condição de junção
+ApelidoA.colunaFK = ApelidoB.ColunaFK
+```
+
+Exemplificando de forma prática, podemos retratar novamente aquela tabela que criamos e aplicarmos um ``SELECT`` com o método ``LEFT JOIN``.
+
+```SQL
+SELECT
+    A.AlunoNome,
+    C.CursoNome
+FROM
+    ALUNOS AS A
+LEFT JOIN
+    CURSO AS C
+ON
+    A.CursoID = C.CursoID;
+```
+
+| AlunoNome         | CursoNome  |
+|-------------------|------------|
+| Lucas Alencar     | JavaScript |
+| Vitoria Pedrosa   | Python     |
+| Vivian Mesquita   | JavaScript |
+| Breno Mesquita    | Java       |
+| Claubia Rodrigues | PHP        |
+| Valdemar Firmino  | C#         |
+| Alice Silva       | JavaScript |
+| Bruno Costa       | Python     |
+| Carla Dias        | Java       |
+| Daniel Lima       | C#         |
+| Yelena Alcantara  | **NULL**   |
+
+Teremos agora retratando todos os dados de junção da tabela esquerda, ou seja, uma aluna que não esta matriculada até o momento em nenhum curso, irá ser apresentada com o valor **null**.
+
+### ➜ RIGHT JOIN
+
+O método ``RIGHT JOIN`` do ``SELECT``  é uma operação de junção que retorna todas as linhas da tabela "direita" (a segunda tabela listada após a cláusula ``RIGHT JOIN``) e as linhas correspondentes da tabela "esquerda" (a primeira tabela listada na cláusula FROM ou antes do ``RIGHT JOIN``). Assim como no ``LEFT JOIN``, a regra é: se não houver correspondência para uma linha da tabela direita na tabela esquerda, a linha da tabela direita será incluída no conjunto de resultados, e as colunas da tabela esquerda correspondentes terão valores NULL. Sua sintaxe é igualmente a suas anteriores, só alterando o método do ``SELECT``.
+
+```SQL
+SELECT
+-- 01. Colunas que desejamos buscar
+Apelido.colunaDeBuscaTabelaA, 
+Apelido.colunaDeBuscaTabelaB
+FROM
+-- 02. Declarando a primeira tabela que iremos buscar os dados
+nomeDaTabelaA AS apelidoTabelaA (A) -- Tabela Esquerda
+RIGHT JOIN
+-- 03. Declarando a segunda tabela que iremos buscar os dados e um apelido
+nomeDaTabelaB AS apelidoTabelaB (B) -- Tabela Direita
+ON
+-- 04. Definindo quais colunas possuem uma condição de junção
+ApelidoA.colunaFK = ApelidoB.ColunaFK
+```
+
+Exemplificando utilizaremos ainda a tabela que construimos no ``INNER JOIN``.
+
+```SQL
+SELECT
+    A.AlunoNome,
+    C.CursoNome
+FROM
+    ALUNOS AS A
+RIGHT JOIN
+    CURSO AS C
+ON
+    A.CursoID = C.CursoID;
+```
+
+| AlunoNome         | CursoNome  |
+|-------------------|------------|
+| Lucas Alencar     | JavaScript |
+| Vitoria Pedrosa   | Python     |
+| Vivian Mesquita   | JavaScript |
+| Breno Mesquita    | Java       |
+| Claubia Rodrigues | PHP        |
+| Valdemar Firmino  | C#         |
+| Alice Silva       | JavaScript |
+| Bruno Costa       | Python     |
+| Carla Dias        | Java       |
+| Daniel Lima       | C#         |
+| **NULL**          | Ruby       |
+| **NULL**          | GoLang     |
+
+### ➜ FULL JOIN
+
+O método do ``SELECT`` ``FULL JOIN``é a operação de junção mais abrangente. Ele retorna todas as linhas de ambas as tabelas que estão sendo unidas, ou seja, tanto da tabela "esquerda" quanto da tabela "direita", independentemente de haver ou não uma correspondência na outra tabela, assim, retornando a soma de todos os conjuntos tabelas. Sua sintaxe é indiferente das anteriores, ou seja, se constitui a partir da seguinte sintaxe:
+
+```SQL
+SELECT 
+-- 01. Colunas que desejamos buscar
+Apelido.colunaDeBuscaTabelaA, 
+Apelido.colunaDeBuscaTabelaB
+FROM
+-- 02. Declarando a primeira tabela que iremos buscar os dados
+nomeDaTabelaA AS apelidoTabelaA (A) -- Tabela Esquerda
+LEFT JOIN
+-- 03. Declarando a segunda tabela que iremos buscar os dados e um apelido
+nomeDaTabelaB AS apelidoTabelaB (B) -- Tabela Direita
+ON
+-- 04. Definindo quais colunas possuem uma condição de junção
+ApelidoA.colunaFK = ApelidoB.ColunaFK
+```
+
+Exemplificando, novamente utilizaremos as tabelas utilziada anteriormente:
+
+```SQL
+SELECT
+    A.AlunoNome,
+    C.CursoNome
+FROM
+    ALUNOS AS A
+FULL OUTER JOIN
+    CURSO AS C
+ON
+    A.CursoID = C.CursoID;
+```
+
+| AlunoNome         | CursoNome  |
+|-------------------|------------|
+| Lucas Alencar     | JavaScript |
+| Vitoria Pedrosa   | Python     |
+| Vivian Mesquita   | JavaScript |
+| Breno Mesquita    | Java       |
+| Claubia Rodrigues | PHP        |
+| Valdemar Firmino  | C#         |
+| Alice Silva       | JavaScript |
+| Bruno Costa       | Python     |
+| Carla Dias        | Java       |
+| Daniel Lima       | C#         |
+| Yelena Alcantara  | **NULL**   |
+| **NULL**          | Ruby       |
+| **NULL**          | GoLang     |
+
+### ➜ CROSS JOIN
+
+O ``CROSS JOIN`` é a operação que realiza o produto cartesiano de duas tabelas. Ele combina cada linha da primeira tabela com cada linha da segunda tabela, resultando em um conjunto de resultados que contém todas as combinações possíveis de linhas entre as duas tabelas, sem nenhuma condição de junção. Sua sintaxe é um pouco diferente dos outros métodos, portanto, apresentaremos de forma detalhada a seguir:
+
+```SQL
+SELECT 
+-- 01. Colunas que desejamos buscar
+Apelido.colunaDeBuscaTabelaA, 
+Apelido.colunaDeBuscaTabelaB
+FROM
+-- 02. Declarando a primeira tabela que iremos buscar os dados
+nomeDaTabelaA AS apelidoTabelaA (A) -- Tabela Esquerda
+CROSS JOIN
+-- 03. Declarando a segunda tabela que iremos buscar os dados e um apelido
+nomeDaTabelaB AS apelidoTabelaB (B); -- Tabela Direita
+```
+
+Exemplificando o ``CROSS JOIN`` manipulando nossas tabelas criando um produto cartesiano de ambos, teriamos o seguinte resultado:
+
+
+```SQL
+SELECT
+    A.AlunoID,
+    A.AlunoNome,
+    C.CursoID,
+    C.CursoNome
+FROM
+    ALUNOS AS A
+CROSS JOIN
+    CURSO AS C;
+```
+
+| AlunoID | AlunoNome         | CursoID | CursoNome  |
+|---------|-------------------|---------|------------|
+| 1       | Lucas Alencar     | 101     | JavaScript |
+| 1       | Lucas Alencar     | 102     | Python     |
+| 1       | Lucas Alencar     | 103     | Java       |
+| 1       | Lucas Alencar     | 104     | C#         |
+| 1       | Lucas Alencar     | 105     | PHP        |
+| 1       | Lucas Alencar     | 106     | Ruby       |
+| 1       | Lucas Alencar     | 107     | GoLang     |
+| 2       | Vitoria Pedrosa   | 101     | JavaScript |
+| 2       | Vitoria Pedrosa   | 102     | Python     |
+| 2       | Vitoria Pedrosa   | 103     | Java       |
+| 2       | Vitoria Pedrosa   | 104     | C#         |
+| 2       | Vitoria Pedrosa   | 105     | PHP        |
+| 2       | Vitoria Pedrosa   | 106     | Ruby       |
+| 2       | Vitoria Pedrosa   | 107     | GoLang     |
+| 3       | Vivian Mesquita   | 101     | JavaScript |
+| 3       | Vivian Mesquita   | 102     | Python     |
+| 3       | Vivian Mesquita   | 103     | Java       |
+| 3       | Vivian Mesquita   | 104     | C#         |
+| 3       | Vivian Mesquita   | 105     | PHP        |
+| 3       | Vivian Mesquita   | 106     | Ruby       |
+| 3       | Vivian Mesquita   | 107     | GoLang     |
+| 4       | Breno Mesquita    | 101     | JavaScript |
+| 4       | Breno Mesquita    | 102     | Python     |
+| 4       | Breno Mesquita    | 103     | Java       |
+| 4       | Breno Mesquita    | 104     | C#         |
+| 4       | Breno Mesquita    | 105     | PHP        |
+| 4       | Breno Mesquita    | 106     | Ruby       |
+| 4       | Breno Mesquita    | 107     | GoLang     |
+| 5       | Claubia Rodrigues | 101     | JavaScript |
+| 5       | Claubia Rodrigues | 102     | Python     |
+| 5       | Claubia Rodrigues | 103     | Java       |
+| 5       | Claubia Rodrigues | 104     | C#         |
+| 5       | Claubia Rodrigues | 105     | PHP        |
+| 5       | Claubia Rodrigues | 106     | Ruby       |
+| 5       | Claubia Rodrigues | 107     | GoLang     |
+| 6       | Valdemar Firmino  | 101     | JavaScript |
+| 6       | Valdemar Firmino  | 102     | Python     |
+| 6       | Valdemar Firmino  | 103     | Java       |
+| 6       | Valdemar Firmino  | 104     | C#         |
+| 6       | Valdemar Firmino  | 105     | PHP        |
+| 6       | Valdemar Firmino  | 106     | Ruby       |
+| 6       | Valdemar Firmino  | 107     | GoLang     |
+| 7       | Alice Silva       | 101     | JavaScript |
+| 7       | Alice Silva       | 102     | Python     |
+| 7       | Alice Silva       | 103     | Java       |
+| 7       | Alice Silva       | 104     | C#         |
+| 7       | Alice Silva       | 105     | PHP        |
+| 7       | Alice Silva       | 106     | Ruby       |
+| 7       | Alice Silva       | 107     | GoLang     |
+| 8       | Bruno Costa       | 101     | JavaScript |
+| 8       | Bruno Costa       | 102     | Python     |
+| 8       | Bruno Costa       | 103     | Java       |
+| 8       | Bruno Costa       | 104     | C#         |
+| 8       | Bruno Costa       | 105     | PHP        |
+| 8       | Bruno Costa       | 106     | Ruby       |
+| 8       | Bruno Costa       | 107     | GoLang     |
+| 9       | Carla Dias        | 101     | JavaScript |
+| 9       | Carla Dias        | 102     | Python     |
+| 9       | Carla Dias        | 103     | Java       |
+| 9       | Carla Dias        | 104     | C#         |
+| 9       | Carla Dias        | 105     | PHP        |
+| 9       | Carla Dias        | 106     | Ruby       |
+| 9       | Carla Dias        | 107     | GoLang     |
+| 10      | Daniel Lima       | 101     | JavaScript |
+| 10      | Daniel Lima       | 102     | Python     |
+| 10      | Daniel Lima       | 103     | Java       |
+| 10      | Daniel Lima       | 104     | C#         |
+| 10      | Daniel Lima       | 105     | PHP        |
+| 10      | Daniel Lima       | 106     | Ruby       |
+| 10      | Daniel Lima       | 107     | GoLang     |
+| 11      | Yelena Alcantara  | 101     | JavaScript |
+| 11      | Yelena Alcantara  | 102     | Python     |
+| 11      | Yelena Alcantara  | 103     | Java       |
+| 11      | Yelena Alcantara  | 104     | C#         |
+| 11      | Yelena Alcantara  | 105     | PHP        |
+| 11      | Yelena Alcantara  | 106     | Ruby       |
+| 11      | Yelena Alcantara  | 107     | GoLang     |
+
+Ficou muito extenso, mas queriamos trazer o resultado final do ``CROSS JOIN`` para demonstrar como de fato funciona seu método.
+
 ### 📍 Funções de Agrupamento
 
 ### ➜ AVG: Calcula a média dos valores de uma coluna numérica.
@@ -1040,3 +1397,4 @@ SELECT SUM(condição) FROM nomeDaTabela;
 ```SQL
 SELECT COUNT(condição) FROM nomeDaTabela;
 ```
+
