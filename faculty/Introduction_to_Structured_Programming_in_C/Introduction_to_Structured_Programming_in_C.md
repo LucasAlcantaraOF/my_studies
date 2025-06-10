@@ -884,7 +884,7 @@ int main() {
 
     printf("\nAs notas dos alunos são:\n");
 
-    // 3. Acessando e exibindo os elementos do vetor usando um loop 'for' (Olha os loops de novo!)
+    // 3. Acessando e exibindo os elementos do vetor usando um loop 'for' 
     // O loop vai do índice 0 até o (tamanho-1)
     for (int i = 0; i < 4; i++) {
         printf("Nota do aluno %d: %.1f\n", i + 1, notas[i]); // i+1 para mostrar "Aluno 1", "Aluno 2", etc.
@@ -901,6 +901,9 @@ int main() {
 }
 ```
 
+### 📌 Matrizes
+
+     
 
 
 

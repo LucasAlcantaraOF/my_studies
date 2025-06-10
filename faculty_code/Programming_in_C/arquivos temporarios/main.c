@@ -1,21 +1,32 @@
-#include <stdio.h>
+#include <stdio.h> 
 
 int main() {
-    int numero;
+    int matriz[3][4];
+    int i, j;
+    int somaTerceiraLinha = 0;
 
-    printf("Por favor, digite um número.\n");
-
-    do {
-        printf("Digite um número: ");
-        scanf("%d", &numero); // Lê o número do usuário
-
-        if (numero >= 0) { // Se o número for positivo (maior ou igual a zero)
-            printf("Número inválido! Digite um número menor que zero.\n");
+    printf("Digite os elementos da Matriz: \n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 4; j++) { 
+            printf("Elemento [%d][%d]: ", i, j);
+            scanf("%d", &matriz[i][j]); 
         }
+    }
 
-    } while (numero >= 0); // Repete enquanto o número for inválido (maior ou igual a zero)
+    printf("\nSomando os elementos da terceira linha)...\n");
+    for (j = 0; j < 4; j++) {
+        somaTerceiraLinha += matriz[2][j];
+    }
 
-    printf("Você digitou o número negativo: %d. Ótimo!\n", numero);
+    printf("\n--- Matriz Digitada ---\n");
+    for (i = 0; i < 3; i++) { 
+        for (j = 0; j < 4; j++) { 
+            printf("%d\t", matriz[i][j]); 
+        }
+        printf("\n"); 
+    }
+
+    printf("A soma dos elementos da terceira linha eh: %d\n", somaTerceiraLinha);
 
     return 0;
 }

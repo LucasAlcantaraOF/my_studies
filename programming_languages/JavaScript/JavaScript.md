@@ -1,5 +1,0 @@
-# <img align="center" height="40" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" /> 
-
-Dentro deste material iremos estudar a linguagem JavaScript, que é muito utilizada dentro do desenvolvimento WEB, visto que, com o JS podemos criar páginas interativas, dinâmicas e modernas. Muito requisitada dentro do mercado de novos desenvolvedores, por ter uma sintaxe fácil e de rápido entedimento, além de ser uma linguagem de alto nível, ou seja, está muito perto do entendimento dos programadores, ela é utilizada para trabalharmos com outros linguagens derivadas delas, que possuem mais poder de codificação e processamento, entretanto, precisamos solidifcar os conceitos básicos de como o desenvolvimento de algoritimos em JavaScript acontecem.
-
-Para tanto, constaremos que você entenda o conceito do que seria a lógica de programção e não explicaremos tão aprofunmente sobre assuntos que
