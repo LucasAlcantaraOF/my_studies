@@ -1,12 +1,12 @@
 # Pensamento Computacional
 
 - [1.0 - Introdução](#introdução)
-  - [1.1 - Introdução aos Princípios Fundamentais da Computação](#introdução-aos-princípios-fundamentais-da-computação)
-  - [1.2 - Humano versus Máquina](#humano-versus-máquina)
-  - [1.3 - Compreendendo o potencial dos computadores](#Compreendendo-o-potencial-dos-computadores)
+  - [1.1 - Introdução aos Princípios Fundamentais da Computação](#-introdução-aos-princípios-fundamentais-da-computação)
+  - [1.2 - Humano versus Máquina](#-humano-versus-máquina)
+  - [1.3 - Compreendendo o potencial dos computadores](#-compreendendo-o-potencial-dos-computadores)
   - [1.4 - Conceito de Código](#-conceito-de-código)
-  - [1.5 - Algoritmo](#algoritmo)
-  - [1.6 - Lei de Moore](#lei-de-moore)
+  - [1.5 - Algoritmo](#-algoritmo)
+  - [1.6 - Lei de Moore](#-lei-de-moore)
 - [2.0 - Outro Tópico](#outro-tópico)
 
 
