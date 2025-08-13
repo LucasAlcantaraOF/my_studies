@@ -1,8 +1,40 @@
 # Pensamento Computacional
 
-[Introdução](#-introdução)
+<style>
+  body {
+    background-color: #2D2D30;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  ul ul {
+    padding-left: 20px;
+  }
+  li {
+    margin-bottom: 8px;
+  }
+  a {
+    color: #569CD6;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
 
-[Introdução aos Princípios Fundamentais da Computação](#introdução-aos-princípios-fundamentais-da-computação)
+<ul>
+  <li>
+    <a href="#introdução">1.0 - Introdução</a>
+    <ul>
+      <li><a href="#Introdução-aos-Princípios-Fundamentais-da-Computação">1.1 - Introdução aos Princípios Fundamentais da Computação</a></li>
+      <li><a href="#Humano-versus-Máquina">1.2 - Humano versus Máquina</a></li>
+    </ul>
+  </li>
+  <li><a href="#">2.0 - Próximo Tópico</a></li>
+</ul>
 
 ## 📌 Introdução
 
