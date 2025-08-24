@@ -7,7 +7,7 @@
   - [1.4 - Conceito de Código](#-conceito-de-código)
   - [1.5 - Algoritmo](#-algoritmo)
   - [1.6 - Lei de Moore](#-lei-de-moore)
-- [2.0 - Outro Tópico](#outro-tópico)
+- [2.0 - Outros Tópicos](#outro-tópico)
 
 
 ## 📌 Introdução
